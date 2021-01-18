@@ -1,4 +1,4 @@
-![Tia portal minimum requirements ](../PDB/Images/FrontPage.jpg)
+![Front Page ](../PDB/Images/FrontPage.jpg)
 
 # Inhoud
 
