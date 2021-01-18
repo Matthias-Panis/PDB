@@ -1,30 +1,40 @@
+![Tia portal minimum requirements ](../PDB/Images/FrontPage.jpg)
+
 # Inhoud
 
-[1	Projectdefinitie	](#1)
+[1	Projectdefinitie	](#1-projectdefinitie)
 
-[2	Voorwoord	](#2)
+[2	Voorwoord	](#2-voorwoord)
 
-[3	Omschrijving Bachelor Proef	](#3)
+[3	Omschrijving Bachelorproef	](#3-omschrijving-bachelorproef)
 
-[4	IST-Situatie	](#4)
+[4	IST-Situatie	](#4-ist-situatie)
 
-[5	SOLL-Situatie	](#5)
+[5	SOLL-Situatie	](#5-soll-situatie)
 
-[6	Software vereisten	](#6)
- [6.1	TIA PORTAL	](##6.1)
- [6.2	FactoryIO	](##6.2)
+[6	ACTEA team ](#6-actea-team)
 
-[7	ACTEA team ](#7)
- [7.1	Van Grieken Geert ](#7.1)
- [7.2	Sasha Pampus ](#7.2)
- [7.3	Florian Maximillian Eichel ](#7.3)
- [7.4	Panis Matthias ](#7.4)
+ [6.1	Van Grieken Geert ](#6-1-van-grieken-geert)
 
-[8 Cursus](#8)
+ [6.2	Sasha Pampus ](#6-2-sasha-pampus)
 
-[9	Bibliografie	](#9)
+ [6.3	Florian Maximillian Eichel ](#6.3)
 
-[10	Figuurlijst	](#10)
+ [6.4	Panis Matthias ](#6.4)
+
+[7	Software vereisten	](#7-software-vereisten)
+
+ [7.1	TIA PORTAL	](#7-1-tia-poral)
+
+ [7.2	FactoryIO	](#7-2-factoryio)
+
+[8 Cursus](#8-cursus)
+
+[9	Bibliografie	](#9-bibliografie)
+
+[10	Figuurlijst	](#10-figuurlijst)
+
+Dit PDB staat ook op een persoonlijke repository op [Github](https://github.com/Matthias-Panis/PDB/blob/master/PDB-PanisMatthias.md)
 
 
 #1 Projectdefinitie
@@ -58,7 +68,7 @@ dan ook over gaan.
 
 # 2 Voorwoord
 
-Ik studeer op het departement Wetenschap & Techniek van AP-Hogeschool deze bevind zich op de campus spoor noord - Ellermanstraat 33 in Antwerpen. Ik volg hier de opleiding elektrotechniek met de afstudeerrichting Automatisatie. Hier doe ik ook mijn bachelorproef voor het ACTEA project. ACTEA is een samenwerking van de volgende universiteiten en hogescholen:
+Ik studeer op het departement Wetenschap & Techniek van AP-Hogeschool deze bevind zich op de campus spoor noord - Ellermanstraat 33 in Antwerpen. Ik volg hier de opleiding elektrotechniek met de afstudeerrichting Automatisatie. Hier doe ik ook mijn bachelorproef voor het ACTEA-project. ACTEA is een samenwerking van de volgende universiteiten en hogescholen:
 - Hogeschool West-Vlaanderen
 - Fachhochschule Dortmund
 - Technological Educational Institute of Crete
@@ -71,8 +81,8 @@ Ik studeer op het departement Wetenschap & Techniek van AP-Hogeschool deze bevin
 - Research and Education Network for Uganda
 - Tanzania Education and Research Network
 
-Hierbij gaan ze cursussen oprichten in de STEM richting voor gebruik in Zuid-Afrikaanse landen waaronder, Ethiopië, Uganda en Tanzania. Deze cursussen bestaan uit 2 grote modulles, modulle 1 : "Computer Aided Manufacturing Technology" ,modulle 2 "Electrical Engineering & Automation" en ten slotte moddule 3 : "Labor Market Skills".
-Ik zit in de groep dat verantwoordelijk is over modulle 2 "Computer Aided Manufacturing Technology" hierin zijn er nog verschillende cursussen.
+Hierbij gaan ze cursussen oprichten in de STEM richting voor gebruik in Zuid-Afrikaanse landen waaronder, Ethiopië, Uganda en Tanzania. Deze cursussen bestaan uit 2 grote modulles, modulle 1: "Computer Aided Manufacturing Technology”, module 2 "Electrical Engineering & Automation" en ten slotte module 3 : "Labor Market Skills".
+Ik zit in de groep dat verantwoordelijk is over module 2 "Computer Aided Manufacturing Technology" hierin zijn er nog verschillende cursussen.
 - Electrical Installations
 - Electrical Motors & Drives
 - Basic PLC Programming
@@ -81,7 +91,10 @@ Ik zit in de groep dat verantwoordelijk is over modulle 2 "Computer Aided Manufa
 - Process Simulation & Control
 - Renewable Energy
 - Embedded Measurement and Control
+
+
 Waaruit "Advanced PLC & Motion" mijn verantwoordelijkheid zijn.
+
 
 # 3 Omschrijving Bachelorproef
 
@@ -115,21 +128,24 @@ De PDB zelf heb ik dan ook in een .md bestandformaat geschreven gebruik makend v
 
 Via Microsoft Teams worden er meatings georganiseerd. Hier gaat ook alle communicatie door. Als er een hoofdstuk klaar is voor controle laat ik het via deze manier weten.
 
-## 6.1 Van Grieken Geert
+## 6-1 Van Grieken Geert
 
-Lector op AP-Hogescool is voornamelijk verantwoordelijk voor het automatisatie gedeelte van het ACTEA project. Hij schrijft zelf de cursus "Basic PLC Programming". Hij stuurt me ook het meeste aan en geeft me de benodigde documentatie om verder te kunnen met het schrijven van mijn deel van de cursus.
+Lector op AP-Hogescool is voornamelijk verantwoordelijk voor het automatisatie gedeelte van het ACTEA project. Hij schrijft zelf de cursus "Basic PLC Programming". Normaal ook "Advanced PLC & Motion" maar dit neem ik over van hem. Hij stuurt me ook het meeste aan en geeft me de benodigde documentatie om verder te kunnen met het schrijven van mijn deel van de cursus.
 
-## 6.2 Sasha Pampus
+## 6-2 Sasha Pampus
 
-## 6.3 Florian Maximillian Eichel
+## 6-3 Florian Maximillian Eichel
 
-## 6.4 Panis Matthias
+## 6-4 Panis Matthias
 Student (ik) die verantwoordelijk is voor de uitwerking van de cursus "Advanced PLC & Motion"
 
 #7 Software vereisten
 
-In de cursus M2C4 "Acvanced PLC & Motion" wordt er gebruik gemaakt van TIA Portal en FactoryIO. TIA Portal wordt gebruikt voor het programmeren van de verschillende opdrachten die in de cursus voorkomt. FactoryIO zal helpen met het visualiseren van deze oefeningen. Het is eigenlijk een simulatie van echte installatie die de studenten kunnen gebruiken om "echt" te zien wat er nu juist gebeurd als ze hun programma's testen. Om dit deftig te kunnen draaien op je lokale PC of laptop zal je de volgende minimum specificaties moeten hebben (of nieuwere versies).
-## 7.1 Tia Portal
+In de cursus is er gebruik gemaakt van TIA Portal en FactoryIO. TIA Portal is een computerprogramma dat gebruikt wordt om de oefeningen die aan bod zullen komen te programmeren en uit te voeren op een PLC. FactoryIO is een simulatie programma dat waarin je verschillende scénes kunt maken van echte machine's. Deze scènes en machines die gebouwd zijn in FactoryIO kunnen gesimuleerd worden om met een PLC te communiceren. Hiermee kan een student zijn programmatie controleren zonder effectief de machine voor hun te hoeven hebben. Dit is geweldig makkelijk voor studenten omdat ze het live kunnen controleren met de simulatie van een "echte" machine.
+
+Om deze programma's uit te kunnen voeren zal je PC tenminste met deze specificaties moeten voldoen.
+
+## 7-1 Tia Portal
 
 | **Hardware/Software**| **Requirement** |
 | :---: | :---: |
@@ -140,7 +156,8 @@ In de cursus M2C4 "Acvanced PLC & Motion" wordt er gebruik gemaakt van TIA Porta
 | Monitor   |   15.6 "full HD display (1920 x 1080 or more) |
 | Operating system	 |  ![Tia portal minimum requirements ](../PDB/Images/TiaPortalMinReq.jpg) |
 
-## 7.2 FactoryIO
+## 7-2 FactoryIO
+
 | **Hardware/Software**| **Requirement** |
 | :---: | :---: |
 | Processor | CPU with SSE2 instruction set support |
@@ -153,6 +170,7 @@ In de cursus M2C4 "Acvanced PLC & Motion" wordt er gebruik gemaakt van TIA Porta
 
 
 #8 Cursus
+
 Ik behandel het gedeelte M2C4 wat de advanced cursus is van automatisatie cursus.
 Deze zal de volgende onderwerpen bespreken:
 - Addendum 3 **HMI**
@@ -165,7 +183,7 @@ Deze zal de volgende onderwerpen bespreken:
 - Exercise 4 **Continue controllers**
 - Exercise 5 **HMI displays**
 
-## 8.1 Addendum 3 HMI
+## 8-1 Addendum 3 HMI
 
 In dit hoofdstuk wordt het HMI en hoe men deze gebruikt in TIA portal besproken.
 Men legt uit hoe je de HMI toevoegd via TIA portal. Dit kan zowel via het portal view of project view. Vervolgens wordt men door de device selectie geleid. Als de juiste HMI geselecteerd is zal de HMI wizard tevoorschijn komen. Hierin wordt elke opties uitgelegd en de functies ervan.
@@ -220,10 +238,10 @@ De movements bestaan onder 4 verschillende sub categoriëen;
 - Horizontal movement
 - Vertical movement
 
-Deze bepalen hoe het object zal bewegen. Dit is ook weer linkbaar met een variabelen.
+Deze bepalen hoe het object zal bewegen. Dit is ook weer linkbaar met een variabel.
 
-## 8.2 Addendum 4 GRAFCET
-### 8.2.1 Uitleg
+## 8-2 Addendum 4 GRAFCET
+### 8-2-1 Uitleg
 In dit hoofdstuk wordt een GRAFCET uitgelegd. Hoe men deze correct opstelt en alle functionaliteit hiervan.
 
 Beginnend met de uitleg van wat een GRAFCET is en waarom deze nodig is. Dit is dus nodig bij geautomatiseerde systemen die een sequentieel proces gevolgen(stap voor stap).
@@ -263,7 +281,7 @@ Geruik makend van dit start stop circuit: <p><p>
 Hiervoor zullen we een GRAFCET als volgt bouwen: <p><p>
 ![Example GRAFCET](../PDB/Images/GRAFCET_Ex.jpg)
 
-### 8.2.2 Programmatie in TIA PORTAL
+### 8-2-2 Programmatie in TIA PORTAL
 
 Om dan deze GRAFCET in TIA Portal te programmeren zijn er verschillende methoden om dit te doen. Verder uitgelegd zullen deze methodes aanbod komen.
 
@@ -271,7 +289,7 @@ Om dan deze GRAFCET in TIA Portal te programmeren zijn er verschillende methoden
 - GRAFCET programming in LAD/FBD using INT
 - GRAFCET programming in ST
 
-### 8.2.2.1 GRAFCET programming in LAD/FBD using BOOL
+### 8-2-2-1 GRAFCET programming in LAD/FBD using BOOL
 
 De programmatie zullen in deze 3 netwerken verdeeld worden:
 - Initialization
@@ -291,7 +309,7 @@ De volgende regels worden toegepast
 | :---:          | :---:             |
 | Simplicity (1 step = 1 variable) | Initial step is not activated during the first download of the program |
 |                                | Monitoring of active steps is complicated        |
-### 8.2.2.2 GRAFCET programming in LAD/FBD using INT
+### 8-2-2-2 GRAFCET programming in LAD/FBD using INT
 
 De programmatie zullen in deze 3 netwerken verdeeld worden:
 - Initialization
@@ -312,7 +330,7 @@ De volgende regels worden toegepast
 | Initial step is activated during the first download of the program | More complex, advanced programming then with LAD/FBD BOOL method |
 | Monitoring of active steps is easier | Programming of AND-convergence is more complex then with LAD/FBD BOOL variant |
 
-### 8.2.2.3 GRAFCET programming in ST
+### 8-2-2-3 GRAFCET programming in ST
 
 De programmatie zullen in deze 3 netwerken verdeeld worden:
 - Initialization
@@ -336,7 +354,69 @@ De volgende regels worden toegepast
 | Smaller programming then LAD/FBD variant | Programming of AND-convergence is more complex than the LAD/FBD BOOL method |
 | Monitoring of active steps are easier | Debugging in ST is harder than in FBD/LAD |
 
-## 8.3 Addendum 05 controllers
+## 8-3 Addendum 05 controllers
+
+In dit hoofdstuk worden regelaars of terwijl "controllers" besproken. Waaronder:
+- ON-OFF circuit ("Aan-uit schakeling")
+- PID controller ("PID regelaar")
+- Singular control circuit (Enkelvoudige regelkring)
+- Cascade control
+- Ratio controller ("Verhoudingsregeling")
+- Mix ratio controller ("Mengverhouding regeling")
+- Split range controllers
+
+Eerst zijn de eigenschappen van controllers uitgelegd. Deze bevatten de karakterestieken die de controllers die hier besproken worden.
+![Example Conveyorbelt](../PDB/Images/Controller-properties.jpg)
+
+### 8-3-1 Aan-uit schakeling
+
+Aan-uit schakeling zal er voor zorgen dat een actuator niet constant aan-uit geschakeld zal worden. Dit gebeurt door 2 grenswaarden, in- en uitschakeldrempel. Het verschil tussen deze 2 grenswaarden wordt de hysteresis genoemd.
+
+### 8-3-2 PID regelaar
+
+Een PID regelaar wordt gebruikt om processen te regelen via een analoge actuator. Een PID regelaar bestaat uit verschillende deelfuncties.
+- P of Proportionele actie
+- I of Integrerende actie
+- D of Differentiërende actie
+
+### 8-3-3 Compact PID regelaar
+
+In deze cursus gebruiken we de compact PID regelaar van TIA-Portal (S7-1200). Een heel groot deel van de paramaters kunnen ingesteld worden gebruik maken van TIA-Portal.
+
+
+
+## 8-4 Addendum 06 Software modeling ANSI/ISA-S88
+
+S88 software model is een norm die omschrijft hoe een machine/installatie (batch)proces kan onderverdeeld worden in verschillende onderdelen.
+
+Het S88 software model deelt een machine/installatie proces op in 3 grote delen nl.:
+
+- Het fysisch gedeelte (The physical part)
+- Het procedure gedeelte (The procedure part)
+- Het recepten gedeelte (The recipe part)
+
+![Example Conveyorbelt](../PDB/Images/S88_Softwaredesign.jpg)
+
+De volgende hoofdstukken zal de verschillende bouwstenen bespreken die in een library zijn opgenomen. Deze zullen in de programmatie van oefeningen kunnen gebruikt worden.
+
+## 8-4-1 Fysich gedeelte - Control modules
+**Control modules** zijn software bouwstenen die
+
+- Ingangssignalen (%I) afkomstig van de sensoren verwerken
+- Uitgangssignalen (%Q) naar de actuatoren aansturen
+
+In de library zijn er sensor control modules aanweezig, waaronder een digitale sensor(digital sensor) en analoge sensor(analog sensor).
+
+Een **digitale sensor** verwerkt voornamelijk de aanwezigheid van een product, voorwerp, persoon, enz. en heeft 2 toestanden die weergeven of deze producten, voorwerpen en personen al dan niet aanwezig zijn.
+Functioneel gezien verzorgen deze sensoren:
+- De correcte automatische werking al dan niet met de nodige vertragingen (bijv. openen van een deur m.b.v. een fotocel waarna de deur even open blijft)
+- De beveiliging tegen defecten (bijv. droogloop beveiliging)
+
+Zo'n bouwsteen ziet er als volgt uit:
+![Example Conveyorbelt](../PDB/Images/ObjectDigitalSensor.jpg)
+
+
+
 
 #9 Bibliografie
 
