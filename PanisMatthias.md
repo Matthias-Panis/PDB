@@ -18,9 +18,9 @@
 
  [6.2	Sasha Pampus ](#6-2-sasha-pampus)
 
- [6.3	Florian Maximillian Eichel ](#6.3)
+ [6.3	Florian Maximillian Eichel ](#6-3-florian-maximillian-eichel)
 
- [6.4	Panis Matthias ](#6.4)
+ [6.4	Panis Matthias ](#6-4-panis-matthias)
 
 [7	Software vereisten	](#7-software-vereisten)
 
@@ -37,7 +37,7 @@
 
 
 
-#1 Projectdefinitie
+# 1 Projectdefinitie
 
 Mijn project zal gaan over het schrijven van een basiscursus in automatisatie.
 Het project is een internationaal project waarbij Mr. Van Grieken ontwikkelaar
@@ -104,12 +104,12 @@ De PDB zelf heb ik dan ook in een .md bestandformaat geschreven gebruik makend v
 
 [^1]: Markdown is een opmaaktaal op basis van platte tekst die ontworpen is voor HTML gebaseerde webpagina's. (Bestandsextensie .md)
 
-#4 IST-Situatie
+# 4 IST-Situatie
 - Advanced PLC boek is nog niet vervolledigen
 - ADD01[^2] Electrical drawings
 - ADD02 TAG Name
 
-#5 SOLL-Situatie
+# 5 SOLL-Situatie
 - Elektonische Advanced PLC boek geschreven
 - EX01[^3] Industrial Networks
 - EX02 ANSI/ISA S88
@@ -124,7 +124,7 @@ De PDB zelf heb ik dan ook in een .md bestandformaat geschreven gebruik makend v
 [^2]: ADD = Addendum, een onderwerp wordt hierin volledig uitgelegd.
 [^3]: EX = Exercise, een oefening die de student zal kunnen maken.
 
-#6 ACTEA Team
+# 6 ACTEA Team
 
 Via Microsoft Teams worden er meatings georganiseerd. Hier gaat ook alle communicatie door. Als er een hoofdstuk klaar is voor controle laat ik het via deze manier weten.
 
@@ -139,7 +139,7 @@ Lector op AP-Hogescool is voornamelijk verantwoordelijk voor het automatisatie g
 ## 6-4 Panis Matthias
 Student (ik) die verantwoordelijk is voor de uitwerking van de cursus "Advanced PLC & Motion"
 
-#7 Software vereisten
+# 7 Software vereisten
 
 In de cursus is er gebruik gemaakt van TIA Portal en FactoryIO. TIA Portal is een computerprogramma dat gebruikt wordt om de oefeningen die aan bod zullen komen te programmeren en uit te voeren op een PLC. FactoryIO is een simulatie programma dat waarin je verschillende scénes kunt maken van echte machine's. Deze scènes en machines die gebouwd zijn in FactoryIO kunnen gesimuleerd worden om met een PLC te communiceren. Hiermee kan een student zijn programmatie controleren zonder effectief de machine voor hun te hoeven hebben. Dit is geweldig makkelijk voor studenten omdat ze het live kunnen controleren met de simulatie van een "echte" machine.
 
@@ -169,7 +169,7 @@ Om deze programma's uit te kunnen voeren zal je PC tenminste met deze specificat
 | Operating system	 |  Windows 7 SP1+ or higher |
 
 
-#8 Cursus
+# 8 Cursus
 
 Ik behandel het gedeelte M2C4 wat de advanced cursus is van automatisatie cursus.
 Deze zal de volgende onderwerpen bespreken:
@@ -253,11 +253,19 @@ Een voorbeeld van de afbeeldingen in excel :
 
 ![Excel GRAFCET](../PDB/Images/ExcelGrafcet.jpg)
 
-In excel kan je de rasterlijnen laten verdwijnen door "Pagina-indeling" > "Uitlijnen" > "Rasterlijnen weergeven" af te vinken. Hierdoor verdwijnen de rasterlijnen. Hierna gebruik maken van de snipping tool van windows kan de gewenste afbeelding worden geselecteerd.
+In excel kan je de rasterlijnen laten verdwijnen door "Pagina-indeling" > "Uitlijnen" > "Rasterlijnen weergeven" af te vinken. Hierdoor verdwijnen de rasterlijnen. Hierna gebruik makend van de snipping tool in windows kan de gewenste afbeelding worden geselecteerd.
 
+Verder is deze addendum ook opgedeeld in 5 subchapters:
+- Subchapter01 zal gaan over de algemene uitleg
+- Subchapter02 zal gaan over het ontwerpen van een GRAFCET
+- Subchapter03 zal gaan over de GRAFCET taal geprogrammeerd in TIA Portal (Bool)
+- Subchapter04 zal gaan over de GRAFCET taal geprogrammeerd in TIA Portal (INT)
+- Subchapter05 zal gaan over de GRAFCET taal geprogrammeerd in TIA Portal (ST)
 
+Voor subchapter 3 tot 5 komen er ook TIA Portal programmatie voor. Deze zijn ook vertaald naar het engels. Gebruik makend van de nederlandse voorbeelden in de bestaande cursussen heb ik dan in TIA Portal deze bouwstenen nagemaakt maar dan met de engelse benamingen.
+Voorbeeld hiervan.
 
-#9 Bibliografie
+# 9 Bibliografie
 [HMI Tutorial](https://www.automation.siemens.com/sce-static/learning-training-documents/tia-portal/visualization-s7-1200/sce-041-101-wincc-basic-ktp700-s7-1200-r1709-en.docx)
 
-#10 Figuurlijst
+# 10 Figuurlijst

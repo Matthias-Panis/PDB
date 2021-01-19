@@ -1,0 +1,557 @@
+<!DOCTYPE html><html><head>
+      <title>PanisMatthias</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\Matti\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p><img src="../PDB/Images/FrontPage.jpg" alt="Front Page "></p>
+<h1 class="mume-header" id="inhoud">Inhoud</h1>
+
+<p><a href="#1-projectdefinitie">1	Projectdefinitie	</a></p>
+<p><a href="#2-voorwoord">2	Voorwoord	</a></p>
+<p><a href="#3-omschrijving-bachelorproef">3	Omschrijving Bachelorproef	</a></p>
+<p><a href="#4-ist-situatie">4	IST-Situatie	</a></p>
+<p><a href="#5-soll-situatie">5	SOLL-Situatie	</a></p>
+<p><a href="#6-actea-team">6	ACTEA team </a></p>
+<p><a href="#6-1-van-grieken-geert">6.1	Van Grieken Geert </a></p>
+<p><a href="#6-2-sasha-pampus">6.2	Sasha Pampus </a></p>
+<p><a href="#6.3">6.3	Florian Maximillian Eichel </a></p>
+<p><a href="#6.4">6.4	Panis Matthias </a></p>
+<p><a href="#7-software-vereisten">7	Software vereisten	</a></p>
+<p><a href="#7-1-tia-poral">7.1	TIA PORTAL	</a></p>
+<p><a href="#7-2-factoryio">7.2	FactoryIO	</a></p>
+<p><a href="#8-cursus">8 Cursus</a></p>
+<p><a href="#9-bibliografie">9	Bibliografie	</a></p>
+<p><a href="#10-figuurlijst">10	Figuurlijst	</a></p>
+<h1 class="mume-header" id="1-projectdefinitie">1 Projectdefinitie</h1>
+
+<p>Mijn project zal gaan over het schrijven van een basiscursus in automatisatie.<br>
+Het project is een internationaal project waarbij Mr. Van Grieken ontwikkelaar<br>
+is van cursusmateriaal en didactisch materiaal en levert hij technische<br>
+ondersteuning op vlak van PLC-uitrusting. Hij heeft mij als hulp ingeschakeld om deze cursus te<br>
+vervolledigen. Dit project of terwijl ACTEA zal gebruikt worden internationaal<br>
+om de bevolking daar op te leiden in de STEM wereld.</p>
+<p>Om de levensstandaard in Oost-Afrikaanse landen te verbeteren bied dit project<br>
+een zekere meerwaarde. Bovendien is er een grote vraag naar technici van<br>
+investeerders, ngo’s en de opkomende middenklasse. Om aan deze vraag te kunnen<br>
+voldoen, is er behoefte aan bekwame mensen, opgeleid in relevante technische<br>
+beroepen, maar die zijn moeilijk te vinden vanwege de sterke theoretische<br>
+benadering aan de universiteiten in plaats van praktijkgericht<br>
+competentiegericht onderwijs.</p>
+<p>Het ACTEA-project heeft tot doel te voldoen aan de specifieke behoeften op het<br>
+gebied van engineering, betere afstemming van vaardigheden te bieden,<br>
+cursusmateriaal te leveren in 2 specialisaties, computerondersteunde<br>
+fabricagetechnologie en elektrotechniek &amp; automatisering, en technologische<br>
+laboratoria op te richten met virtuele en externe toegankelijkheid, leermiddelen<br>
+opzetten, academisch personeel aanvullende opleiding over technologie en in het<br>
+ontwikkelen van technologisch cursusmateriaal volgens EU-normen.</p>
+<p>Zoals eerder vermeld is Mr. Van Grieken ontwikkelaar in cursusmateriaal en<br>
+didactisch materiaal. Hierbij zal ik mee helpen en hier zal mijn bachelor proef<br>
+dan ook over gaan.</p>
+<h1 class="mume-header" id="2-voorwoord">2 Voorwoord</h1>
+
+<p>Ik studeer op het departement Wetenschap &amp; Techniek van AP-Hogeschool deze bevind zich op de campus spoor noord - Ellermanstraat 33 in Antwerpen. Ik volg hier de opleiding elektrotechniek met de afstudeerrichting Automatisatie. Hier doe ik ook mijn bachelorproef voor het ACTEA-project. ACTEA is een samenwerking van de volgende universiteiten en hogescholen:</p>
+<ul>
+<li>Hogeschool West-Vlaanderen</li>
+<li>Fachhochschule Dortmund</li>
+<li>Technological Educational Institute of Crete</li>
+<li>Mekelle University Ethiopia</li>
+<li>Jimma University (Jimma Institute of Technology)</li>
+<li>Mbarara University of Science and Technology</li>
+<li>Muni University</li>
+<li>Mzumbe University</li>
+<li>Ardhi University</li>
+<li>Research and Education Network for Uganda</li>
+<li>Tanzania Education and Research Network</li>
+</ul>
+<p>Hierbij gaan ze cursussen oprichten in de STEM richting voor gebruik in Zuid-Afrikaanse landen waaronder, Ethiopië, Uganda en Tanzania. Deze cursussen bestaan uit 2 grote modulles, modulle 1: "Computer Aided Manufacturing Technology”, module 2 "Electrical Engineering &amp; Automation" en ten slotte module 3 : "Labor Market Skills".<br>
+Ik zit in de groep dat verantwoordelijk is over module 2 "Computer Aided Manufacturing Technology" hierin zijn er nog verschillende cursussen.</p>
+<ul>
+<li>Electrical Installations</li>
+<li>Electrical Motors &amp; Drives</li>
+<li>Basic PLC Programming</li>
+<li>Advanced PLC &amp; Motion</li>
+<li>Sensor Technology</li>
+<li>Process Simulation &amp; Control</li>
+<li>Renewable Energy</li>
+<li>Embedded Measurement and Control</li>
+</ul>
+<p>Waaruit "Advanced PLC &amp; Motion" mijn verantwoordelijkheid zijn.</p>
+<h1 class="mume-header" id="3-omschrijving-bachelorproef">3 Omschrijving Bachelorproef</h1>
+
+<p>Ik zal bestaande cursusmateriaal omzetten naar het engels. Dit cursus materiaal bevatten ook schema's en oefening die ik zal hermaken / hernoemen naar de correcte engelse benamingen. De oefening zal ik zelf allemaal moeten uittesten en naar de correcte engelse benamingen omzetten. Ik maak gebruik van Atom om deze cursus in markdown <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> te schrijven en heb ook in Atom mijn PDB geschreven. Atom is een tekst editor vooral gemaakt voor bv. markdown bestanden mee te schrijven. Verder gebruik ik ook GitHub om de cursusses en mijn aanpassingen te uploaden en downloaden. Mensen met de juiste link hiernaar kunnen dan deze cursussen en bestanden online bekijken.</p>
+<p>De PDB zelf heb ik dan ook in een .md bestandformaat geschreven gebruik makend van <a href="https://atom.io/">Atom</a>. Deze is dan geexport naar een HTML pagina die dan in een PDF versie gepresenteerd wordt. Dit PDB staat ook op een persoonlijke repository op <a href="https://github.com/Matthias-Panis/PDB/blob/master/PDB-PanisMatthias.md">Github</a></p>
+<h1 class="mume-header" id="4-ist-situatie">4 IST-Situatie</h1>
+
+<ul>
+<li>Advanced PLC boek is nog niet vervolledigen</li>
+<li>ADD01<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> Electrical drawings</li>
+<li>ADD02 TAG Name</li>
+</ul>
+<h1 class="mume-header" id="5-soll-situatie">5 SOLL-Situatie</h1>
+
+<ul>
+<li>Elektonische Advanced PLC boek geschreven</li>
+<li>EX01<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> Industrial Networks</li>
+<li>EX02 ANSI/ISA S88</li>
+<li>EX03 Sequential controllers</li>
+<li>EX04 Continue controllers</li>
+<li>EX05 HMI displays</li>
+<li>ADD03 Manuals</li>
+<li>ADD04 GRAFCET</li>
+<li>ADD05 controllers</li>
+<li>ADD06 S88</li>
+</ul>
+<h1 class="mume-header" id="6-actea-team">6 ACTEA Team</h1>
+
+<p>Via Microsoft Teams worden er meatings georganiseerd. Hier gaat ook alle communicatie door. Als er een hoofdstuk klaar is voor controle laat ik het via deze manier weten.</p>
+<h2 class="mume-header" id="6-1-van-grieken-geert">6-1 Van Grieken Geert</h2>
+
+<p>Lector op AP-Hogescool is voornamelijk verantwoordelijk voor het automatisatie gedeelte van het ACTEA project. Hij schrijft zelf de cursus "Basic PLC Programming". Normaal ook "Advanced PLC &amp; Motion" maar dit neem ik over van hem. Hij stuurt me ook het meeste aan en geeft me de benodigde documentatie om verder te kunnen met het schrijven van mijn deel van de cursus.</p>
+<h2 class="mume-header" id="6-2-sasha-pampus">6-2 Sasha Pampus</h2>
+
+<h2 class="mume-header" id="6-3-florian-maximillian-eichel">6-3 Florian Maximillian Eichel</h2>
+
+<h2 class="mume-header" id="6-4-panis-matthias">6-4 Panis Matthias</h2>
+
+<p>Student (ik) die verantwoordelijk is voor de uitwerking van de cursus "Advanced PLC &amp; Motion"</p>
+<h1 class="mume-header" id="7-software-vereisten">7 Software vereisten</h1>
+
+<p>In de cursus is er gebruik gemaakt van TIA Portal en FactoryIO. TIA Portal is een computerprogramma dat gebruikt wordt om de oefeningen die aan bod zullen komen te programmeren en uit te voeren op een PLC. FactoryIO is een simulatie programma dat waarin je verschillende scénes kunt maken van echte machine's. Deze scènes en machines die gebouwd zijn in FactoryIO kunnen gesimuleerd worden om met een PLC te communiceren. Hiermee kan een student zijn programmatie controleren zonder effectief de machine voor hun te hoeven hebben. Dit is geweldig makkelijk voor studenten omdat ze het live kunnen controleren met de simulatie van een "echte" machine.</p>
+<p>Om deze programma's uit te kunnen voeren zal je PC tenminste met deze specificaties moeten voldoen.</p>
+<h2 class="mume-header" id="7-1-tia-portal">7-1 Tia Portal</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Hardware/Software</strong></th>
+<th style="text-align:center"><strong>Requirement</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Processor</td>
+<td style="text-align:center">Intel® Core ™ i5-6440EQ (up to 3.4 GHz)</td>
+</tr>
+<tr>
+<td style="text-align:center">RAM</td>
+<td style="text-align:center">16 GB (min. 8 GB, 32 GB for large projects)</td>
+</tr>
+<tr>
+<td style="text-align:center">Hard disk</td>
+<td style="text-align:center">SSD with 50 GB free storage space</td>
+</tr>
+<tr>
+<td style="text-align:center">Network</td>
+<td style="text-align:center">1 Gbit (for multi-user) Laptops need WiFi</td>
+</tr>
+<tr>
+<td style="text-align:center">Monitor</td>
+<td style="text-align:center">15.6 "full HD display (1920 x 1080 or more)</td>
+</tr>
+<tr>
+<td style="text-align:center">Operating system</td>
+<td style="text-align:center"><img src="../PDB/Images/TiaPortalMinReq.jpg" alt="Tia portal minimum requirements "></td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="7-2-factoryio">7-2 FactoryIO</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Hardware/Software</strong></th>
+<th style="text-align:center"><strong>Requirement</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Processor</td>
+<td style="text-align:center">CPU with SSE2 instruction set support</td>
+</tr>
+<tr>
+<td style="text-align:center">GPU/ Video Card</td>
+<td style="text-align:center">NVIDIA since 2006 (GeForce 8), AMD since 2006 (Radeon HD 2000), Intel since 2012 (HD 4000 / IvyBridge)</td>
+</tr>
+<tr>
+<td style="text-align:center">RAM</td>
+<td style="text-align:center">8 GB</td>
+</tr>
+<tr>
+<td style="text-align:center">Hard disk</td>
+<td style="text-align:center">SSD with 10 GB free storage space</td>
+</tr>
+<tr>
+<td style="text-align:center">Network</td>
+<td style="text-align:center">1 Gbit (for multi-user) Laptops need WiFi</td>
+</tr>
+<tr>
+<td style="text-align:center">Monitor</td>
+<td style="text-align:center">15.6 "full HD display (1920 x 1080 or more)</td>
+</tr>
+<tr>
+<td style="text-align:center">Operating system</td>
+<td style="text-align:center">Windows 7 SP1+ or higher</td>
+</tr>
+</tbody>
+</table>
+<h1 class="mume-header" id="8-cursus">8 Cursus</h1>
+
+<p>Ik behandel het gedeelte M2C4 wat de advanced cursus is van automatisatie cursus.<br>
+Deze zal de volgende onderwerpen bespreken:</p>
+<ul>
+<li>Addendum 3 <strong>HMI</strong></li>
+<li>Addendum 4 <strong>GRAFCET</strong></li>
+<li>Addendum 5 <strong>Controllers</strong></li>
+<li>Addendum 6 <strong>Software model following S88</strong></li>
+<li>Exercise 1 <strong>Industrial networks</strong></li>
+<li>Exercise 2 <strong>ANSI/ISA S88</strong></li>
+<li>Exercise 3 <strong>Sequential controllers</strong></li>
+<li>Exercise 4 <strong>Continue controllers</strong></li>
+<li>Exercise 5 <strong>HMI displays</strong></li>
+</ul>
+<p>Link naar <a href="https://github.com/ACTEA-Erasmus/m2c4-aplc">Github</a> repository van ACTEA</p>
+<p>De hele cursus is in het engels geschreven, gebruik makend van Atom.</p>
+<h2 class="mume-header" id="8-1-addendum-3-hmi">8-1 Addendum 3 HMI</h2>
+
+<p>Dit addendum heb ik met hulp van siemens pdf's zelf samen gesteld. Dit is ook in het engels geschreven maar heb het terug naar nederlands vertaald hier.</p>
+<p>In dit hoofdstuk wordt het HMI en hoe men deze gebruikt in TIA portal besproken.<br>
+Men legt uit hoe je de HMI toevoegd via TIA portal. Dit kan zowel via het portal view of project view. Vervolgens wordt men door de device selectie geleid. Als de juiste HMI geselecteerd is zal de HMI wizard tevoorschijn komen. Hierin wordt elke opties uitgelegd en de functies ervan.</p>
+<p>Als dit allemaal geconfigureerd is kunnen we verder naar de "Device configuration". Hierbij zullen we eerste de HMI moeten configureren. </p><p></p><p><br>
+<img src="../PDB/Images/Step12.jpg" alt="Steps GRAFCET"></p>
+<p>In de device configuratie wordt uitgelegd waar men de juiste IP instellingen ingegeven wordt. Als dit ingesteld is zal de CPU en het HMI Paneel worden gecompiled. Als er geen errors zijn kunnen we verder naar het ontwerpen van de schermen.<br>
+In dit hoofdstuk legt men uit hoe je een scherm aanpast met verschillende elementen. Deze elementen kunnen via de Toolbox van TIA Portal worden geselecteerd. Vervolgens bespreekt men the "Basic objects", "Elements", "Events" en "Animations".</p>
+<p>Onder de <strong>basic objects</strong> zitten de volgende voorwerpen;</p>
+<ul>
+<li>Text box</li>
+<li>Rectangle</li>
+<li>Circle</li>
+<li>Line</li>
+<li>Ellipse</li>
+<li>Graphic view</li>
+</ul>
+<p>Deze delen ongeveer dezelfde eigenschappen (hun layout en de make-up ervan).<br>
+Dit kan aangepast worden in de properties tab.<br>
+Het speciale aan een <strong>Graphic view</strong> is dat men custom afbeeldingen in het HMI schermen kan steken. Dit is uitgelegd hoe men het doet in de cursus.</p>
+<p>De <strong>"elements"</strong> zijn figuren die kunnen gelinked worden met PLC data. Deze bestaan uit;</p>
+<ul>
+<li>I/O-Field</li>
+<li>Button</li>
+<li>Symbolic I/O-Field</li>
+<li>Graphical I/O-Field</li>
+<li>Date/Time Field</li>
+<li>Bar</li>
+<li>Switch</li>
+</ul>
+<p>Een I/O-Field kan dus ingesteld worden om bv. een integer waarde vanuit de plc te lezen en/of wegschrijven. Deze functionaliteit wordt in de properties veranderd onder "General".</p>
+<p>De <strong>events</strong> kunnen toegepast worden op elk object of figuur op een HMI scherm.<br>
+Deze events kunnen verschillende functies doen bv. <img src="../PDB/Images/Step24.jpg" alt="Steps GRAFCET"><br>
+In de cursus leg ik het gebruik van "SetBitWhileKeyPressed" dit zal de functionaliteit van een drukknop nabootsen.</p>
+<p>De <strong>animations</strong> bestaat onder 2 verschillende toepassingen die men kan kiezen.<br>
+Deze zijnde ;</p>
+<ul>
+<li>Display</li>
+<li>Movements</li>
+</ul>
+<p>Het display zal de optie geven om de "visibility" aan te passen. Hierdoor kan je voorwerpen tevoorschijn of verbergen aan de hand van een waarde.</p>
+<p>De movements bestaan onder 4 verschillende sub categoriëen;</p>
+<ul>
+<li>Direct movement</li>
+<li>Diagonal movement</li>
+<li>Horizontal movement</li>
+<li>Vertical movement</li>
+</ul>
+<p>Deze bepalen hoe het object zal bewegen. Dit is ook weer linkbaar met een variabel.</p>
+<h2 class="mume-header" id="8-2-addendum-4-grafcet">8-2 Addendum 4 GRAFCET</h2>
+
+<p>In dit hoofdstuk wordt een GRAFCET uitgelegd. Hiervan was al een nederlandse cursus door Mr. Van Grieken geschreven. Deze heb ik dan volledig omgezet van nederlands naar engels. Afbeeldingen die eerst in het nederlands stonden zijn dus ook in excel aangepast naar de correcte engelse benamingen. Hier had Mr. Van Grieken ook al een excel file van met al de correcte nederlandse benamingen.</p>
+<p>Een voorbeeld van de afbeeldingen in excel :</p>
+<p><img src="../PDB/Images/ExcelGrafcet.jpg" alt="Excel GRAFCET"></p>
+<p>In excel kan je de rasterlijnen laten verdwijnen door "Pagina-indeling" &gt; "Uitlijnen" &gt; "Rasterlijnen weergeven" af te vinken. Hierdoor verdwijnen de rasterlijnen. Hierna gebruik maken van de snipping tool van windows kan de gewenste afbeelding worden geselecteerd.</p>
+<h1 class="mume-header" id="9-bibliografie">9 Bibliografie</h1>
+
+<p><a href="https://www.automation.siemens.com/sce-static/learning-training-documents/tia-portal/visualization-s7-1200/sce-041-101-wincc-basic-ktp700-s7-1200-r1709-en.docx">HMI Tutorial</a></p>
+<h1 class="mume-header" id="10-figuurlijst">10 Figuurlijst</h1>
+
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Markdown is een opmaaktaal op basis van platte tekst die ontworpen is voor HTML gebaseerde webpagina's. (Bestandsextensie .md) <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>ADD = Addendum, een onderwerp wordt hierin volledig uitgelegd. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>EX = Exercise, een oefening die de student zal kunnen maken. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
