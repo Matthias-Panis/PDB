@@ -34,7 +34,7 @@
 
 [10	Figuurlijst	](#10-figuurlijst)
 
-Dit PDB staat ook op een persoonlijke repository op [Github](https://github.com/Matthias-Panis/PDB/blob/master/PDB-PanisMatthias.md)
+
 
 
 #1 Projectdefinitie
@@ -100,7 +100,7 @@ Waaruit "Advanced PLC & Motion" mijn verantwoordelijkheid zijn.
 
 Ik zal bestaande cursusmateriaal omzetten naar het engels. Dit cursus materiaal bevatten ook schema's en oefening die ik zal hermaken / hernoemen naar de correcte engelse benamingen. De oefening zal ik zelf allemaal moeten uittesten en naar de correcte engelse benamingen omzetten. Ik maak gebruik van Atom om deze cursus in markdown [^1] te schrijven en heb ook in Atom mijn PDB geschreven. Atom is een tekst editor vooral gemaakt voor bv. markdown bestanden mee te schrijven. Verder gebruik ik ook GitHub om de cursusses en mijn aanpassingen te uploaden en downloaden. Mensen met de juiste link hiernaar kunnen dan deze cursussen en bestanden online bekijken.
 
-De PDB zelf heb ik dan ook in een .md bestandformaat geschreven gebruik makend van Atom. Deze is dan geexport naar een HTML pagina die dan in een PDF versie gepresenteerd wordt.
+De PDB zelf heb ik dan ook in een .md bestandformaat geschreven gebruik makend van [Atom](https://atom.io/). Deze is dan geexport naar een HTML pagina die dan in een PDF versie gepresenteerd wordt. Dit PDB staat ook op een persoonlijke repository op [Github](https://github.com/Matthias-Panis/PDB/blob/master/PDB-PanisMatthias.md)
 
 [^1]: Markdown is een opmaaktaal op basis van platte tekst die ontworpen is voor HTML gebaseerde webpagina's. (Bestandsextensie .md)
 
@@ -183,7 +183,12 @@ Deze zal de volgende onderwerpen bespreken:
 - Exercise 4 **Continue controllers**
 - Exercise 5 **HMI displays**
 
+Link naar [Github](https://github.com/ACTEA-Erasmus/m2c4-aplc) repository van ACTEA
+
+De hele cursus is in het engels geschreven, gebruik makend van Atom.
+
 ## 8-1 Addendum 3 HMI
+Dit addendum heb ik met hulp van siemens pdf's zelf samen gesteld. Dit is ook in het engels geschreven maar heb het terug naar nederlands vertaald hier.
 
 In dit hoofdstuk wordt het HMI en hoe men deze gebruikt in TIA portal besproken.
 Men legt uit hoe je de HMI toevoegd via TIA portal. Dit kan zowel via het portal view of project view. Vervolgens wordt men door de device selectie geleid. Als de juiste HMI geselecteerd is zal de HMI wizard tevoorschijn komen. Hierin wordt elke opties uitgelegd en de functies ervan.
@@ -241,183 +246,18 @@ De movements bestaan onder 4 verschillende sub categoriëen;
 Deze bepalen hoe het object zal bewegen. Dit is ook weer linkbaar met een variabel.
 
 ## 8-2 Addendum 4 GRAFCET
-### 8-2-1 Uitleg
-In dit hoofdstuk wordt een GRAFCET uitgelegd. Hoe men deze correct opstelt en alle functionaliteit hiervan.
 
-Beginnend met de uitleg van wat een GRAFCET is en waarom deze nodig is. Dit is dus nodig bij geautomatiseerde systemen die een sequentieel proces gevolgen(stap voor stap).
-- De GRAFCET zal stap voor stap lopen.
-- Het heeft een initiële stap waarin hij altijd begint.
-- Een overgang zal met een wiskundige boolean expressie getoond worden.
-- Het resultaat hiervan zal of terwijl TRUE of FALSE zijn.
-- Er zal altijd 1 actieve stap uitgevoerd worden.
-- Alleen stappen die verbonden zijn met actieve stap zullen kunnen uitgevoerd worden.
-- Andere stappen kunnen geactiveerd worden op voorwaarden dat ze verbonden zijn met de actieve stap en als het resultaat van de overgang TRUE is.
+In dit hoofdstuk wordt een GRAFCET uitgelegd. Hiervan was al een nederlandse cursus door Mr. Van Grieken geschreven. Deze heb ik dan volledig omgezet van nederlands naar engels. Afbeeldingen die eerst in het nederlands stonden zijn dus ook in excel aangepast naar de correcte engelse benamingen. Hier had Mr. Van Grieken ook al een excel file van met al de correcte nederlandse benamingen.
 
-Verder bespreekt men hoe je een GRAFCET opstelt. Hierbij leggen we de stappen, connecties, transities, acties en structuren en functie regels uit.
+Een voorbeeld van de afbeeldingen in excel :
 
+![Excel GRAFCET](../PDB/Images/ExcelGrafcet.jpg)
 
-| **Begrip** | **Uitleg** |
-| :---:      | :---            |
-| GRAFCET diagram | Een GRAFCET diagram is een collectie van stappen, acties, transities, connecties, etc |
-| Step   | Een stap weergeeft een bepaalde conditie van het sequentieel proces. Een stap is of terwijl actief of niet actief  |
-| Connections | "Connections" zijn lijnen in het netwerk die stappen connecteert |
-| Actions |  Een "Action" is toegewezen aan een stap. Deze zal verbonden zijn met de stap via een horizontale lijn. Het is toegestaan om meerdere acties per stap uit te voeren. Elk heeft hun eigen rechthoek. |
-| Structure   |  Een "structure" is een serie van stappen waar elke stap maximaal een transitie conditie  heeft |
-| Function rules   |  **De functie van een GRAFCET** is normaal stap voor stap. Als de voorwaarden voor de volgende stap voldaan worden zal de volgende stap geactiveerd worden en de vorige stap gedeactiveerd. |
-
-Elk mogelijk symbool dat m'n kan gebruiken in een GRAFCET zal ook uitgelegd worden. Voorbeeld hiervan (alle mogelijke stappen uitgelegd): <p><p>
-
-![Steps GRAFCET](../PDB/Images/Steps_Ex.jpg)
-
-Ten slotte zal er ook een voorbeeld gegeven om verdere uitleg te geven over het onderwerp.
-In dit voorbeeld zullen we een simpele transportband van links naar rechts en omgekeerd laten draaien. Door middel van een start stop sturing zullen we deze starten en stoppen. Telkens dat we op stop duwen zal de transportband meteen stoppen. Als we op start zal de GRAFCET en transportband verder gaan waar ze  gebleven waren. De fotocel sensoren zullen de aanweezigheid detecteren van de box. De status van de fotocellen (%I) zijn gelinked met de GRAFCET variabelen "iSenFw" en "iSenBw".
-Het controleren van de transportband zal gebeuren in stap 1 en 2 op de conditie dat de installatie start.
-De effectieve besturing van the transportband zal gebeuren de GRAFCET variabelen "oBeltFw en oBeltBw" die dat gelinked zijn aan de contactoren (%Q)
-Het tellen van het aantal keer dat de transportband voorwaards en achterwaards beweegt door internal INT variabele "i".
-De transportband : <p><p>
-![Example Conveyorbelt](../PDB/Images/ConveyorBeltEx.jpg)
-Geruik makend van dit start stop circuit: <p><p>
-![Example Conveyorbelt](../PDB/Images/StartStopEx.jpg)
-Hiervoor zullen we een GRAFCET als volgt bouwen: <p><p>
-![Example GRAFCET](../PDB/Images/GRAFCET_Ex.jpg)
-
-### 8-2-2 Programmatie in TIA PORTAL
-
-Om dan deze GRAFCET in TIA Portal te programmeren zijn er verschillende methoden om dit te doen. Verder uitgelegd zullen deze methodes aanbod komen.
-
-- GRAFCET programming in LAD/FBD using BOOL
-- GRAFCET programming in LAD/FBD using INT
-- GRAFCET programming in ST
-
-### 8-2-2-1 GRAFCET programming in LAD/FBD using BOOL
-
-De programmatie zullen in deze 3 netwerken verdeeld worden:
-- Initialization
-- Transition-conditions
-- Actions
-
-De volgende regels worden toegepast
-
-- Elke stap heeft een unieke BOOL variabelen
-- Deze variabelen is een ARRAY van BOOL startend met 0 en eindigd op het maximum stap nummer.
-- Als de juiste variabelen TRUE is zal de gelinkte stap actief worden.
-- Input "ilnit" is altijd aanweezig wat de activatie van de intiale stap kan activeren bij een stijgende flank.
-- Input "iStarted" wat het resultaat is van de start stop sturing
-
-
-| **Advantages** | **Disadvantages** |
-| :---:          | :---:             |
-| Simplicity (1 step = 1 variable) | Initial step is not activated during the first download of the program |
-|                                | Monitoring of active steps is complicated        |
-### 8-2-2-2 GRAFCET programming in LAD/FBD using INT
-
-De programmatie zullen in deze 3 netwerken verdeeld worden:
-- Initialization
-- Transition-conditions
-- Actions
-
-De volgende regels worden toegepast
-
-- Alleen de actieve stap moet gekend zijn
-- De actuele stap is een STATIC INT variabelen (step)
-- De initiële waarde van de variabelen is het decimale waarde 0
-- Input "ilnit" is altijd aanweezig wat de activatie van de intiale stap kan activeren bij een stijgende flank.
-- Input "iStarted" wat het resultaat is van de start stop sturing
-
-
-| **Advantages** | **Disadvantages** |
-| :---:          | :---:             |
-| Initial step is activated during the first download of the program | More complex, advanced programming then with LAD/FBD BOOL method |
-| Monitoring of active steps is easier | Programming of AND-convergence is more complex then with LAD/FBD BOOL variant |
-
-### 8-2-2-3 GRAFCET programming in ST
-
-De programmatie zullen in deze 3 netwerken verdeeld worden:
-- Initialization
-- Transition-conditions
-- Actions
-
-De volgende regels worden toegepast
-
-- Het gebruik van CASE .. OF .. ELSE control structure voor het verwerken van de overgangs condities.
-- Alleen de actieve stap moet gekend zijn
-- De actuele stap is een STATIC ANY_INT variabelen (step)
-- De initiële waarde van de variabelen is het decimale waarde 0
-- De actuele waarde van deze variabelen is gelinked aan de actieve GRAFCET stap.
-- De intiale stap is automatisch geactiveerd de eerste keer het programma gedownload wordt naar de PLC.
-- Input "ilnit" is altijd aanweezig wat de activatie van de intiale stap kan activeren bij een stijgende flank.
-- Input "iStarted" wat het resultaat is van de start stop sturing
-
-| **Advantages**| **Disadvantages** |
-| :---: | :---: |
-| Initial step is not activated while the the first download of the program | More complex programming than LAD/FBD variant |
-| Smaller programming then LAD/FBD variant | Programming of AND-convergence is more complex than the LAD/FBD BOOL method |
-| Monitoring of active steps are easier | Debugging in ST is harder than in FBD/LAD |
-
-## 8-3 Addendum 05 controllers
-
-In dit hoofdstuk worden regelaars of terwijl "controllers" besproken. Waaronder:
-- ON-OFF circuit ("Aan-uit schakeling")
-- PID controller ("PID regelaar")
-- Singular control circuit (Enkelvoudige regelkring)
-- Cascade control
-- Ratio controller ("Verhoudingsregeling")
-- Mix ratio controller ("Mengverhouding regeling")
-- Split range controllers
-
-Eerst zijn de eigenschappen van controllers uitgelegd. Deze bevatten de karakterestieken die de controllers die hier besproken worden.
-![Example Conveyorbelt](../PDB/Images/Controller-properties.jpg)
-
-### 8-3-1 Aan-uit schakeling
-
-Aan-uit schakeling zal er voor zorgen dat een actuator niet constant aan-uit geschakeld zal worden. Dit gebeurt door 2 grenswaarden, in- en uitschakeldrempel. Het verschil tussen deze 2 grenswaarden wordt de hysteresis genoemd.
-
-### 8-3-2 PID regelaar
-
-Een PID regelaar wordt gebruikt om processen te regelen via een analoge actuator. Een PID regelaar bestaat uit verschillende deelfuncties.
-- P of Proportionele actie
-- I of Integrerende actie
-- D of Differentiërende actie
-
-### 8-3-3 Compact PID regelaar
-
-In deze cursus gebruiken we de compact PID regelaar van TIA-Portal (S7-1200). Een heel groot deel van de paramaters kunnen ingesteld worden gebruik maken van TIA-Portal.
-
-
-
-## 8-4 Addendum 06 Software modeling ANSI/ISA-S88
-
-S88 software model is een norm die omschrijft hoe een machine/installatie (batch)proces kan onderverdeeld worden in verschillende onderdelen.
-
-Het S88 software model deelt een machine/installatie proces op in 3 grote delen nl.:
-
-- Het fysisch gedeelte (The physical part)
-- Het procedure gedeelte (The procedure part)
-- Het recepten gedeelte (The recipe part)
-
-![Example Conveyorbelt](../PDB/Images/S88_Softwaredesign.jpg)
-
-De volgende hoofdstukken zal de verschillende bouwstenen bespreken die in een library zijn opgenomen. Deze zullen in de programmatie van oefeningen kunnen gebruikt worden.
-
-## 8-4-1 Fysich gedeelte - Control modules
-**Control modules** zijn software bouwstenen die
-
-- Ingangssignalen (%I) afkomstig van de sensoren verwerken
-- Uitgangssignalen (%Q) naar de actuatoren aansturen
-
-In de library zijn er sensor control modules aanweezig, waaronder een digitale sensor(digital sensor) en analoge sensor(analog sensor).
-
-Een **digitale sensor** verwerkt voornamelijk de aanwezigheid van een product, voorwerp, persoon, enz. en heeft 2 toestanden die weergeven of deze producten, voorwerpen en personen al dan niet aanwezig zijn.
-Functioneel gezien verzorgen deze sensoren:
-- De correcte automatische werking al dan niet met de nodige vertragingen (bijv. openen van een deur m.b.v. een fotocel waarna de deur even open blijft)
-- De beveiliging tegen defecten (bijv. droogloop beveiliging)
-
-Zo'n bouwsteen ziet er als volgt uit:
-![Example Conveyorbelt](../PDB/Images/ObjectDigitalSensor.jpg)
-
+In excel kan je de rasterlijnen laten verdwijnen door "Pagina-indeling" > "Uitlijnen" > "Rasterlijnen weergeven" af te vinken. Hierdoor verdwijnen de rasterlijnen. Hierna gebruik maken van de snipping tool van windows kan de gewenste afbeelding worden geselecteerd.
 
 
 
 #9 Bibliografie
+[HMI Tutorial](https://www.automation.siemens.com/sce-static/learning-training-documents/tia-portal/visualization-s7-1200/sce-041-101-wincc-basic-ktp700-s7-1200-r1709-en.docx)
 
 #10 Figuurlijst
