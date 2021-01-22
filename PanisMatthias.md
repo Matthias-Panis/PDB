@@ -16,11 +16,9 @@
 
  [6.1	Van Grieken Geert ](#6-1-van-grieken-geert)
 
- [6.2	Sasha Pampus ](#6-2-sasha-pampus)
+ [6.2	Panis Matthias ](#6-2-panis-matthias)
 
- [6.3	Florian Maximillian Eichel ](#6-3-florian-maximillian-eichel)
-
- [6.4	Panis Matthias ](#6-4-panis-matthias)
+ [6.3 ](#6-3)
 
 [7	Software vereisten	](#7-software-vereisten)
 
@@ -32,9 +30,7 @@
 
 [9	Bibliografie	](#9-bibliografie)
 
-[10	Figuurlijst	](#10-figuurlijst)
-
-[11 Bijlagen](#11-bijlagen)
+[10 Bijlagen](#10-bijlagen)
 
 
 
@@ -135,12 +131,12 @@ Gespecialiseerd in industriële automatisatie voor de maakindustrie en interne l
 
 Is binnen het ACTEA-project verantwoordelijk voor de cursussen “M2C3 Basic PLC programming” en “M2C4 Advanced PLC programming”. In zijn functie als cursusverantwoordelijke verzorgt hij de aansturing van de internationale “writing teams” inclusief de uitwerking, opvolging en ondersteuning van het technisch didactisch materiaal voor deze cursussen.
 
-## 6-2 Sasha Pampus
-
-## 6-3 Florian Maximillian Eichel
-
-## 6-4 Panis Matthias
+## 6-2 Panis Matthias
 Student (ik) die verantwoordelijk is voor de uitwerking van de cursus "Advanced PLC & Motion"
+
+## 6-3
+
+Van de andere personen heb ik momenteel nog geen aantwoord gekregen.
 
 # 7 Software vereisten
 
@@ -188,7 +184,7 @@ Deze cursus bevat volgende hoofdstukken:
 
 Link naar [Github](https://github.com/ACTEA-Erasmus/m2c4-aplc) repository van ACTEA
 
-De hele cursus is in het engels geschreven, gebruik makend van Atom. Deze is te vinden in de [Bijlagen](#11-bijlagen)
+De hele cursus is in het engels geschreven, gebruik makend van Atom. Deze is te vinden in de [Bijlagen](#10-bijlagen)
 
 ## 8-1 Addendum 3 HMI
 Dit addendum heb ik met hulp van Siemens pdf's zelf samen gesteld (HMI Tutorial). Dit is ook in het engels geschreven maar heb het terug naar nederlands vertaald hier.
@@ -266,7 +262,7 @@ In Ms Excel kan je de rasterlijnen laten verdwijnen door "Pagina-indeling" > "Ui
 Verder is deze addendum ook opgedeeld in 5 subchapters:
 - [Subchapter01](#grafcet) zal gaan over de algemene uitleg
 - [Subchapter02](#designing-of-a-grafcet-in-iec-60848) zal gaan over het ontwerpen van een GRAFCET
-- [Subchapter03](#grafcet-programming-in-lad/fbd-using-bool) zal gaan over de GRAFCET taal geprogrammeerd in TIA Portal (Bool) [Bijlagen]
+- [Subchapter03](#grafcet-programming-in-lad/fbd-using-bool) zal gaan over de GRAFCET taal geprogrammeerd in TIA Portal (Bool)
 - [Subchapter04](#grafcet-programming-in-lad-fbd-using-int) zal gaan over de GRAFCET taal geprogrammeerd in TIA Portal (INT)
 - [Subchapter05](#grafcet-programming-in-st) zal gaan over de GRAFCET taal geprogrammeerd in TIA Portal (ST)
 
@@ -327,16 +323,18 @@ De archived library zal gebruikt worden in oefening 2.
 
 Verder is deze addendum ook opgedeeld in 5 subchapters:
 - [Subchapter01](#software-model-following-ansi-isa-88) zal gaan over de algemene uitleg
-- Subchapter02 zal gaan over sensoren
-- Subchapter03 zal gaan over het aansturen van motoren door een controle module
-- Subchapter04 zal gaan over de controle module voor een ventiel en contactor
-- Subchapter05 zal gaan over geeft voorbeelden
+- [Subchapter02](#sensors) zal gaan over sensoren
+- [Subchapter03](#asynchronous-motors) zal gaan over het aansturen van motoren door een controle module
+- [Subchapter04](#valve) zal gaan over de controle module voor een ventiel en contactor
+- [Subchapter05](#physical-part) zal gaan over geeft voorbeelden
 
 ## 8-5 Exercise 1
 
 ## 8-6 Exercise 2
 
-Oefening 2 is een toepassing op S88. De student leert een S88 ontwerp om te zetten naaar een software design. Ook zullen ze leren om de volgende functies uit te voeren in TIA Portal:
+[Bijlagen](#exercise-2)
+
+Oefening 2 is een toepassing op S88. De student leert een S88 ontwerp om te zetten naar een software design. Ook zullen ze leren om de volgende functies uit te voeren in TIA Portal:
 - Het retrieven van een archived programma
 - Het retrieve van een archived library
 - Het importen van een external source file
@@ -345,7 +343,7 @@ De oefening is opgebouwd rond de FactoryIO scene Pick And Place. <P>
 
 ![Factory IO Pick and place scene](../PDB/Images/pickandplace.jpg)
 
-Hiervoor is een S88 software model gemaakt in het Nederlands, dit is vertaald naar het Engels in Ms Excel.<P>
+De robot arm zal dozen van de input transportband naar de output transportband verplaatsen. Hiervoor is een S88 software model gemaakt in het Nederlands, dit is vertaald naar het Engels in Ms Excel. Het is een beetje aangepast voor een veiligere werking van de ventielen. De originele werking zou als je op stop duwt de robot arm naar zijn rust positie gaan en de dozen weggooien. Door de ventielen altijd te bekrachtigen zal de robot arm tot stilstand komen op die momentele positie. <P>
 
 ![Excel S88](../PDB/Images/S88PnP.jpg)
 
@@ -356,7 +354,7 @@ Deze heb ik geprogrammeerd in TIA Portal:<P>
 
 ![Factory IO Pick and place scene](../PDB/Images/TIAFC_EM_CC1.jpg)
 
-Dit hoeft de student dus niet meer programmeren, wel zijn er de instructies om het archived project te downloaden / kopiëeren naar het de juiste bestandslocatie. Hierna zijn er nog instructies om het programma te openen.
+Dit hoeft de student dus niet meer programmeren, wel zijn er de instructies om het archived project te downloaden / kopiëeren naar de juiste bestandslocatie. Hierna zijn er nog instructies om het programma te openen.
 
 De volgende stap zal zijn om de library die gemaakt is in [8-3 Addendum 06](#8-3-addendum-6-s88) te retrieven. Deze bevat al de nodige controle modules om de oefening correct te laten werken.
 
@@ -405,6 +403,7 @@ Om de student wat te helpen is er nog 1 controle module over namelijk:<P>
 ![Factory IO Pick and place scene](../PDB/Images/EX2example.jpg)
 
 Verder zullen ze de S88 zelf moeten programmeren aan de hand van de gegeven S88 software model.
+
 Om hun software te testen moeten ze de GRAFCET importeren via een external source file. Deze is meegeleverd in de oefening en noemt "FB-P_PickAndPlace.scl" als ze dit correct importeren via "External source files", hebben ze een werkende GRAFCET en kunnen ze de oefening testen. Het bestand "FB-P_PickAndPlace.scl" heb ik gegenereerd uit een zelf geschreven scl block. Die de volgende GRAFCET volgt:<P>
 
 ![Generate source from block](../PDB/Images/generatesource.jpg)
@@ -412,16 +411,73 @@ Om hun software te testen moeten ze de GRAFCET importeren via een external sourc
 
 De GRAFCET is vertaald in Ms Excel. Origineel was dit een Nederlandse versie gemaakt door Mr. Van Grieken.
 
-De uiteindelijke verwachte werking: [Youtube](https://youtu.be/1GHui4iEm5c)
+Heel deze oefening is gearchived voor de lectoren om de verwarchte werking mee te controleren.
+
+## 8-7 Exercise 3
+
+[Bijlagen](#exercise-3)
+
+Bij deze oefening zal het de bedoeling zijn om een GRAFCET en een Flowchart correct te programmeren. De vorige oefening zal op worden verder gebouwd. Nu zullen ze zelfs de GRAFCET moeten programmeren aan de hand van het GRAFCET voorbeeld. Dit zal gebeuren in de FBD programmeer taal. Om de student een start te geven heb ik een extra library gemaakt dat een GRAFCET voorbeeld bevat. <P>
+
+![Grafcet Pick and place](../PDB/Images/mastercopies.jpg)
+
+Het ziet er als volgt uit: <P>
+
+![Grafcet Pick and place](../PDB/Images/templategrafcet.jpg)
+
+Deze blok zal de voorgeprogrammeerde block "FB_P_PickAndPlace" vervangen. Deze had ik ze gegeven voor de vorige oefening te testen. Nu moeten ze die blok verwijderen omdan zelf de GRAFCET te programmeren. De GRAFCET ziet er ook weer uit zoals in oefening 2: <P>
+
+![Grafcet Pick and place](../PDB/Images/Grafcet.jpg)
+
+Als dit dan werkt zoals beschreven kunnen ze een Flowchart programmeren. Deze flowchart is een simpele controle van de hoeveelheid boxen dat verwerkt zijn. Als dit boven 50 geraakt zal er een lamp branden om aan te duiden dat de machine een inspectie nodig heeft. De machine zal niet stoppen maar de operator zal wel de reset knop moeten induwen om dit alarm weg te krijgen.
+
+De Flowchart wordt in SCL geprogrammeerd en ziet er als volgt uit : <P>
+
+![Flowchart Counter](../PDB/Images/FlowchartCounter.jpg)
+![Flowchart Alarm](../PDB/Images/FlowchartAlarm.jpg)
+
+Omdat de counter maar 1 keer mag optellen zal de output sensor worden voorzien met een flank detectie (die de student zelf moet programmeren). De actuele verwerkte dozen zullen ook op een numeriek display in FactoryIO komen te staan.
+De programmatie :
+
+![Flowchart TIA](../PDB/Images/flowcharttia.jpg)
+
+Nu kan het programma gecompileerd en getest worden.
+Heel deze oefening is gearchived voor de lectoren om de verwarchte werking mee te controleren.
+
+## 8-7 Exercise 4
+
+[Bijlagen](#exercise-4)
+
+Bij deze oefening gaan we een tank met een on-off(twph) controller en PID controller regelen. Via FactoryIO simuleren we de tank en niveau meting. Deze scene is door Mr. Van Grieken opgesteld in oefening 7 van de basis cursus. Er is ook een archived programma dat in oefening 7 van de basis cursus is gemaakt (de complete versie). <P>
+
+![Scope oefening 4](../PDB/Images/scope.jpg)
+
+De archived programma moet de student openen om verder te kunnen. Als hij dit gedaan heeft moet hij in de fucntion "FC_T1" netwerk 4 level control verwijderen. Hierin moet de on-off controller geplaatst worden. In de library S88 TIA Portal V16 zit een voorgeprogrammeerde on-off controller. Dit moet dus in netwerk 4 geslepen worden.
+
+Dan verbind men "mT1_SenLev_mm" met de iX ingang, "mGenStarted" wordt verbonden met de ingang "iOn", "mT1_Fill zal worden verbonden met output "oY". <P>
+
+![Procedure element ON OFF](../PDB/Images/onofftia.jpg)
+
+Met iW en iH kan je nu experimenteren wat het exact doet. iW is het setpoint, hiermee kan je het gewenste niveau van de tank ingeven. iH is de hysteresis, hiertussen zal de on en off controller in en uit schakelen. Kleine hysteresis betekent dat hij veel zal in en uitschakelen. Een grote hysteresis betekent dat dit trager zal gaan, hierdoor zal de tank ook leger lopen en voller lopen vanwege de output die altijd op 50% open staat.
+
+Het volgende deel van de oefening zal de on-off controller vervangen met een PID_Compact regeling. Deze bouwsteen zit standaard in TIA portal en heeft een cyclicinterrupt organization block nodig om deftig te werken. De on off controller en netwerk 5 wat de regeling van de inlaat bevat, verwijderen we uit het programma. Dit wordt vervangen met de PID_Compact uitgang die zelf tussen 0 en 100 % zal regelen. <P>
+
+![Verwijdering netwerk 5](../PDB/Images/deleted.jpg)
+
+De PID_Compact wordt dan met de volgende tags aangesloten.<P>
+
+![PID Compact](../PDB/Images/pidcompacttia.jpg)
+
+
 
 # 9 Bibliografie
 [HMI Tutorial](https://www.automation.siemens.com/sce-static/learning-training-documents/tia-portal/visualization-s7-1200/sce-041-101-wincc-basic-ktp700-s7-1200-r1709-en.docx)
+[FactoryIO minimum requirements](https://docs.factoryio.com/system-requirements/)
+[TIA Portal minimum requirements](https://support.industry.siemens.com/cs/document/109771628/delivery-release-simatic-step-7-professional-basic-v16-?lc=en-af)
 
-# 10 Figuurlijst
+# 10 Bijlagen
 
-# 11 Bijlagen
-
-## 11-1 Cursus
+## 10-1 Cursus
 
 # HMI programming in Siemens TIA Portal V16
 ## Introduction
@@ -442,7 +498,7 @@ To add a HMI to a current project you will have to add a new device. This can be
 | Project View | Portal View |
 | :---: | :---: |
 |  "New Device"  |  "Devices & network > Add new device" |
-| ![TIA Portal Adding HMI](../PDB/Images/Step1.jpg)  |  ![TIA Portal Adding HMI](../Ad03/Images/Step1-1.jpg) |
+| ![TIA Portal Adding HMI](../PDB/Images/Step1.jpg)  |  ![TIA Portal Adding HMI](../PDB/Images/Step1-1.jpg) |
 
 The menu that pops up has 3 main options to select between Controllers / HMI / PC systems. For our example we'll be needing the HMI tab:
 
@@ -1120,7 +1176,7 @@ The analog pressure sensor %IW256 gets formed internally so that the following r
 
   -   The recipe part
 
-  ![S88 Software Design ](../Ad06/Images/S88_Softwaredesign.jpg)
+  ![S88 Software Design ](../PDB/Images/S88_Softwaredesign.jpg)
 
   Because the S88 software model is very abstract and expanded we will be using a very simple form in this course:
 
@@ -1138,16 +1194,16 @@ The analog pressure sensor %IW256 gets formed internally so that the following r
 
   | **Symbol** | **Description**                                                                                                             |
   |-------------|------------------------------------------------------------------------------------------------------------------------------|
-  |     ![AND port ](../Ad06/Images/AND.jpg)        | AND port                                                                                                                    |
-  |     ![OR port ](../Ad06/Images/OR.jpg)        | OR Port                                                                                                                     |
-  |      ![Not connection ](../Ad06/Images/NOT-connection.jpg)       | NOT connection                                                                                                               |
-  |        ![OR port ](../Ad06/Images/OR.jpg)     | Connection                                                                                                                   |
-  |     ![TON ](../Ad06/Images/TON.jpg)        | Risedelay                                                                                                              |
-  |        ![TOF ](../Ad06/Images/TOF.jpg)     | Drop-off delay                                                                                                             |
-  |      ![Time pulse ](../Ad06/Images/TP.jpg)       | Time Puls                                                                                                                     |
+  |     ![AND port ](../PDB/Images/AND.jpg)        | AND port                                                                                                                    |
+  |     ![OR port ](../PDB/Images/OR.jpg)        | OR Port                                                                                                                     |
+  |      ![Not connection ](../PDB/Images/NOT-connection.jpg)       | NOT connection                                                                                                               |
+  |        ![OR port ](../PDB/Images/OR.jpg)     | Connection                                                                                                                   |
+  |     ![TON ](../PDB/Images/TON.jpg)        | Risedelay                                                                                                              |
+  |        ![TOF ](../PDB/Images/TOF.jpg)     | Drop-off delay                                                                                                             |
+  |      ![Time pulse ](../PDB/Images/TP.jpg)       | Time Puls                                                                                                                     |
   |             | A collection of instructions that together a combination basiccircuit form (in this case the start-stop circuit)  |
-  |       ![Positive flank ](../Ad06/Images/Pflank.jpg)      | Positive flank signal                                                                                                       |
-  |        ![Negative flank ](../Ad06/Images/Nflank.jpg)     | Negative flank signal                                                                                                       |
+  |       ![Positive flank ](../PDB/Images/Pflank.jpg)      | Positive flank signal                                                                                                       |
+  |        ![Negative flank ](../PDB/Images/Nflank.jpg)     | Negative flank signal                                                                                                       |
 
   The operation scheme gets drawn up so that every incoming signal is as far to the left as possible and all output signals are to the right. Connections are when needed drawn with dotted lines (with crossing lines) to avoid confusion.
 
@@ -1159,6 +1215,59 @@ The analog pressure sensor %IW256 gets formed internally so that the following r
   This way a control module gets represented by a certain type of actuator or sensor and by preference gets included in the software library.
   Control modules are preferably progammed in "Function buildblocks" whereby, the TAG-naming gets expanded with the letters CM.
 
+# Sensors
+[8.4 Addendum 6 S88](#8-4-addendum-6-s88)
+  ## Digital sensor
+  A **digital sensor** (Ex.:limit switch, inductive sensor, capacitive sensor, tuning fork,...) processes mainly the presence of a product, object, person, etc. It has 2 conditions which indicate whether these products, objects or persons are preset or not.
+
+  Functionally seen these sensors monitor:
+  - The correct automatic process whether or not with the needed delay (example, opening of a door with the help of a photocell after which the door stays open for a bit)
+  - The protection against defects (example, overflow protection )
+
+  One can design a building block wherein all the above functionalities are processed. As a Consequently, this building block is the software representative of a digital sensor.
+
+  ![S88 Example Digital Sensor ](../PDB/Images/ObjectDigitalSensor.jpg)
+
+  This building block belongs to the group of **control modules** are provided with following functionalities:
+  -  The module will ensure that the sensor signal (iSen) which optionally can be delayed with a on-delay(iTON_Time) and/or a off-delay (iTOF_Time) for a correct operation, which then provides the output signal (oSen_TO)
+  - In case the option alarm (iAL_Option) is enabled, the module will activate an alarm(ioAL_Sen) as soon as the sensor (iSen) is disabled, taking into account the off-delay(iAL_Time).
+  - If the sensor(iSen) isn't switched on anymore, the module will turn off the alarm(ioAL_Sen) as soon as it gets reset(iReset)
+
+  It is possible with the description to draft an operation scheme for the control module with the name FB_CM_DI_Sensor.
+
+  ![operation scheme control module FB_CM_DI_Sensor ](../PDB/Images/OperationschemeCMFB_CM_DI_Sensor.jpg)
+
+  This results into a **"Function buildblock"** which looks like the following images.
+  | Text | Image |
+  | --|---|
+  | FDB example  | ![TIA image of control module FB_CM_DI_Sensor ](../PDB/Images/TIA-FB_CM_DI_Sensor.jpg)  |
+  | More simple example  | ![Simple image of control module FB_CM_DI_Sensor ](../PDB/Images/SimpleFB_CM_DI_Sensor.jpg)  |
+
+  ## Analog sensors
+
+  It is possible to process for example: the current level of a liquid with an **analog sensor** in a programmable manager circuit ("sturing"). It's needed to convert the number given to the correct SI-unit, this is because the current value isn't given in the correct SI-unit (ex. : mm). A unipolar sensor is only capable of converting a positive signal (ex. 0 .. 20mA, 4 .. 20mA, 0 .. 10 V, ...). A bipolar sensor processes both positive and negative signals (ex. -10V .. + 10 V).
+
+  A **control module** for this type of sensors has the following tasks:
+  - Converting the provided number (iSen) which is a mirror of the measured value, to a SI-unit (oX) whereby taking into account the unipolar and bipolar signals (iUniOption) and the max. (iHiLim) and min. (iLoLim) measure range of the analog sensor.
+  - Making an alarm (ioAL_Sen) in case of an abnormal situation (ex. Cable break or overcurrent)
+  - If the abnormal situation is fixed will the module will turn off the alarm as soon as it gets resetted (iReset)
+
+  ![Object of a analog sensor ](../PDB/Images/ObjectAnalogSensor.jpg)
+
+  It is possible with the description to draft an operation scheme for the control module with the name FB_CM_AI_Sensor.
+
+  ![Operation scheme control module FB_CM_AI_Sensor ](../PDB/Images/OperationschemeCMFB_CM_AI_Sensor.jpg)
+
+  Notice that the operation scheme is drafted for analog sensors that work following the Siemens principle, they have a normal range of 0 .. 27.648 / -27648 .. + 27648.
+
+  The end result is a **"Function building block"** which looks like the following images.
+
+  | Text | Image |
+  | :---: | :---: |
+  | FDB example  | ![TIA image of control module FB_CM_AI_Sensor ](../PDB/Images/TIA-FB_CM_AI_Sensor.jpg)  |
+  | More simple example  | ![Simple image of control module FB_CM_AI_Sensor ](../PDB/Images/SimpleFB_CM_AI_Sensor.jpg)  |
+
+
   _Examples_
   | Tag | Processing of a digital sensor  |
   |--|---|
@@ -1169,3 +1278,805 @@ The analog pressure sensor %IW256 gets formed internally so that the following r
   | FB_CM_Valve   | Controlling of a (pressurised air) valve  |
   | FB_CM_Relay   | Controlling of a relay |
   | FB_CM_Lamp  | Controlling of a (LED) lamp  |
+
+# Asynchronous motors
+
+[8.4 Addendum 6 S88](#8-4-addendum-6-s88)
+  ## Asynchronous motor with set speed and one turn direction
+
+  With the current technology an asynchronous motor that only runs forward with a set speed can't operate without:
+  - 1x motor circuit breaker
+  - 1x relay
+
+  ![Object of a direct online motor ](../PDB/Images/ObjectAsynchronousMotor.jpg)
+
+  A **control module** for this type actuator is inseperable connected with a motor circuit breaker and a relay. The control module shortly does the following:
+  - If the think process(iAut) asks that if the motor needs to run, the control module will let the motor run (oCon)
+  - But if the motor circuit breaker (iMcb) is turned off the module won't let the motor run en it'll activate the alarm (ioAL_Mcb)
+  - The motor will only start running again if the motor circuit breaker has been activated and the alarm reset has been reset(iReset)
+
+  One can expand the functionalities of the control module:
+  - The motor will only run (oCon) if the module is enable (iEnable)
+  - If manual mode is activated (iModeHand), the module will ignore the request from the think process (iAut) and runs the motor whenever the manual signals are given (iHandOn & iHandOut)
+  - If the motor needs to run (oCon) the module can start the motor with an on delay (iTON_Time) and/or an off delay(iTOF_Time)
+
+  It is possible with the description to draft an operation scheme for the control module with the name FB_CM_DOL.
+
+  ![Operationscheme for a direct online control module ](../PDB/Images/OperationschemeFB_CM_DOL.jpg)
+
+  The end result is a **"Function building block"** which looks like the following images.
+
+  | Text | Image |
+  | :--: | :---: |
+  | FDB example  | ![TIA image of control module FB_CM_DOL](../PDB/Images/TIA-FB_CM_DOL.jpg)  |
+  | More simple example  | ![Simple image of control module FB_CM_DOL ](../PDB/Images/SimpleFB_CM_DOL.jpg)  |
+
+  ## Asynchronous motor with set speed and two turn directions
+
+  With the current technology an asynchronous motor that runs forward and backwards with a set speed can't operate without:
+  - 1x motor circuit breaker
+  - 2x relays
+
+  ![Object of a direct online reverse motor ](../PDB/Images/ObjectAsynchronousMotor2.jpg)
+
+  A **control module** for this type of actuator is inseperably connected with a motor circuit breaker and a relay. The control module, in short does the following:
+  - If the think process(iAutL) asks if the motor needs to run left, the control module will let the motor run left (oConL)
+  - If the think process(iAutR) asks if the motor needs to run right, the control module will let the motor run right (oConR)
+  - It is possible to run through a waiting time(iTOF_Time) if it is requested to change direction
+  - But if both directions are requested (left and right) the direction doesn't change and the motor will keep spinning the way it was before the request.
+  - But if the motor circuit breaker (iMcb) is turned off the module won't let the motor run en it'll activate the alarm (ioAL_Mcb)
+  - The motor will only start running again if the motor circuit breaker has been activated and the alarm reset has been reset(iReset)
+
+  One can expand the functionalities of the control module:
+  - The motor will only run (oConR & oConL) if the module is enable (iEnable)
+  - If manual mode is activated (iModeHand), the module will ignore the request from the think process (iAutR & iAutL) and runs the motor to the right(oConR) whenever the manual signal is given (iHandR)
+  - If manual mode is activated (iModeHand), the module will ignore the request from the think process (iAutR & iAutL) and runs the motor to the left(oConL) whenever the manual signal is given (iHandL)
+  - The control module won't change running condition if the mode changes from automatic mode (NOT iModeHand) to hand mode (iModeHand)
+
+  It is possible with the description to draft an operation scheme for the control module with the name FB_CM_DOLRev
+
+  ![Operationscheme for a direct online reverse control module ](../PDB/Images/OperationschemeFB_CM_DOLRev.jpg)
+
+  The end result is a **"Function building block"** which looks like the following images.
+
+  | Text |Image |
+  | :---:   | :---:  |
+  | FDB example  | ![TIA image of control module FB_CM_DOLRev](../PDB/Images/TIA-FB_CM_DOLRev.jpg)  |
+  | More simple example  | ![Simple image of control module FB_CM_DOLRev ](../PDB/Images/SimpleFB_CM_DOLRev.jpg)  |
+
+## Valve
+
+  [8.4 Addendum 6 S88](#8-4-addendum-6-s88)
+
+  A valve is used to power compressed air or hydraulic actuators (ex. compressed air cylinder). The combination of a valve and actuator has a specific functionality:
+  - Monostable power circuit: In case there is a loss of power the actuator will automatically take its residual state (ex. single-acting compressed air cylinder)
+  - Bistable power circuit: In case there is a loss of power the actuator will keep the last position (ex. double-acting compressed air cylinder)
+  - Monostable control circuit:  In case there is a loss of power in the control circuit the valve will automatically take its residual state (ex. 3/2 valve with spring return)
+  - Bistable control circuit: In case there is a loss of power in the control circuit the valve will automatically keep its last state (ex. 5/2 valve with electromagnetic control on both sides)
+
+  A **control module** for a valve will be built without taking into account the already existing functions of the combination valve - actuator. The control module will work following the bistable process.
+
+  **Why would you use a monostable valve and cylinder?**
+
+  During the design of a machine/installation one needs to ask themselves: What can go wrong during an unexpected event? How do i take care of potential risk to a human? Following the machine guidelines, no moving part of the machine or no single object that is held by the machine can be dropped or ejected. (2006/42/EG,2006)
+
+  Unexpected events like for example a fire, an accident, an earthquake, a flood, etc. can cause interruptions in the control- and/or power circuits. The interruption of these circuits can cause dangerous situations.
+
+  _Example_
+
+  Because of a fire in a technical room, the air compressor stopped working which has the side effect that there is no more compressed air. A robot that moves part of +/- 2 kg on highspeed is equipped with a pneumatic grabber. There is the danger that in case the compressed air falls away on the moment the robot moves at high speed, that the robot lets go of the object and basically throws away the object. This has the potential to hurt humans that work near the robot.
+
+  In this situation one chooses a monostable compressed air cylinder with a spring return, this will keep the grabber "grijper" to remain closed in case the compressed air falls away.
+
+  The functionality of this type control module:
+  - The control module will work on the following a bistable principle;
+  -  - In case the think process asks to activate the "+" side of the valve (iAut_1) the control module will do this (oVlv_1) and it will keep the condition in case the think process doesn't ask for it anymore, until the "-" side gets activated
+  -  - In case the thinkprocess asks to activate the "-" side of the valve (iAut_0) the control module will do this (oVlv_0) and it will keep the condition in case the think process doesn't ask for it anymore, until the "+" side gets activated
+  - The control module will only change the condition of the electromagnetic control in case this is allowed (iEnable)
+  - If the hand mode is active (iModeHand) the control module ignores the think process signals (iAut_1 & iAut_0) and sends the valve (oVlv_1 & oVlv_0) commands based off the hand signals (iHand_1 & iHand_0)
+
+  It is possible with the description to draft a operation scheme for the control module with the name FB_CM_Valve
+
+  ![Operationscheme for a valve ](../PDB/Images/OperationschemeFB_CM_Vlv.jpg)
+
+  The endresult is a **"Function buildblock"** which looks like the following images.
+
+  | Text |Image |
+  | :---:      | :----:            |
+  | FDB example  | ![TIA image of control module FB_CM_Valve](../PDB/Images/TIA-FB_CM_Valve.jpg)  |
+  | More simple example  | ![Simple image of control module FB_CM_Vavle ](../PDB/Images/SimpleFB_CM_Valve.jpg)  |
+
+  ## Relay
+
+  A **relay** is often used to build up communication with:
+  - Other PLC's via a potential-free contacts
+  - Other devices like frequency controllers
+
+  ![Object of a relay ](../PDB/Images/ObjectRelay.jpg)
+
+  Just like an asynchronous motor one can assign multiple functionalities to the corresponding control module such as:
+  - If the think process asks to activate the relay (iAut), the relay will be activated (oRel)
+  - The relay will only be activated if this is enabled (iEnable)
+  - If hand mode (iModeHand) is activated then the module will ignore the think process's signal (iAut) and activates the relay based on the hand signals
+  - If it's asked to activate the relay, the module has the possibility to activate a rise delay (iTON_Time) and/or drop-out delay (iTOF_Time)
+
+  It is possible with the description to draft an operation scheme for the control module with the name FB_CM_Relay
+
+  ![Operationscheme FB_CM_Relay ](../PDB/Images/OperationschemeFB_CM_Relay.jpg)
+
+  The end result is a **"Function building block"** which looks like the following images.
+
+  | Text |Image |
+  | :---:      | :---:            |
+  | FDB example  | ![TIA image of control module FB_CM_Relay](../PDB/Images/TIA-FB_CM_Relay.jpg)  |
+  | More simple example  | ![Simple image of control module FB_CM_Relay ](../PDB/Images/SimpleFB_CM_Relay.jpg)  |
+
+  ## Lamp
+
+  A **lamp** is used to inform an operator about the status of a machine/installation or part of it.
+
+  A lamp control module handles following functionalities:
+  - Continued lighting of the lamp (iAut)
+  - Blinking of the lamp (iAaut_1Hz)
+  - Fast blinking of the lamp (iAut_2Hz)
+  - Activating the lamp if a lamp test(= controlling the lamps on defective lamps by maintenance technicians) is being executed (iHandTest)
+
+  It is possible with the description to draft an operation scheme for the control module with the name FB_CM_Lamp
+
+  ![Operationscheme FB_CM_Lamp ](../PDB/Images/OperationschemeFB_CM_Lamp.jpg)
+
+  The end result is a **"Function building block"** which looks like the following images.
+
+  | Text |Image |
+  | :---:      | :---:            |
+  | FDB example  | ![TIA image of control module FB_CM_Lamp ](../PDB/Images/TIA-FB_CM_Lamp.jpg)  |
+  | More simple example  | ![Simple image of control module FB_CM_Lamp ](../PDB/Images/SimpleFB_CM_Lamp.jpg)  |
+
+# Physical part
+
+  [8.4 Addendum 6 S88](#8-4-addendum-6-s88)
+  ## Equipment modules
+
+  An **equipment module** is a collection of multiple control modules and/or other equipment modules. The collection is built upon the physical relationship they have with each other.
+  In other words, an equipment module is a software building block that has a minimum of 2 building blocks of the type control modules and/or equipment modules/.
+  Equipment modules are preferably programmed in "Functions", the TAG-naming gets expanded with the letters EM.
+
+  | Examples | Description |
+  | --- | --- |
+  | FC_EM_CC | Includes programming of the control cabinet |
+  | FC_EM_Airco   | Includes programming of the airco installation  |
+  | FC_T10_EM_Level | Includes programming of the level controlling of tank T10 |
+  | FC_EM_X_Axis | Includes programming of the X axis |
+
+  # Procedure part
+  ## Procedure
+
+  A **procedure** is a strategy, think process to solve a problem. First, a strategy gets designed on paper using a certain method. Next the strategy will be translated to a software building block which we call the procedure element.
+
+  The designing of a strategy can be done with the following methods:
+    - By designing a GRAFCET drawing
+    - By designing a flowchart drawing
+    - By determining the needed mathematical formulas
+    - By drawing of an operation scheme
+    - By selecting a controller and determining the corresponding parameters in the shape of a table
+
+  ## Procedure element
+
+  A **procedure element** is the software translation(programming) of a procedure. A procedure drawing, scheme or table needs to be present for each procedure element. Some of these procedure elements are commonly used in machines/installations. This causes them to preferably be included into a software library. Other procedure elements get delivered by the producer of the processing unit:
+  - Start-stop procedure (software library) = To start and stop actuators, machines/installations in the correct way
+  - Reset procedure (software library) = To create a reset signal in the correct way
+  - Two-point controller (software library) = Controlling a digital sensor using an on-off controller with the help of an analog sensor
+  - PID-controller (software catalog Siemens) = To control an analog output
+
+  Procedure elements get preferably programmed in "Function building blocks", the TAG-naming gets expanded with the letters PE.
+
+  | Examples | Description |
+  | :---: | :---: |
+  | FB_PE_StarStop | Start-stop procedure  |
+  | FB_PE_Reset | Reset procedure  |
+
+  ## Start-stop procedure elements
+
+  A **start-stop procedure** is used to start or stop an actuator and/or the automatic process of a machine/installation (or parts of it). We use a classic start-stop circuit that is expanded with extra functionality.
+
+  Characteristics of the start-stop procedure:
+  - The stop action (iBtnStop) has priority on the start action (iBtnStart) which is mandatory following the machine guidelines
+  - The start signal is of the type NO-contact[^7], the stop signal is of the type NC-contact[^8]
+  - The operator is obligated to press the start button (iBtnStart) (Electrically bridging the start button isn't allowed)
+  - There is the possibility to start slower (iTON_Time) and/or stopping slower (iTOF_Time)
+
+  [^7]: NO = Normal open
+  [^8]: NC = Normal closed
+
+  It is possible with the description to draft an operation scheme for the control module with the name FB_PE_StartStop
+
+  ![Operationscheme FB_PE_StarStop ](../PDB/Images/OperationschemeFB_PE_StartStop.jpg)
+
+  The end result is a **"Function building block"** which looks like the following images.
+
+  | Text |Image |
+  | :---:      | :----:            |
+  | FDB example  | ![TIA image of control module FB_PE_StartStop ](../PDB/Images/TIA-FB_PE_StartStop.jpg)  |
+  | More simple example  | ![Simple image of control module FB_PE_StarStop ](../PDB/Images/SimpleFB_PE_StartStop.jpg)  |
+
+  ## Reset procedure elements
+
+  The **reset procedure** gets used to create a checked reset signal. Checked because the signal coming from ex. an electrical reset button(NO-contact) can include issues like:
+  - An electrical circuit of the reset button can have a short circuit (it is like the button is being pressed the entire time)
+  - The reset button is electrically bridged (it is like the button is being pressed the entire time)
+  - Bad/fake contact in the electrical circuit of the reset button (it is possible by vibrations in the installation the contact on/off/on/off/on/off/.. switches)
+
+  Because these situations can lead to uncontrolled situations, the reset procedure gets designed with the following functionalities:
+  - LHL[^3] functionality after pressing the reset button (iBtnReset) this between a set time (the high range) has to be let go to produce an outputsignal
+  - A checked output signal that is max. 1s is TRUE (oReset_1s)
+  - A checked output signal that is max. 1 PLC-cycle TRUE is (=edge signal)(oReset)
+
+  ![Simple image of control module LHL reset procedure ](../PDB/Images/Operationdiagram_LHLreset.jpg)
+
+  [^3]: LHL = Low / High / Low
+
+  It is possible with the description to draft an operation scheme for the control module with the name FB_PE_Reset
+
+  ![Operationscheme FB_PE_Reset ](../PDB/Images/OperationschemeFB_PE_Reset.jpg)
+
+  The end result is a **"Function building block"** which looks like the following images.
+
+  | Text |Image |
+  | :---:      | :----:            |
+  | FDB example  | ![TIA image of control module FB_PE_Reset ](../PDB/Images/TIA-FB_PE_Reset.jpg)  |
+  | More simple example  | ![Simple image of control module FB_PE_Reset ](../PDB/Images/SimpleFB_PE_Reset.jpg)  |
+
+  ## Two-point controller with hysteresis
+
+  A **two-point controller with hysteresis** uses an on-off switch to switch an actuator either on or off in function of a measure physical unit (= measured value x) and the desired physical unit (= setpoint W).
+
+  A **two-point controller with hysteresis** is consequently an on-off circuit with extra functionality like:
+  - The result of the controller (oY) is also offered inverted (oY_NOT)
+  - The possibility to switch the controller on and off. With turned-off controllers all the control outputs have the status FALSE(oY & oY_NOT)
+  - Setpoint (iW), the measured value (iX) and the hysteresis (iH) are adjustable
+
+  It is possible with the description to draft an operation scheme for the control module with the name FB_PE_TWPH
+
+  ![Operationscheme FB_PE_ON-OFF ](../PDB/Images/OperationschemeFB_PE_TWPH.jpg)
+
+  The end result is a **"Function building block"** which looks like the following images.
+
+  | Text |Image |
+  | :---:      | :----:            |
+  | FDB example  | ![TIA image of control module FB_PE_ON-OFF ](../PDB/Images/TIA-FB_PE_On-Off.jpg)  |
+  | More simple example  | ![Simple image of control module FB_PE_ON-OFF ](../PDB/Images/SimpleFB_PE_On-Off.jpg)  |
+
+  ## Specific designed procedure elements
+
+  Not all the think process can be collected with standard procedures. It's often necessary to design specific procedures and procedure elements. One of these following analysis methods gets applied to determine the strategy:
+  - GRAFCET
+  - Flowchart
+  - Mathematical formulas
+  - Operation schemes
+  - Selection controllers and explanation of control parameters
+
+
+# Exercise 2
+
+[Back](#8-6-exercise-2)
+
+  # Study material
+  ## Literature
+
+  - Addendum 06 : Software model following ANSI/ISA-88
+
+  ## Equipment
+  1 Engineering station 2 SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher 3 SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher 4 Ethernet connection between engineering station and controller 5 Factory IO scene Pick & Place.factoryio
+
+  # The Pick and Place Project
+  _____________________________________
+  -   The [first goal](#goal-1-to-retrieve-an-archived-program) is to retrieve an archived program.
+  -   The [second goal](#goal-2-to-retrieve-an-archived-library) is to retrieve an archived library
+  -   The [third goal](#goal-3-to-program-the-s88) is to program the S88 following the S88 design
+  -   The [fourth goal](#goal-4-to-import-an-external-source-file) is to import a exernal source file
+  -   The [last goal](../Ex02/Subchapter04_04.md) is to deliver a working project
+
+  Back to the [project scope](#scope2)
+
+## Scope2
+
+  Automate the process of picking up packages and placing them on a different conveyor. This will be equipped with the following:
+
+  - 2 Digital photocells
+  - 2 Digital motor circuit breakers
+  - 2 Digital preasurised air valves
+  - 2 Digital contactors to control the conveyorbelt motors
+  - A digital vacuum grabber
+
+  ![FactoryIO scene](../PDB/Images/FactoryIOScene.jpg)
+
+  Use the buttons on the PLC to control the motor circuit breakers.
+  Use the control board in FactoryIO to start and stop the machine.
+
+
+  # The Pick and Place Project
+  _____________________________________
+  -   The [first goal](#goal-1-to-retrieve-an-archived-program) is to retrieve an archived program
+  -   The [second goal](#goal-2-to-retrieve-an-archived-library) is to retrieve an archived library
+  -   The [third goal](#goal-3-to-program-the-s88) is to program the S88 following the S88 design
+  -   The [fourth goal](#goal-4-to-import-an-external-source-file) is to import a exernal source file
+  -   The [last goal](../Ex02/Subchapter04_5.md) is to deliver a working project
+
+  Back to the [project scope](#scope2)
+
+## Goal 1 To retrieve an archived program
+  _____________________________________
+
+  **Step 1:**
+
+  Copy/download the included Ex2-PickAndPlace.zap16 file. Copy the file into:
+  ```javascript
+  Filename : Ex2-PickAndPlace.zap16
+  Destination : \Documents\Automation
+  ```
+
+  **Step 2:** Start TIA Portal and click on "Open existing project" <p>
+  ![FactoryIO scene](../PDB/Images/TiaPortalProjectOpen.jpg)
+
+  **Step 3:** Click on browse and search for the right archived file
+  ```javascript
+  Documents\Automation\Ex2-PickAndPlace.zap16
+  ```
+  **Step 4:** Once selected you'll have to select the target destination. Select Documents\Automation in our case. <p>
+  ![Project succesfully opened](../PDB/Images/FileBrowser.jpg)
+
+  **Step 5:** Once this screen pops up you have succesfully opened the archive. Click on "Project view" to continue the exercise <p>
+  ![Project succesfully opened](../PDB/Images/TiaPortalProjectView.jpg)
+
+  # The Pick and Place Project
+  _____________________________________
+  -   The [first goal](#goal-1-to-retrieve-an-archived-program) is to retrieve an archived program
+  -   The [second goal](#goal-2-to-retrieve-an-archived-library) is to retrieve an archived library
+  -   The [third goal](#goal-3-to-program-the-s88) is to program the S88 following the S88 design
+  -   The [fourth goal](#goal-4-to-import-an-external-source-file) is to import a exernal source file
+  -   The [last goal](../Ex02/Subchapter04_5.md) is to deliver a working project
+
+  Back to the [project scope](#scope2)
+
+## Goal 2 To retrieve an archived library
+  _____________________________________
+
+  The point of retrieving this archived library is that this has all the control modules and procedure elemts programmed for you. So that later when you build your S88 in TIA you can drag them from the library into your project.
+
+  **Step 1:**
+
+  Copy/download the included .zal file named. Make a new subfolder into automation called "Library"(If it doesn't exist already). Copy the file into:
+  ```javascript
+  Filename : S88 TIA Portal V16.zap16
+  Destination : \Documents\Automation\Library
+  ```
+
+  **Step 2:** To select the library go to "Options > Global libraries > Open library..." <p>
+  ![FactoryIO scene](../PDB/Images/ImportLibrary.jpg)
+
+  **Step 3:** Open in the follwing screen the saved library
+
+  ```javascript
+  Files of type : Compressed Libraries
+  Destination : \Documents\Automation\Library
+  ```
+  ![FactoryIO scene](../PDB/Images/LibraryBrowser.jpg)
+
+  **Step 4:**  Once selected you'll have to select the target destination. Select "Documents\Automation\Library" in our case. <p>
+
+  ![FactoryIO scene](../PDB/Images/LibraryDestination.jpg)
+
+  **Step 5:** To make sure you have got the library opened check the right bottom of TIA Portal in "Global Libraries". This is done by clicking on libraries on the right side of tia portal. <p>
+
+  ![FactoryIO scene](../PDB/Images/TiaLibrary.jpg)
+
+  # The Pick and Place Project
+  _____________________________________
+  -   The [first goal](#goal-1-to-retrieve-an-archived-program) is to retrieve an archived program.
+  -   The [second goal](#goal-2-to-retrieve-an-archived-library) is to retrieve an archived library
+  -   The [third goal](#goal-3-to-program-the-s88) is to program the S88 following the S88 design
+  -   The [fourth goal](#goal-4-to-import-an-external-source-file) is to import a exernal source file
+  -   The [last goal](../Ex02/Subchapter04_5.md) is to deliver a working project
+
+  Back to the [project scope](#scope2)
+
+## Goal 3 To program the S88
+  _____________________________________
+
+  **Step 1:** Create the necessary PLC Tags:
+  ```javascript
+  //Inputs
+  iCC1_McbConveyorIn_Q1 - BOOL - %I 0.0 - Motor circuit breaker for conveyor belt entry
+  iCC1_McbConveyorOut_Q2 - BOOL -	%I0.1	- Motor circuit breaker for conveyor belt exit
+  iPnP_Sen_B1 -	BOOL - %I10.0 - Sensor item at entry
+  iPnP_Sen_B2 - BOOL - %I10.1 - Sensor item at exit
+  Moving X - BOOL - %I10.2 - Robot is moving in the X axis
+  Moving Z - BOOL - %I10.3 - is moving in the Z axis
+  Vacuum - BOOL -	%I10.4 - The vacuum of the robot is active
+  iCC1_BtnStart_S1 - BOOL	- %I10.5 - Start button
+  iCC1_BtnReset_S3 - BOOL	- %I10.6 - Reset button
+  iCC1_BtnStop_S2	- BOOL - %I10.7	- Stop button
+  iCC1_BtnEms_S4	- BOOL - %I11.0	- Emergency stop button
+
+
+  //Outputs
+  iCC1_McbConveryorIn_K1 - BOOL - %Q10.0 - Contactor conveyor belt entry
+  iCC1_McbConveyorOut_K2 - BOOL - %Q10.1 - Contactor conveyor belt exit
+  Move X - BOOL - %Q10.2 - Moves the robot in the X axis
+  Move Z -  BOOL - %Q10.3 - Moves the robot in the Z axis
+  Grab - BOOL - %Q10.4 - Grabs an item
+  oCB1_LmpError_H1 - BOOL - %Q10.7 - Error lamp
+
+
+  //Flags
+  mM001 - BOOL - %M50.0 - System started
+  mA001 - BOOL - %M50.1 - Motor circuit breaker conveyot belt entry alarm
+  mA002 - BOOL - %M50.2 - Motor circuit breaker coneyor belt exit alarm
+
+  mZ - BOOL - %M60.1 - Flag move Z-axis of the robot
+  mGrab - BOOL - %M60.2 - Flag grab item
+  mReset - BOOL - %M60.3 - Flag reset
+  mSysFALSE - BOOL - %M60.4 - Flag FALSE
+  mStopIn	- BOOL - %M60.6 - Flag stop conveyor belt entry
+  mStopOut - BOOL - %M60.7 - Flag stop conveyor belt exit
+  mSen_TO_B1 - BOOL - %M61.0 - Flag sensor B1
+  mSen_TO_B2 - BOOL - %M61.1 - Flag sensor B2
+  mSysIlnit	- BOOL - %M60.5 - Flag initilization
+
+  ```
+
+  **Step 2 :** Open the Function FC_EM_PnP[FC1]
+
+  **Step 3 :** There is one control module already present and linked to the right tags. <p>
+
+  ![Control module DI Sensor](../PDB/Images/DI_Sensor.jpg)
+
+  **Step 4:** Program the remaining control modules like the following S88 design. *For each control module or procedure element you need to have a seperate network* <p>
+
+  ![S88 Pick and Place](../PDB/Images/S88PnP.jpg "S88 Pick and Place")
+
+  # The Pick and Place Project
+  _____________________________________
+  -   The [first goal](#goal-1-to-retrieve-an-archived-program) is to retrieve an archived program.
+  -   The [second goal](#goal-2-to-retrieve-an-archived-library) is to retrieve an archived library
+  -   The [third goal](#goal-3-to-program-the-s88) is to program the S88 following the S88 design
+  -   The [fourth goal](#goal-4-to-import-an-external-source-file) is to import a exernal source file
+  -   The [last goal](#goal-5-to-deliver-a-working-project2) is to deliver a working project
+
+  Back to the [project scope](#scope2)
+
+## Goal 4 To import an external source file
+  _____________________________________
+
+  **Step 1:** Download/copy FB-P_PickAndPlace.scl and place it under
+  ```javascript
+  Filename : FB-P_PickAndPlace.scl
+  Destination : \Documents\Automation
+  ```
+  **Step 2:** Search for "External source files" in the project tree and click on "Add new external file" <p>
+  ![External Source File in TIA](../PDB/Images/ExternalSource.jpg)
+
+  **Step 3:** In the file browser select FB-P_PickAndPlace.scl and open it <p>
+
+  ![External Source File in windows explorer](../PDB/Images/SourceBrowser.jpg)
+
+  **Step 4:** Under the "External source files" the selected file will pop up. Right click on it and run "Generate source blocks from source" <p>
+
+  ![Generate blocks from source](../PDB/Images/GenerateBlocks.jpg)
+
+  **Step 5:**  Add both the Functions into *Function block* FC_EM_PnP [FC1]:
+
+  ```javascript
+  FB-P_PickAndPlace into a new network
+  ```
+
+  **Step 5:** Link the right tags with the block that has been generated
+
+  # The Pick and Place Project
+  _____________________________________
+  -   The [first goal](#goal-1-to-retrieve-an-archived-program) is to retrieve an archived program.
+  -   The [second goal](#goal-2-to-retrieve-an-archived-library) is to retrieve an archived library
+  -   The [third goal](#goal-3-to-program-the-s88) is to program the S88 following the S88 design
+  -   The [fourth goal](#goal-4-to-import-an-external-source-file) is to import a exernal source file
+  -   The [last goal](#goal-5-to-deliver-a-working-project2) is to deliver a working project
+
+  Back to the [project scope](#scope2)
+
+## Goal 5 To deliver a working project2
+  _____________________________________
+
+  **Step 1:** Open the FactoryIO scene called "Pick and Place" (it's one of the default scene's)
+
+  **Step 2:** Configure the driver to the right PLC
+
+  **Step 3:** Open up the configuration
+
+  ```javascript
+  IP adress: 192.168.0.10
+  Bool inputs: 10
+  Bool outputs: 10
+  ```
+  ![FactoryIO Drive configuration ](../PDB/Images/DriveConfiguration.jpg)
+
+  **Step 4:** Compile the hardware with a rebuild all command
+
+  **Step 5:** Compile the software with a rebuild all command
+
+  **Step 6:** Download hardware and software to the PLC_1
+
+  **Step 7:** Test the Project
+
+  __Normal functionallity__
+  - Start the conveyorbelt by pressing the start button in FactoryIO
+  - The sensor will detect an item on the entry conveyor belt
+  - Entry conveyor belt will stop and the robot will pick up the item
+  - Exit conveyor belt will stop and the robot will put down the item
+
+# Exercise 3
+
+[Back](#8-7-exercise-3)
+# Study materials
+## Literature
+
+- Addendum 04 : Grafcet
+
+## Equipment
+1 Engineering station 2 SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher 3 SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher 4 Ethernet connection between engineering station and controller 5 Factory IO scene Pick & Place.factoryio
+
+# The Pick and Place Project
+_____________________________________
+-   The [first goal](#goal-1-to-program-a-grafcet) is to program a GRAFCET
+-   The [second goal](#goal-2-to-program-a-flowchart) is to program a Flowchart
+-   The [third goal](#goal-3-to-deliver-a-working-project3) is to deliver a working
+
+Back to the [project scope](#scope3)
+
+## Scope3
+
+Automate the process of picking up packages and placing them on a different conveyor. This will be equipped with the following:
+
+- 2 Digital photocells
+- 2 Digital motor circuit breakers
+- 2 Digital preasurised air valves
+- 2 Digital contactors to control the conveyorbelt motors
+- A digital vacuum grabber
+
+![FactoryIO scene](../PDB/Images/FactoryIOScene.jpg)
+
+Use the buttons on the PLC to control the motor circuit breakers.
+Use the control board in FactoryIO to start and stop the machine.
+
+## Goal 1 To program a GRAFCET
+_____________________________________
+
+**Step 1:** Open the previous exercise Ex2-PickAndPlace.
+```javascript
+Filename : Ex2-PickAndPlace.ap16
+```
+
+**Step 2:** Remove the function block that we previously ported into TIA.
+```javascript
+Functionblock : FB-P_PickAndPlace
+```
+**Step 3:** Copy/download the included .zal file named. Make a new subfolder into automation called "Library"(If it doesn't exist already). Copy the file into:
+```javascript
+Filename : S88 GRAFCET.zap16
+Destination : \Documents\Automation\Library
+```
+**Step 4:** Open the archive as we did in Ex02. Here you'll find a template of a GRAFCET under "Master Copies" called "FB-P_GRAFCET". Drag this into your TIA portal project.
+
+**Step 5:** Rename the block to FB-P_PickAndPlace.
+
+*Remark: The previous block "FB-P_PickAndPlace" in "FC_EM_PnP" will be red, to fix this right click on the block and press "Update block call".*
+
+**Step 6:** Program the following GRAFCET into FB-P_PickAndPlace.
+![GRAFCET](../PDB/Images/GRAFCET.jpg)
+
+# The Pick and Place Project
+_____________________________________
+-   The [first goal](#goal-1-to-program-a-grafcet) is to program a GRAFCET
+-   The [second goal](#goal-2-to-program-a-flowchart) is to program a Flowchart
+-   The [third goal](#goal-3-to-deliver-a-working-project3) is to deliver a working
+
+Back to the [project scope](#scope3)
+
+## Goal 2 To program a Flowchart
+_____________________________________
+
+**Step 1:** Create the necessary PLC Tags:
+```javascript
+//Outputs
+Counter - DWORD - %QD100 - Amount of processed packages
+
+//Flags
+mA003 - BOOL - %M50.3 - Motor circuit breaker coneyor belt exit alarm
+mCounter - DWORD - %QD100 - Flag amount of processed packages
+```
+
+**Step 2:** Create the Function Block FB_Counter[FB1] in the language SCL
+
+**Step 3:** Create the necessary block tags:
+```javascript
+//Static
+mSen - BOOL - Rising edge detection for sensor on the output conveyor
+```
+**Step 4:** Add a rise edge direction for "mSen_TO_B2"
+*Remark "mSen_TO_B2" will be the input and "mSen" will be the output*
+
+**Step 5:** Create the following Flowcharts
+![Flowchart Counter](../PDB/Images/FlowchartCounter.jpg)
+![Flowchart Alarm](../PDB/Images/FlowchartAlarm.jpg)
+
+# The Pick and Place Project
+_____________________________________
+-   The [first goal](#goal-1-to-program-a-grafcet) is to program a GRAFCET
+-   The [second goal](#goal-2-to-program-a-flowchart) is to program a Flowchart
+-   The [third goal](#goal-3-to-deliver-a-working-project3) is to deliver a working project
+
+Back to the [project scope](#scope3)
+
+## Goal 3 To deliver a working project3
+_____________________________________
+
+
+**Step 1:** Compile the hardware with a rebuild all command
+
+**Step 2:** Compile the software with a rebuild all command
+
+**Step 3:** Download hardware and software to the PLC_1
+
+**Step 4:** Test the Project
+
+__Normal functionallity__
+- Start the conveyorbelt by pressing the start button in FactoryIO
+- The sensor will detect an item on the entry conveyor belt
+- Entry conveyor belt will stop and the robot will pick up the item
+- Exit conveyor belt will stop and the robot will put down the item
+- The counter counts up each time a object gets detected by the fotocell on the outputconveyor
+- Stop light lights up when you reach 50 moved packages
+
+# Exercise 4
+
+[Back](#8-7-exercise-4)
+
+# Study material
+## Literature
+
+- Addendum 05 Controllers
+
+## Equipment
+1 Engineering station 2 SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher 3 SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher 4 Ethernet connection between engineering station and controller 5 Factory IO scene Level Control.factoryio
+
+# The Watertank Project
+_____________________________________
+-   The [first goal](#goal-1-to-program-an-on-off-controller) is to program an ON/OFF controller
+-   The [second goal](#goal-2-to-program-a-pid-controller) is to program a PID controller
+-   The [third goal](#goal-3-to-deliver-a-working-program4) is to deliver a working program
+
+Back to the [project scope](#scope4)
+
+## Scope4
+
+Automate controlling the level in **watertank T1**. that is equipped with
+- An analog level sensor
+- An analog flow sensor on the outlet
+- An analog inlet valve
+- An analog outlet valve
+
+![Procedure element ON OFF](../PDB/Images/scope.jpg)
+
+Use the buttons, lamps, potentiometer and analog indicator on the ASTI PLC board to control the watertank.
+
+## Characteristics
+- Height: 3 m
+- Diameter: 2 m
+- Discharge pipe radius: 0.125 m
+- Input flow: 0.25 m³/s
+- Output flow: 0.3543 m³/s
+
+# The Watertank Project
+_____________________________________
+-   The [first goal](#goal-1-to-program-an-on-off-controller) is to program an ON/OFF controller
+-   The [second goal](#goal-2-to-program-a-pid-controller) is to program a PID controller
+-   The [third goal](#goal-3-to-deliver-a-working-program4) is to deliver a working program
+
+Back to the [project scope](#scope4)
+
+## Goal 1 To program an ON OFF controller
+_____________________________________
+
+**Step 1:** Open project Ex7-Watertank
+
+**Step 2:** Open the *Function* FC_T1[FC2]
+
+**Step 3:** Delete the content within network 4 : Level control
+
+**Step 4:** Open the library "S88 TIA Portal V16"
+
+**Step 5:** Copy "FB_PE_ON-OFF" into the *Function* FC_T1[FC2] network 4 :
+![Global library](../PDB/Images/ON-OFF.jpg)
+
+**Step 6:** Link the right in- & outputs of the ON-OFF controller.
+
+![Procedure element ON OFF](../PDB/Images/changes.jpg)
+**Step 8 :** Open the FactoryIO scene called:
+```javascript
+Filename : Level_Control.factoryio
+Filelocation : \Documents\Factory IO\My Scenes
+```
+**Step 9:** Compile the hardware with a rebuild all command
+
+**Step 10:** Compile the software with a rebuild all command
+
+**Step 11:** Download hardware and software to the PLC_1
+
+**Step 12:** Test the Project
+
+__Normal functionallity__
+- If you change the iH value the hysteresis of the controller will change
+- If you change the iW value the setpoint will change
+- The on/off controller will control the level set by you in iW
+- Play around with these values and see what they do
+
+
+# The Watertank Project
+_____________________________________
+-   The [first goal](#goal-1-to-program-an-on-off-controller) is to program an ON/OFF controller
+-   The [second goal](#goal-2-to-program-a-pid-controller) is to program a PID controller
+-   The [third goal](#goal-3-to-deliver-a-working-program4) is to deliver a working program
+
+Back to the [project scope](#scope4)
+
+## Goal 2 To program a PID controller
+_____________________________________
+
+**Step 1:** Open project Ex7-Watertank
+
+**Step 2:** Delete network 4 : Level control
+
+**Step 3:** Create a cyclic interrupt
+
+**Step 4:** Add PID_Compact into *cyclic interrupt*
+
+![PID Compact](../PDB/Images/pidcompact.jpg)
+
+**Step 5:** Connect the right in- & outputs
+
+![PID Compact](../PDB/Images/cyclicinterrupt.jpg)
+
+**Step 6:**  Delete network 5 : Control the inlet valve
+
+![Deleting](../PDB/Images/deleted.jpg)
+
+**Step 7:** Configure the PID_Compact
+
+![PID Compact configuration](../PDB/Images/configuration.jpg)
+
+**Step 8:** Play with the following paramaters
+
+![PID paramaters](../PDB/Images/end.jpg)
+
+**Step 9 :** Open the FactoryIO scene called:
+```javascript
+Filename : Level_Control.factoryio
+Filelocation : \Documents\Factory IO\My Scenes
+```
+
+# The Watertank Project
+_____________________________________
+-   The [first goal](#goal-1-to-program-an-on-off-controller) is to program an ON/OFF controller
+-   The [second goal](#goal-2-to-program-a-pid-controller) is to program a PID controller
+-   The [third goal](#goal-3-to-deliver-a-working-program4) is to deliver a working program
+
+Back to the [project scope](#scope4)
+
+## Goal 3 To deliver a working program4
+_____________________________________
+
+**Step 1:** Compile the hardware with a rebuild all command
+
+**Step 2:** Compile the software with a rebuild all command
+
+**Step 3:** Download hardware and software to the PLC_1
+
+**Step 4:** Go to [Exercise 5](../Ex05/Subchapter03.md) to test the program on a HMI screen
