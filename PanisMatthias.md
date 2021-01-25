@@ -28,9 +28,29 @@
 
 [8 Cursus](#8-cursus)
 
+ [8.1 Addendum 3 HMI ](#8-1-addendum-3-hmi)
+
+ [8.2 Addendum 4 GRAFCET](#8-2-addendum-4-grafcet)
+
+ [8.3 Addendum 5 Controllers](#8-3-addendum-5-controllers)
+
+ [8.4 Addendum 6 S88](#8-4-addendum-6-s88)
+
+ [8.5 Oefening 1 Netwerkconfiguratie](#8-5-exercise-1)
+
+ [8.6 Oefening 2 S88 programmeren](#8-6-exercise-2)
+
+ [8.7 Oefening 3 GRAFCET en Flowchart programmeren](#8-7-exercise-3)
+
+ [8.8 Oefening 4 Regelaars programmeren](#8-8-exercise-4)
+
+ [8.8 Oefening 4 HMI](#8-9-exercise-5)
+
 [9	Bibliografie	](#9-bibliografie)
 
 [10 Bijlagen](#10-bijlagen)
+
+[10-1 Cursus](#10-1-cursus)
 
 
 
@@ -113,7 +133,7 @@ De PDB zelf heb ik dan ook in een .md bestandformaat geschreven gebruik makend v
 - EX03 Sequential controllers
 - EX04 Continue controllers
 - EX05 HMI displays
-- ADD03 Manuals
+- ADD03 HMI
 - ADD04 GRAFCET
 - ADD05 controllers
 - ADD06 S88
@@ -330,6 +350,68 @@ Verder is deze addendum ook opgedeeld in 5 subchapters:
 
 ## 8-5 Exercise 1
 
+[Bijlagen](#exercise-1)
+
+Oefening 1 zal de student een uitgebreid netwerk configuratie moeten maken. Deze bevat ProfiNET & Profibus apparaten maar ook gewone IO.
+De hardware configuratie wordt gemaakt voor een kraan: <P>
+
+![Crane](../PDB/Images/Crane.jpg)
+
+Om alle apparaten in de netwerkconfiguratie te krijgen zijn er GSD bestanden nodig. Deze moeten ze zelfs zoeken aan de hand van modelnummers van de apparaten. Als ze geen internet ter beschiking hebben zijn alle GSD bestanden toegevoegd onder "Ex01/Documents/GSD files"
+
+Eerste doel zal zijn om ProfiNET apparaten toe te voegen met de juiste configuratie en IP adressen:
+```javascript
+Beckhoff CX8093 island (IO on bridge)
+-	3x digital sensor (grabber open, rabber closed, grabber on top)
+-	2x digital sensor (eindeloop left, eindeloop right)
+
+Siemens ET200S island 1  (pumps)
+-	3x motorstarter (supply- & drainpump & heating)
+-	2x analog measurement (level and temperature)
+-	1x digital levelmeasurement (overflow)
+```
+**Netwerkoverzicht** <P>
+
+![Networkview](../PDB/Images/Networkview.jpg)
+
+Om GSD bestanden correct toe te voegen aan TIA Portal moet het volgende gebeuren:
+"Options" > "Manage general station description files":
+
+![Importing GSD files](../PDB/Images/Tia-Options.jpg)
+
+Selecteren van de GSD bestanden:
+
+![Importing GSD files](../PDB/Images/TIA-GSDselection.jpg)
+
+Installeren van de GSD bestanden:
+
+![Installing GSD files](../PDB/Images/Tia-GSDinstall.jpg)
+
+Als de juiste apparaten zijn toe gevoegd aan het project moet de juiste IO nog geconfigureerd worden. Modulen per apparaat inslepen volgens de opgegeven in en uitgangen(functies).
+
+Profibus apparaten die toegevoegd moeten worden:
+```javascript
+- Sick Long-range-sensor DX100
+- Sick wire-encoder ATM60
+```
+
+**Netwerkoverzicht** <P>
+
+![Networkview](../PDB/Images/Networkprofibus.jpg)
+
+Ten laatste moet een Control Techniques drive worden toegevoegd:
+
+**Step 1:** Search for the correct GSD file for the following device:
+```javascript
+Control Techniques Commander C300
+```
+
+**Netwerkoverzicht** <P>
+
+![Networkview](../PDB/Images/Networkdrive.jpg)
+
+Als dit allemaal gedaan is zal het project moeten gecompileerd worden en nakijken op errors.
+
 ## 8-6 Exercise 2
 
 [Bijlagen](#exercise-2)
@@ -444,7 +526,7 @@ De programmatie :
 Nu kan het programma gecompileerd en getest worden.
 Heel deze oefening is gearchived voor de lectoren om de verwarchte werking mee te controleren.
 
-## 8-7 Exercise 4
+## 8-8 Exercise 4
 
 [Bijlagen](#exercise-4)
 
@@ -467,6 +549,45 @@ Het volgende deel van de oefening zal de on-off controller vervangen met een PID
 De PID_Compact wordt dan met de volgende tags aangesloten.<P>
 
 ![PID Compact](../PDB/Images/pidcompacttia.jpg)
+
+PID_Compact zal ook correct geconfigureerd worden om de watertank te controleren. "PLC_1" > "Technology objects" > "PIC_Compact" > "Configuration" <P>
+
+![PID Compact configuration](../PDB/Images/configuration.jpg)
+
+Als dit correct is ingesteld kan het getest worden via een HMI. Dit is de 5de en laatste oefening in deze cursus.
+
+# 8-9 Exercise 5
+
+[Bijlagen](#exercise-5)
+
+In deze oefening zal er een HMI scherm moeten worden opgebouwd en gebruikt worden om oefening 4 correct te testen. Op dit HMI scherm zal de student de PID paramaters moeten zetten om deze dan via HMI aan te passen en uit te testen wat het doet.
+
+In TIA voegen we het grootste HMI paneel beschikbaar toe. We werken via de HMI simulator, voeg TP1500 Basic color PN toe. Deze wordt gelinked met PLC_1 in de HMI setup wizzard. De netwerkconfiguratie voor de HMI is:
+```javascript
+IP-address                    : 192.168.0.31
+IP-address subnet mask        : 255.255.255.0
+```
+
+Het volgende scherm heb ik zelf opgesteld via IO-fields en een bar dat de actuele waarde zal uitlezen vanuit FactoryIO
+
+![Hmi screen](../PDB/Images/hmiscreen.jpg)
+*Let op: om parameters in een IO field 00.00 waardes te laten zien pas je format pattern aan;*
+![Hmi screen](../PDB/Images/format.jpg)
+
+Via de HMI simulatie kan de student de PID correct configureren door het live te testen samen met de FactoryIO scene "Level_Control.factoryio"
+
+![Hmi screen](../PDB/Images/simulation.jpg)
+
+*Als de  hmi simulatie de PLC niet vind zal je het volgende programma moeten uitvoeren*
+```javascript
+"C:\Program Files\Common Files\Siemens\CommunicationSettings"
+```
+
+Acces point > S7ONLINE > "Your networkcard"
+
+Nu kunnen we via de HMI simulatie de parameters zo aanpassen dat als het setpunt wordt aangepast het niveau in de tank langzaam naar dit punt zal stijgen of dalen.
+
+
 
 
 
@@ -1555,6 +1676,154 @@ The analog pressure sensor %IW256 gets formed internally so that the following r
   - Operation schemes
   - Selection controllers and explanation of control parameters
 
+# Exercise 1
+[Back](#8-5-exercise-1)
+
+# Study material
+_____________________________________
+## Literature
+
+
+## Equipment
+> **1** Engineering station
+> **2** SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher
+> **3** SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher
+> **4** Ethernet connection between engineering station and controller
+
+## Additional literature
+
+
+# The Crane Project
+_____________________________________
+-   The [first goal](#goal-1-to-add-profinet-based-device) is to add ProfiNET based devices
+-   The [second goal](#goal-2-to-add-profibus-based-devices) is to add Profibus based devices
+-   The [third goal](#goal-3-to-add-drives) is to add Drives
+
+Back to the [project scope](#scope1)
+
+## Scope1
+
+Make a networkconfiguration of a crane that has the follwing:
+
+- 5 Digital sensors
+- 3 Motorstarters
+- 2 Analog sensors
+- A digital levelsensor
+- 2 Profibus Devices
+- 1 Drive
+
+![Crane](../PDB/Images/Crane.jpg)
+## Goal 1 To add ProfiNET based devices
+_____________________________________
+# ProfiNET
+
+**Step 1 :** Create a new TIA Portal project
+```javascript
+Project name  : Ex1-TheCraneProject
+Author        : Your name
+Comment       : The Crane Project
+```
+
+**Step 2 :** Add a PLC-device with next CPU settings
+```javascript
+Type                          : See available CPU
+System byte                   : %MB254
+Clock memory byte             : %MB255
+Digital input start address   : %IB0
+Output start address          : %QB0
+Analog input start address    : %IB64
+IP-address                    : 192.168.0.30
+IP-address subnet mask        : 255.255.255.0
+```
+
+**Step 3:** Search for the correct GSD files for the following devices:
+```javascript
+Beckhoff CX8093 island (IO on bridge)
+-	3x digital sensor (grabber open, rabber closed, grabber on top)
+-	2x digital sensor (eindeloop left, eindeloop right)
+
+Siemens ET200S island 1  (pumps)
+-	3x motorstarter (supply- & drainpump & heating)
+-	2x analog measurement (level and temperature)
+-	1x digital levelmeasurement (overflow)
+```
+*If there is no internet available the required GSD files are included in the Documents.*
+**Overview of IP adresses and devices**
+![Networkview](../PDB/Images/Networkview.jpg)
+
+**Step 4:** Importing these GSD files:
+
+![Importing GSD files](../PDB/Images/Tia-Options.jpg)
+
+**Step 5:** Select the right GSD files wherever you stored them:
+
+![Importing GSD files](../PDB/Images/TIA-GSDselection.jpg)
+
+**Step 6:** Install the selected GSD files:
+
+![Installing GSD files](../PDB/Images/Tia-GSDinstall.jpg)
+
+**Step 7:** Import the correct devices from the "Hardware catalog" into "Network view"
+
+**Step 8:** Connect the devices and give them the right IP adress
+
+**Step 9:** Configure them for the right configuration given in **Step 3**
+
+# The Crane Project
+_____________________________________
+-   The [first goal](#goal-1-to-add-profinet-based-device) is to add ProfiNET based devices
+-   The [second goal](#goal-2-to-add-profibus-based-devices) is to add Profibus based devices
+-   The [third goal](#goal-3-to-add-drives) is to add Drives
+
+Back to the [project scope](#scope1)
+
+## Goal 2 to add Profibus based devices
+_____________________________________
+
+# Profibus
+
+**Step 1:** Search for the correct GSD files for the following devices:
+```javascript
+- Sick Long-range-sensor DX100
+- Sick wire-encoder ATM60
+```
+
+**Step 2:** Link them to the PLC
+
+**Overview of the network** <P>
+
+![Networkview](../PDB/Images/Networkprofibus.jpg)
+
+**Step 3:** Configure the imported devices to the right measurement type
+
+# The Crane Project
+_____________________________________
+-   The [first goal](#goal-1-to-add-profinet-based-device) is to add ProfiNET based devices
+-   The [second goal](#goal-2-to-add-profibus-based-devices) is to add Profibus based devices
+-   The [third goal](#goal-3-to-add-drives) is to add Drives
+
+Back to the [project scope](#scope1)
+
+## Goal 3 to add Drives
+_____________________________________
+# Drives
+
+**Step 1:** Search for the correct GSD file for the following device:
+```javascript
+Control Techniques Commander C300
+```
+
+**Step 2:** Link the drive to the PLC
+
+![Networkview](../PDB/Images/Networkdrive.jpg)
+
+**Step 3:** Compile the entire project and check for errors
+
+
+__Normal functionallity__
+- TIA compiles the project without issues
+
+
 
 # Exercise 2
 
@@ -2079,4 +2348,71 @@ _____________________________________
 
 **Step 3:** Download hardware and software to the PLC_1
 
-**Step 4:** Go to [Exercise 5](../Ex05/Subchapter03.md) to test the program on a HMI screen
+**Step 4:** Go to [Exercise 5](#exercise-5) to test the program on a HMI screen
+
+# Exercise 5
+[Back](#8-8-exercise-5)
+# Study material
+_____________________________________
+## Literature
+- Addendum 03 HMI
+- Addendum 05 Controllers
+
+## Equipment
+> **1** Engineering station
+> **2** SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher
+> **3** SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher
+> **4** Ethernet connection between engineering station and controller
+> **5** Factory IO scene Pick & Place.factoryio
+
+## Additional literature
+*  Real Games Factory IO manual - https://docs.factoryio.com/
+
+# The Watertank Project
+_____________________________________
+
+## Scope
+
+Automate controlling the level in **watertank T1**. that is equipped with
+- An analog level sensor
+- An analog flow sensor on the outlet
+- An analog inlet valve
+- An analog outlet valve
+
+![Scope](../PDB/Images/scope.jpg)
+
+Use the HMI simulation to control the tank leven and control the PID parameters
+
+**Step 1:** Open project Ex4-Watertank
+
+**Step 2 :** Open the FactoryIO scene called:
+```javascript
+Filename : Level_Control.factoryio
+Filelocation : \Documents\Factory IO\My Scenes
+```
+**Step 3:** Add a TP1500 Basic color PN HMI panel to the project
+**Step 4:** Link the HMI to the PLC configured in the project.
+```javascript
+IP-address                    : 192.168.0.31
+IP-address subnet mask        : 255.255.255.0
+```
+**Step 5:** Create the following HMI screen, (adjust the PID parameters through HMI)
+
+![Hmi screen](../PDB/Images/hmiscreen.jpg)
+*Remark: to show and use the parameters in 00.00 values in a IO field;*
+![Hmi screen](../PDB/Images/format.jpg)
+
+**Step 6:** Start the HMI simulation
+
+![Hmi screen](../PDB/Images/simulation.jpg)
+
+*Remark: if the HMI simulation can't find your PLC connection go to the following*
+```javascript
+"C:\Program Files\Common Files\Siemens\CommunicationSettings"
+```
+
+Acces point > S7ONLINE > "Your networkcard"
+
+__Normal functionallity__
+- The PID will slowly increase(or decrease) when setpoint changes and ultimately stop at the setpoint
+- Play with the PID parameters until it works

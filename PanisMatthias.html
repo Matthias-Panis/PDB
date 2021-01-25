@@ -277,8 +277,18 @@ pre[data-line] .line-highlight[data-end]:after {
 <p><a href="#7-1-tia-poral">7.1	TIA PORTAL	</a></p>
 <p><a href="#7-2-factoryio">7.2	FactoryIO	</a></p>
 <p><a href="#8-cursus">8 Cursus</a></p>
+<p><a href="#8-1-addendum-3-hmi">8.1 Addendum 3 HMI </a></p>
+<p><a href="#8-2-addendum-4-grafcet">8.2 Addendum 4 GRAFCET</a></p>
+<p><a href="#8-3-addendum-5-controllers">8.3 Addendum 5 Controllers</a></p>
+<p><a href="#8-4-addendum-6-s88">8.4 Addendum 6 S88</a></p>
+<p><a href="#8-5-exercise-1">8.5 Oefening 1 Netwerkconfiguratie</a></p>
+<p><a href="#8-6-exercise-2">8.6 Oefening 2 S88 programmeren</a></p>
+<p><a href="#8-7-exercise-3">8.7 Oefening 3 GRAFCET en Flowchart programmeren</a></p>
+<p><a href="#8-8-exercise-4">8.8 Oefening 4 Regelaars programmeren</a></p>
+<p><a href="#8-9-exercise-5">8.8 Oefening 4 HMI</a></p>
 <p><a href="#9-bibliografie">9	Bibliografie	</a></p>
 <p><a href="#10-bijlagen">10 Bijlagen</a></p>
+<p><a href="#10-1-cursus">10-1 Cursus</a></p>
 <h1 class="mume-header" id="1-projectdefinitie">1 Projectdefinitie</h1>
 
 <p>Mijn project zal gaan over het schrijven van een cursus in automatisatie.<br>
@@ -352,7 +362,7 @@ Ik zit in de groep die verantwoordelijk is over module 2 "Computer Aided Manufac
 <li>EX03 Sequential controllers</li>
 <li>EX04 Continue controllers</li>
 <li>EX05 HMI displays</li>
-<li>ADD03 Manuals</li>
+<li>ADD03 HMI</li>
 <li>ADD04 GRAFCET</li>
 <li>ADD05 controllers</li>
 <li>ADD06 S88</li>
@@ -572,13 +582,48 @@ Afbeeldingen die eerst in het Nederlands stonden zijn dus ook in Ms Excel aangep
 <p>Verder is deze addendum ook opgedeeld in 5 subchapters:</p>
 <ul>
 <li><a href="#software-model-following-ansi-isa-88">Subchapter01</a> zal gaan over de algemene uitleg</li>
-<li>[Subchapter02] zal gaan over sensoren</li>
-<li>[Subchapter03] zal gaan over het aansturen van motoren door een controle module</li>
-<li>[Subchapter04] zal gaan over de controle module voor een ventiel en contactor</li>
-<li>[Subchapter05] zal gaan over geeft voorbeelden</li>
+<li><a href="#sensors">Subchapter02</a> zal gaan over sensoren</li>
+<li><a href="#asynchronous-motors">Subchapter03</a> zal gaan over het aansturen van motoren door een controle module</li>
+<li><a href="#valve">Subchapter04</a> zal gaan over de controle module voor een ventiel en contactor</li>
+<li><a href="#physical-part">Subchapter05</a> zal gaan over geeft voorbeelden</li>
 </ul>
 <h2 class="mume-header" id="8-5-exercise-1">8-5 Exercise 1</h2>
 
+<p><a href="#exercise-1">Bijlagen</a></p>
+<p>Oefening 1 zal de student een uitgebreid netwerk configuratie moeten maken. Deze bevat ProfiNET &amp; Profibus apparaten maar ook gewone IO.<br>
+De hardware configuratie wordt gemaakt voor een kraan: </p><p></p>
+<p><img src="../PDB/Images/Crane.jpg" alt="Crane"></p>
+<p>Om alle apparaten in de netwerkconfiguratie te krijgen zijn er GSD bestanden nodig. Deze moeten ze zelfs zoeken aan de hand van modelnummers van de apparaten. Als ze geen internet ter beschiking hebben zijn alle GSD bestanden toegevoegd onder "Ex01/Documents/GSD files"</p>
+<p>Eerste doel zal zijn om ProfiNET apparaten toe te voegen met de juiste configuratie en IP adressen:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Beckhoff</span> <span class="token constant">CX8093</span> <span class="token function">island</span> <span class="token punctuation">(</span><span class="token constant">IO</span> on bridge<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">3</span>x digital <span class="token function">sensor</span> <span class="token punctuation">(</span>grabber open<span class="token punctuation">,</span> rabber closed<span class="token punctuation">,</span> grabber on top<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">2</span>x digital <span class="token function">sensor</span> <span class="token punctuation">(</span>eindeloop left<span class="token punctuation">,</span> eindeloop right<span class="token punctuation">)</span>
+
+<span class="token maybe-class-name">Siemens</span> <span class="token constant">ET200S</span> island <span class="token number">1</span>  <span class="token punctuation">(</span>pumps<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">3</span>x <span class="token function">motorstarter</span> <span class="token punctuation">(</span>supply<span class="token operator">-</span> <span class="token operator">&amp;</span> drainpump <span class="token operator">&amp;</span> heating<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">2</span>x analog <span class="token function">measurement</span> <span class="token punctuation">(</span>level and temperature<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">1</span>x digital <span class="token function">levelmeasurement</span> <span class="token punctuation">(</span>overflow<span class="token punctuation">)</span>
+</pre><p><strong>Netwerkoverzicht</strong> </p><p></p>
+<p><img src="../PDB/Images/Networkview.jpg" alt="Networkview"></p>
+<p>Om GSD bestanden correct toe te voegen aan TIA Portal moet het volgende gebeuren:<br>
+"Options" &gt; "Manage general station description files":</p>
+<p><img src="../PDB/Images/Tia-Options.jpg" alt="Importing GSD files"></p>
+<p>Selecteren van de GSD bestanden:</p>
+<p><img src="../PDB/Images/TIA-GSDselection.jpg" alt="Importing GSD files"></p>
+<p>Installeren van de GSD bestanden:</p>
+<p><img src="../PDB/Images/Tia-GSDinstall.jpg" alt="Installing GSD files"></p>
+<p>Als de juiste apparaten zijn toe gevoegd aan het project moet de juiste IO nog geconfigureerd worden. Modulen per apparaat inslepen volgens de opgegeven in en uitgangen(functies).</p>
+<p>Profibus apparaten die toegevoegd moeten worden:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token operator">-</span> <span class="token maybe-class-name">Sick</span> <span class="token maybe-class-name">Long</span><span class="token operator">-</span>range<span class="token operator">-</span>sensor <span class="token constant">DX100</span>
+<span class="token operator">-</span> <span class="token maybe-class-name">Sick</span> wire<span class="token operator">-</span>encoder <span class="token constant">ATM60</span>
+</pre><p><strong>Netwerkoverzicht</strong> </p><p></p>
+<p><img src="../PDB/Images/Networkprofibus.jpg" alt="Networkview"></p>
+<p>Ten laatste moet een Control Techniques drive worden toegevoegd:</p>
+<p><strong>Step 1:</strong> Search for the correct GSD file for the following device:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Control</span> <span class="token maybe-class-name">Techniques</span> <span class="token maybe-class-name">Commander</span> <span class="token constant">C300</span>
+</pre><p><strong>Netwerkoverzicht</strong> </p><p></p>
+<p><img src="../PDB/Images/Networkdrive.jpg" alt="Networkview"></p>
+<p>Als dit allemaal gedaan is zal het project moeten gecompileerd worden en nakijken op errors.</p>
 <h2 class="mume-header" id="8-6-exercise-2">8-6 Exercise 2</h2>
 
 <p><a href="#exercise-2">Bijlagen</a></p>
@@ -663,9 +708,39 @@ De programmatie :</p>
 <p><img src="../PDB/Images/flowcharttia.jpg" alt="Flowchart TIA"></p>
 <p>Nu kan het programma gecompileerd en getest worden.<br>
 Heel deze oefening is gearchived voor de lectoren om de verwarchte werking mee te controleren.</p>
-<h2 class="mume-header" id="8-7-exercise-4">8-7 Exercise 4</h2>
+<h2 class="mume-header" id="8-8-exercise-4">8-8 Exercise 4</h2>
 
 <p><a href="#exercise-4">Bijlagen</a></p>
+<p>Bij deze oefening gaan we een tank met een on-off(twph) controller en PID controller regelen. Via FactoryIO simuleren we de tank en niveau meting. Deze scene is door Mr. Van Grieken opgesteld in oefening 7 van de basis cursus. Er is ook een archived programma dat in oefening 7 van de basis cursus is gemaakt (de complete versie). </p><p></p>
+<p><img src="../PDB/Images/scope.jpg" alt="Scope oefening 4"></p>
+<p>De archived programma moet de student openen om verder te kunnen. Als hij dit gedaan heeft moet hij in de fucntion "FC_T1" netwerk 4 level control verwijderen. Hierin moet de on-off controller geplaatst worden. In de library S88 TIA Portal V16 zit een voorgeprogrammeerde on-off controller. Dit moet dus in netwerk 4 geslepen worden.</p>
+<p>Dan verbind men "mT1_SenLev_mm" met de iX ingang, "mGenStarted" wordt verbonden met de ingang "iOn", "mT1_Fill zal worden verbonden met output "oY". </p><p></p>
+<p><img src="../PDB/Images/onofftia.jpg" alt="Procedure element ON OFF"></p>
+<p>Met iW en iH kan je nu experimenteren wat het exact doet. iW is het setpoint, hiermee kan je het gewenste niveau van de tank ingeven. iH is de hysteresis, hiertussen zal de on en off controller in en uit schakelen. Kleine hysteresis betekent dat hij veel zal in en uitschakelen. Een grote hysteresis betekent dat dit trager zal gaan, hierdoor zal de tank ook leger lopen en voller lopen vanwege de output die altijd op 50% open staat.</p>
+<p>Het volgende deel van de oefening zal de on-off controller vervangen met een PID_Compact regeling. Deze bouwsteen zit standaard in TIA portal en heeft een cyclicinterrupt organization block nodig om deftig te werken. De on off controller en netwerk 5 wat de regeling van de inlaat bevat, verwijderen we uit het programma. Dit wordt vervangen met de PID_Compact uitgang die zelf tussen 0 en 100 % zal regelen. </p><p></p>
+<p><img src="../PDB/Images/deleted.jpg" alt="Verwijdering netwerk 5"></p>
+<p>De PID_Compact wordt dan met de volgende tags aangesloten.</p><p></p>
+<p><img src="../PDB/Images/pidcompacttia.jpg" alt="PID Compact"></p>
+<p>PID_Compact zal ook correct geconfigureerd worden om de watertank te controleren. "PLC_1" &gt; "Technology objects" &gt; "PIC_Compact" &gt; "Configuration" </p><p></p>
+<p><img src="../PDB/Images/configuration.jpg" alt="PID Compact configuration"></p>
+<p>Als dit correct is ingesteld kan het getest worden via een HMI. Dit is de 5de en laatste oefening in deze cursus.</p>
+<h1 class="mume-header" id="8-9-exercise-5">8-9 Exercise 5</h1>
+
+<p><a href="#exercise-5">Bijlagen</a></p>
+<p>In deze oefening zal er een HMI scherm moeten worden opgebouwd en gebruikt worden om oefening 4 correct te testen. Op dit HMI scherm zal de student de PID paramaters moeten zetten om deze dan via HMI aan te passen en uit te testen wat het doet.</p>
+<p>In TIA voegen we het grootste HMI paneel beschikbaar toe. We werken via de HMI simulator, voeg TP1500 Basic color PN toe. Deze wordt gelinked met PLC_1 in de HMI setup wizzard. De netwerkconfiguratie voor de HMI is:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token constant">IP</span><span class="token operator">-</span>address                    <span class="token operator">:</span> <span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.31</span>
+<span class="token constant">IP</span><span class="token operator">-</span>address subnet mask        <span class="token operator">:</span> <span class="token number">255.255</span><span class="token number">.255</span><span class="token number">.0</span>
+</pre><p>Het volgende scherm heb ik zelf opgesteld via IO-fields en een bar dat de actuele waarde zal uitlezen vanuit FactoryIO</p>
+<p><img src="../PDB/Images/hmiscreen.jpg" alt="Hmi screen"><br>
+<em>Let op: om parameters in een IO field 00.00 waardes te laten zien pas je format pattern aan;</em><br>
+<img src="../PDB/Images/format.jpg" alt="Hmi screen"></p>
+<p>Via de HMI simulatie kan de student de PID correct configureren door het live te testen samen met de FactoryIO scene "Level_Control.factoryio"</p>
+<p><img src="../PDB/Images/simulation.jpg" alt="Hmi screen"></p>
+<p><em>Als de  hmi simulatie de PLC niet vind zal je het volgende programma moeten uitvoeren</em></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token string">"C:\Program Files\Common Files\Siemens\CommunicationSettings"</span>
+</pre><p>Acces point &gt; S7ONLINE &gt; "Your networkcard"</p>
+<p>Nu kunnen we via de HMI simulatie de parameters zo aanpassen dat als het setpunt wordt aangepast het niveau in de tank langzaam naar dit punt zal stijgen of dalen.</p>
 <h1 class="mume-header" id="9-bibliografie">9 Bibliografie</h1>
 
 <p><a href="https://www.automation.siemens.com/sce-static/learning-training-documents/tia-portal/visualization-s7-1200/sce-041-101-wincc-basic-ktp700-s7-1200-r1709-en.docx">HMI Tutorial</a><br>
@@ -1599,6 +1674,76 @@ The building blocks will exhange information between each other.</p>
 - Activate / control output signals (%Q)</p>
 <p>This way a control module gets represented by a certain type of actuator or sensor and by preference gets included in the software library.<br>
 Control modules are preferably progammed in "Function buildblocks" whereby, the TAG-naming gets expanded with the letters CM.</p>
+<h1 class="mume-header" id="sensors">Sensors</h1>
+
+<p><a href="#8-4-addendum-6-s88">8.4 Addendum 6 S88</a></p>
+<h2>Digital sensor</h2>
+<p>A <strong>digital sensor</strong> (Ex.:limit switch, inductive sensor, capacitive sensor, tuning fork,...) processes mainly the presence of a product, object, person, etc. It has 2 conditions which indicate whether these products, objects or persons are preset or not.</p>
+<p>Functionally seen these sensors monitor:</p>
+<ul>
+<li>The correct automatic process whether or not with the needed delay (example, opening of a door with the help of a photocell after which the door stays open for a bit)</li>
+<li>The protection against defects (example, overflow protection )</li>
+</ul>
+<p>One can design a building block wherein all the above functionalities are processed. As a Consequently, this building block is the software representative of a digital sensor.</p>
+<p><img src="../PDB/Images/ObjectDigitalSensor.jpg" alt="S88 Example Digital Sensor "></p>
+<p>This building block belongs to the group of <strong>control modules</strong> are provided with following functionalities:</p>
+<ul>
+<li>The module will ensure that the sensor signal (iSen) which optionally can be delayed with a on-delay(iTON_Time) and/or a off-delay (iTOF_Time) for a correct operation, which then provides the output signal (oSen_TO)</li>
+<li>In case the option alarm (iAL_Option) is enabled, the module will activate an alarm(ioAL_Sen) as soon as the sensor (iSen) is disabled, taking into account the off-delay(iAL_Time).</li>
+<li>If the sensor(iSen) isn't switched on anymore, the module will turn off the alarm(ioAL_Sen) as soon as it gets reset(iReset)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_DI_Sensor.</p>
+<p><img src="../PDB/Images/OperationschemeCMFB_CM_DI_Sensor.jpg" alt="operation scheme control module FB_CM_DI_Sensor "></p>
+<p>This results into a <strong>"Function buildblock"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th>Text</th>
+<th>Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FDB example</td>
+<td><img src="../PDB/Images/TIA-FB_CM_DI_Sensor.jpg" alt="TIA image of control module FB_CM_DI_Sensor "></td>
+</tr>
+<tr>
+<td>More simple example</td>
+<td><img src="../PDB/Images/SimpleFB_CM_DI_Sensor.jpg" alt="Simple image of control module FB_CM_DI_Sensor "></td>
+</tr>
+</tbody>
+</table>
+<h2>Analog sensors</h2>
+<p>It is possible to process for example: the current level of a liquid with an <strong>analog sensor</strong> in a programmable manager circuit ("sturing"). It's needed to convert the number given to the correct SI-unit, this is because the current value isn't given in the correct SI-unit (ex. : mm). A unipolar sensor is only capable of converting a positive signal (ex. 0 .. 20mA, 4 .. 20mA, 0 .. 10 V, ...). A bipolar sensor processes both positive and negative signals (ex. -10V .. + 10 V).</p>
+<p>A <strong>control module</strong> for this type of sensors has the following tasks:</p>
+<ul>
+<li>Converting the provided number (iSen) which is a mirror of the measured value, to a SI-unit (oX) whereby taking into account the unipolar and bipolar signals (iUniOption) and the max. (iHiLim) and min. (iLoLim) measure range of the analog sensor.</li>
+<li>Making an alarm (ioAL_Sen) in case of an abnormal situation (ex. Cable break or overcurrent)</li>
+<li>If the abnormal situation is fixed will the module will turn off the alarm as soon as it gets resetted (iReset)</li>
+</ul>
+<p><img src="../PDB/Images/ObjectAnalogSensor.jpg" alt="Object of a analog sensor "></p>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_AI_Sensor.</p>
+<p><img src="../PDB/Images/OperationschemeCMFB_CM_AI_Sensor.jpg" alt="Operation scheme control module FB_CM_AI_Sensor "></p>
+<p>Notice that the operation scheme is drafted for analog sensors that work following the Siemens principle, they have a normal range of 0 .. 27.648 / -27648 .. + 27648.</p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_AI_Sensor.jpg" alt="TIA image of control module FB_CM_AI_Sensor "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_AI_Sensor.jpg" alt="Simple image of control module FB_CM_AI_Sensor "></td>
+</tr>
+</tbody>
+</table>
 <p><em>Examples</em></p>
 <table>
 <thead>
@@ -1638,6 +1783,506 @@ Control modules are preferably progammed in "Function buildblocks" whereby, the 
 </tr>
 </tbody>
 </table>
+<h1 class="mume-header" id="asynchronous-motors">Asynchronous motors</h1>
+
+<p><a href="#8-4-addendum-6-s88">8.4 Addendum 6 S88</a></p>
+<h2>Asynchronous motor with set speed and one turn direction</h2>
+<p>With the current technology an asynchronous motor that only runs forward with a set speed can't operate without:</p>
+<ul>
+<li>1x motor circuit breaker</li>
+<li>1x relay</li>
+</ul>
+<p><img src="../PDB/Images/ObjectAsynchronousMotor.jpg" alt="Object of a direct online motor "></p>
+<p>A <strong>control module</strong> for this type actuator is inseperable connected with a motor circuit breaker and a relay. The control module shortly does the following:</p>
+<ul>
+<li>If the think process(iAut) asks that if the motor needs to run, the control module will let the motor run (oCon)</li>
+<li>But if the motor circuit breaker (iMcb) is turned off the module won't let the motor run en it'll activate the alarm (ioAL_Mcb)</li>
+<li>The motor will only start running again if the motor circuit breaker has been activated and the alarm reset has been reset(iReset)</li>
+</ul>
+<p>One can expand the functionalities of the control module:</p>
+<ul>
+<li>The motor will only run (oCon) if the module is enable (iEnable)</li>
+<li>If manual mode is activated (iModeHand), the module will ignore the request from the think process (iAut) and runs the motor whenever the manual signals are given (iHandOn &amp; iHandOut)</li>
+<li>If the motor needs to run (oCon) the module can start the motor with an on delay (iTON_Time) and/or an off delay(iTOF_Time)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_DOL.</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_DOL.jpg" alt="Operationscheme for a direct online control module "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_DOL.jpg" alt="TIA image of control module FB_CM_DOL"></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_DOL.jpg" alt="Simple image of control module FB_CM_DOL "></td>
+</tr>
+</tbody>
+</table>
+<h2>Asynchronous motor with set speed and two turn directions</h2>
+<p>With the current technology an asynchronous motor that runs forward and backwards with a set speed can't operate without:</p>
+<ul>
+<li>1x motor circuit breaker</li>
+<li>2x relays</li>
+</ul>
+<p><img src="../PDB/Images/ObjectAsynchronousMotor2.jpg" alt="Object of a direct online reverse motor "></p>
+<p>A <strong>control module</strong> for this type of actuator is inseperably connected with a motor circuit breaker and a relay. The control module, in short does the following:</p>
+<ul>
+<li>If the think process(iAutL) asks if the motor needs to run left, the control module will let the motor run left (oConL)</li>
+<li>If the think process(iAutR) asks if the motor needs to run right, the control module will let the motor run right (oConR)</li>
+<li>It is possible to run through a waiting time(iTOF_Time) if it is requested to change direction</li>
+<li>But if both directions are requested (left and right) the direction doesn't change and the motor will keep spinning the way it was before the request.</li>
+<li>But if the motor circuit breaker (iMcb) is turned off the module won't let the motor run en it'll activate the alarm (ioAL_Mcb)</li>
+<li>The motor will only start running again if the motor circuit breaker has been activated and the alarm reset has been reset(iReset)</li>
+</ul>
+<p>One can expand the functionalities of the control module:</p>
+<ul>
+<li>The motor will only run (oConR &amp; oConL) if the module is enable (iEnable)</li>
+<li>If manual mode is activated (iModeHand), the module will ignore the request from the think process (iAutR &amp; iAutL) and runs the motor to the right(oConR) whenever the manual signal is given (iHandR)</li>
+<li>If manual mode is activated (iModeHand), the module will ignore the request from the think process (iAutR &amp; iAutL) and runs the motor to the left(oConL) whenever the manual signal is given (iHandL)</li>
+<li>The control module won't change running condition if the mode changes from automatic mode (NOT iModeHand) to hand mode (iModeHand)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_DOLRev</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_DOLRev.jpg" alt="Operationscheme for a direct online reverse control module "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_DOLRev.jpg" alt="TIA image of control module FB_CM_DOLRev"></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_DOLRev.jpg" alt="Simple image of control module FB_CM_DOLRev "></td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="valve">Valve</h2>
+
+<p><a href="#8-4-addendum-6-s88">8.4 Addendum 6 S88</a></p>
+<p>A valve is used to power compressed air or hydraulic actuators (ex. compressed air cylinder). The combination of a valve and actuator has a specific functionality:</p>
+<ul>
+<li>Monostable power circuit: In case there is a loss of power the actuator will automatically take its residual state (ex. single-acting compressed air cylinder)</li>
+<li>Bistable power circuit: In case there is a loss of power the actuator will keep the last position (ex. double-acting compressed air cylinder)</li>
+<li>Monostable control circuit:  In case there is a loss of power in the control circuit the valve will automatically take its residual state (ex. 3/2 valve with spring return)</li>
+<li>Bistable control circuit: In case there is a loss of power in the control circuit the valve will automatically keep its last state (ex. 5/2 valve with electromagnetic control on both sides)</li>
+</ul>
+<p>A <strong>control module</strong> for a valve will be built without taking into account the already existing functions of the combination valve - actuator. The control module will work following the bistable process.</p>
+<p><strong>Why would you use a monostable valve and cylinder?</strong></p>
+<p>During the design of a machine/installation one needs to ask themselves: What can go wrong during an unexpected event? How do i take care of potential risk to a human? Following the machine guidelines, no moving part of the machine or no single object that is held by the machine can be dropped or ejected. (2006/42/EG,2006)</p>
+<p>Unexpected events like for example a fire, an accident, an earthquake, a flood, etc. can cause interruptions in the control- and/or power circuits. The interruption of these circuits can cause dangerous situations.</p>
+<p><em>Example</em></p>
+<p>Because of a fire in a technical room, the air compressor stopped working which has the side effect that there is no more compressed air. A robot that moves part of +/- 2 kg on highspeed is equipped with a pneumatic grabber. There is the danger that in case the compressed air falls away on the moment the robot moves at high speed, that the robot lets go of the object and basically throws away the object. This has the potential to hurt humans that work near the robot.</p>
+<p>In this situation one chooses a monostable compressed air cylinder with a spring return, this will keep the grabber "grijper" to remain closed in case the compressed air falls away.</p>
+<p>The functionality of this type control module:</p>
+<ul>
+<li>The control module will work on the following a bistable principle;</li>
+<li>
+<ul>
+<li>In case the think process asks to activate the "+" side of the valve (iAut_1) the control module will do this (oVlv_1) and it will keep the condition in case the think process doesn't ask for it anymore, until the "-" side gets activated</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>In case the thinkprocess asks to activate the "-" side of the valve (iAut_0) the control module will do this (oVlv_0) and it will keep the condition in case the think process doesn't ask for it anymore, until the "+" side gets activated</li>
+</ul>
+</li>
+<li>The control module will only change the condition of the electromagnetic control in case this is allowed (iEnable)</li>
+<li>If the hand mode is active (iModeHand) the control module ignores the think process signals (iAut_1 &amp; iAut_0) and sends the valve (oVlv_1 &amp; oVlv_0) commands based off the hand signals (iHand_1 &amp; iHand_0)</li>
+</ul>
+<p>It is possible with the description to draft a operation scheme for the control module with the name FB_CM_Valve</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_Vlv.jpg" alt="Operationscheme for a valve "></p>
+<p>The endresult is a <strong>"Function buildblock"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_Valve.jpg" alt="TIA image of control module FB_CM_Valve"></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_Valve.jpg" alt="Simple image of control module FB_CM_Vavle "></td>
+</tr>
+</tbody>
+</table>
+<h2>Relay</h2>
+<p>A <strong>relay</strong> is often used to build up communication with:</p>
+<ul>
+<li>Other PLC's via a potential-free contacts</li>
+<li>Other devices like frequency controllers</li>
+</ul>
+<p><img src="../PDB/Images/ObjectRelay.jpg" alt="Object of a relay "></p>
+<p>Just like an asynchronous motor one can assign multiple functionalities to the corresponding control module such as:</p>
+<ul>
+<li>If the think process asks to activate the relay (iAut), the relay will be activated (oRel)</li>
+<li>The relay will only be activated if this is enabled (iEnable)</li>
+<li>If hand mode (iModeHand) is activated then the module will ignore the think process's signal (iAut) and activates the relay based on the hand signals</li>
+<li>If it's asked to activate the relay, the module has the possibility to activate a rise delay (iTON_Time) and/or drop-out delay (iTOF_Time)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_Relay</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_Relay.jpg" alt="Operationscheme FB_CM_Relay "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_Relay.jpg" alt="TIA image of control module FB_CM_Relay"></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_Relay.jpg" alt="Simple image of control module FB_CM_Relay "></td>
+</tr>
+</tbody>
+</table>
+<h2>Lamp</h2>
+<p>A <strong>lamp</strong> is used to inform an operator about the status of a machine/installation or part of it.</p>
+<p>A lamp control module handles following functionalities:</p>
+<ul>
+<li>Continued lighting of the lamp (iAut)</li>
+<li>Blinking of the lamp (iAaut_1Hz)</li>
+<li>Fast blinking of the lamp (iAut_2Hz)</li>
+<li>Activating the lamp if a lamp test(= controlling the lamps on defective lamps by maintenance technicians) is being executed (iHandTest)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_Lamp</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_Lamp.jpg" alt="Operationscheme FB_CM_Lamp "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_Lamp.jpg" alt="TIA image of control module FB_CM_Lamp "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_Lamp.jpg" alt="Simple image of control module FB_CM_Lamp "></td>
+</tr>
+</tbody>
+</table>
+<h1 class="mume-header" id="physical-part">Physical part</h1>
+
+<p><a href="#8-4-addendum-6-s88">8.4 Addendum 6 S88</a></p>
+<h2>Equipment modules</h2>
+<p>An <strong>equipment module</strong> is a collection of multiple control modules and/or other equipment modules. The collection is built upon the physical relationship they have with each other.<br>
+In other words, an equipment module is a software building block that has a minimum of 2 building blocks of the type control modules and/or equipment modules/.<br>
+Equipment modules are preferably programmed in "Functions", the TAG-naming gets expanded with the letters EM.</p>
+<table>
+<thead>
+<tr>
+<th>Examples</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FC_EM_CC</td>
+<td>Includes programming of the control cabinet</td>
+</tr>
+<tr>
+<td>FC_EM_Airco</td>
+<td>Includes programming of the airco installation</td>
+</tr>
+<tr>
+<td>FC_T10_EM_Level</td>
+<td>Includes programming of the level controlling of tank T10</td>
+</tr>
+<tr>
+<td>FC_EM_X_Axis</td>
+<td>Includes programming of the X axis</td>
+</tr>
+</tbody>
+</table>
+<h1>Procedure part</h1>
+<h2>Procedure</h2>
+<p>A <strong>procedure</strong> is a strategy, think process to solve a problem. First, a strategy gets designed on paper using a certain method. Next the strategy will be translated to a software building block which we call the procedure element.</p>
+<p>The designing of a strategy can be done with the following methods:<br>
+- By designing a GRAFCET drawing<br>
+- By designing a flowchart drawing<br>
+- By determining the needed mathematical formulas<br>
+- By drawing of an operation scheme<br>
+- By selecting a controller and determining the corresponding parameters in the shape of a table</p>
+<h2>Procedure element</h2>
+<p>A <strong>procedure element</strong> is the software translation(programming) of a procedure. A procedure drawing, scheme or table needs to be present for each procedure element. Some of these procedure elements are commonly used in machines/installations. This causes them to preferably be included into a software library. Other procedure elements get delivered by the producer of the processing unit:</p>
+<ul>
+<li>Start-stop procedure (software library) = To start and stop actuators, machines/installations in the correct way</li>
+<li>Reset procedure (software library) = To create a reset signal in the correct way</li>
+<li>Two-point controller (software library) = Controlling a digital sensor using an on-off controller with the help of an analog sensor</li>
+<li>PID-controller (software catalog Siemens) = To control an analog output</li>
+</ul>
+<p>Procedure elements get preferably programmed in "Function building blocks", the TAG-naming gets expanded with the letters PE.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Examples</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FB_PE_StarStop</td>
+<td style="text-align:center">Start-stop procedure</td>
+</tr>
+<tr>
+<td style="text-align:center">FB_PE_Reset</td>
+<td style="text-align:center">Reset procedure</td>
+</tr>
+</tbody>
+</table>
+<h2>Start-stop procedure elements</h2>
+<p>A <strong>start-stop procedure</strong> is used to start or stop an actuator and/or the automatic process of a machine/installation (or parts of it). We use a classic start-stop circuit that is expanded with extra functionality.</p>
+<p>Characteristics of the start-stop procedure:</p>
+<ul>
+<li>The stop action (iBtnStop) has priority on the start action (iBtnStart) which is mandatory following the machine guidelines</li>
+<li>The start signal is of the type NO-contact<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>, the stop signal is of the type NC-contact<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></li>
+<li>The operator is obligated to press the start button (iBtnStart) (Electrically bridging the start button isn't allowed)</li>
+<li>There is the possibility to start slower (iTON_Time) and/or stopping slower (iTOF_Time)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_PE_StartStop</p>
+<p><img src="../PDB/Images/OperationschemeFB_PE_StartStop.jpg" alt="Operationscheme FB_PE_StarStop "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_PE_StartStop.jpg" alt="TIA image of control module FB_PE_StartStop "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_PE_StartStop.jpg" alt="Simple image of control module FB_PE_StarStop "></td>
+</tr>
+</tbody>
+</table>
+<h2>Reset procedure elements</h2>
+<p>The <strong>reset procedure</strong> gets used to create a checked reset signal. Checked because the signal coming from ex. an electrical reset button(NO-contact) can include issues like:</p>
+<ul>
+<li>An electrical circuit of the reset button can have a short circuit (it is like the button is being pressed the entire time)</li>
+<li>The reset button is electrically bridged (it is like the button is being pressed the entire time)</li>
+<li>Bad/fake contact in the electrical circuit of the reset button (it is possible by vibrations in the installation the contact on/off/on/off/on/off/.. switches)</li>
+</ul>
+<p>Because these situations can lead to uncontrolled situations, the reset procedure gets designed with the following functionalities:</p>
+<ul>
+<li>LHL<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3:1]</a></sup> functionality after pressing the reset button (iBtnReset) this between a set time (the high range) has to be let go to produce an outputsignal</li>
+<li>A checked output signal that is max. 1s is TRUE (oReset_1s)</li>
+<li>A checked output signal that is max. 1 PLC-cycle TRUE is (=edge signal)(oReset)</li>
+</ul>
+<p><img src="../PDB/Images/Operationdiagram_LHLreset.jpg" alt="Simple image of control module LHL reset procedure "></p>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_PE_Reset</p>
+<p><img src="../PDB/Images/OperationschemeFB_PE_Reset.jpg" alt="Operationscheme FB_PE_Reset "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_PE_Reset.jpg" alt="TIA image of control module FB_PE_Reset "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_PE_Reset.jpg" alt="Simple image of control module FB_PE_Reset "></td>
+</tr>
+</tbody>
+</table>
+<h2>Two-point controller with hysteresis</h2>
+<p>A <strong>two-point controller with hysteresis</strong> uses an on-off switch to switch an actuator either on or off in function of a measure physical unit (= measured value x) and the desired physical unit (= setpoint W).</p>
+<p>A <strong>two-point controller with hysteresis</strong> is consequently an on-off circuit with extra functionality like:</p>
+<ul>
+<li>The result of the controller (oY) is also offered inverted (oY_NOT)</li>
+<li>The possibility to switch the controller on and off. With turned-off controllers all the control outputs have the status FALSE(oY &amp; oY_NOT)</li>
+<li>Setpoint (iW), the measured value (iX) and the hysteresis (iH) are adjustable</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_PE_TWPH</p>
+<p><img src="../PDB/Images/OperationschemeFB_PE_TWPH.jpg" alt="Operationscheme FB_PE_ON-OFF "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_PE_On-Off.jpg" alt="TIA image of control module FB_PE_ON-OFF "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_PE_On-Off.jpg" alt="Simple image of control module FB_PE_ON-OFF "></td>
+</tr>
+</tbody>
+</table>
+<h2>Specific designed procedure elements</h2>
+<p>Not all the think process can be collected with standard procedures. It's often necessary to design specific procedures and procedure elements. One of these following analysis methods gets applied to determine the strategy:</p>
+<ul>
+<li>GRAFCET</li>
+<li>Flowchart</li>
+<li>Mathematical formulas</li>
+<li>Operation schemes</li>
+<li>Selection controllers and explanation of control parameters</li>
+</ul>
+<h1 class="mume-header" id="exercise-1">Exercise 1</h1>
+
+<p><a href="#8-5-exercise-1">Back</a></p>
+<h1 class="mume-header" id="study-material">Study material</h1>
+
+<hr>
+<h2 class="mume-header" id="literature">Literature</h2>
+
+<h2 class="mume-header" id="equipment">Equipment</h2>
+
+<blockquote>
+<p><strong>1</strong> Engineering station<br>
+<strong>2</strong> SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher<br>
+<strong>3</strong> SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher<br>
+<strong>4</strong> Ethernet connection between engineering station and controller</p>
+</blockquote>
+<h2 class="mume-header" id="additional-literature">Additional literature</h2>
+
+<h1 class="mume-header" id="the-crane-project">The Crane Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-add-profinet-based-device">first goal</a> is to add ProfiNET based devices</li>
+<li>The <a href="#goal-2-to-add-profibus-based-devices">second goal</a> is to add Profibus based devices</li>
+<li>The <a href="#goal-3-to-add-drives">third goal</a> is to add Drives</li>
+</ul>
+<p>Back to the <a href="#scope1">project scope</a></p>
+<h2 class="mume-header" id="scope1">Scope1</h2>
+
+<p>Make a networkconfiguration of a crane that has the follwing:</p>
+<ul>
+<li>5 Digital sensors</li>
+<li>3 Motorstarters</li>
+<li>2 Analog sensors</li>
+<li>A digital levelsensor</li>
+<li>2 Profibus Devices</li>
+<li>1 Drive</li>
+</ul>
+<p><img src="../PDB/Images/Crane.jpg" alt="Crane"></p>
+<h2 class="mume-header" id="goal-1-to-add-profinet-based-devices">Goal 1 To add ProfiNET based devices</h2>
+
+<hr>
+<h1 class="mume-header" id="profinet">ProfiNET</h1>
+
+<p><strong>Step 1 :</strong> Create a new TIA Portal project</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Project</span> name  <span class="token operator">:</span> <span class="token maybe-class-name">Ex1</span><span class="token operator">-</span><span class="token maybe-class-name">TheCraneProject</span>
+<span class="token maybe-class-name">Author</span>        <span class="token operator">:</span> <span class="token maybe-class-name">Your</span> name
+<span class="token maybe-class-name">Comment</span>       <span class="token operator">:</span> <span class="token maybe-class-name">The</span> <span class="token maybe-class-name">Crane</span> <span class="token maybe-class-name">Project</span>
+</pre><p><strong>Step 2 :</strong> Add a PLC-device with next CPU settings</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Type</span>                          <span class="token operator">:</span> <span class="token maybe-class-name">See</span> available <span class="token constant">CPU</span>
+<span class="token maybe-class-name">System</span> byte                   <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">MB254</span>
+<span class="token maybe-class-name">Clock</span> memory byte             <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">MB255</span>
+<span class="token maybe-class-name">Digital</span> input start address   <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">IB0</span>
+<span class="token maybe-class-name">Output</span> start address          <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">QB0</span>
+<span class="token maybe-class-name">Analog</span> input start address    <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">IB64</span>
+<span class="token constant">IP</span><span class="token operator">-</span>address                    <span class="token operator">:</span> <span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.30</span>
+<span class="token constant">IP</span><span class="token operator">-</span>address subnet mask        <span class="token operator">:</span> <span class="token number">255.255</span><span class="token number">.255</span><span class="token number">.0</span>
+</pre><p><strong>Step 3:</strong> Search for the correct GSD files for the following devices:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Beckhoff</span> <span class="token constant">CX8093</span> <span class="token function">island</span> <span class="token punctuation">(</span><span class="token constant">IO</span> on bridge<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">3</span>x digital <span class="token function">sensor</span> <span class="token punctuation">(</span>grabber open<span class="token punctuation">,</span> rabber closed<span class="token punctuation">,</span> grabber on top<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">2</span>x digital <span class="token function">sensor</span> <span class="token punctuation">(</span>eindeloop left<span class="token punctuation">,</span> eindeloop right<span class="token punctuation">)</span>
+
+<span class="token maybe-class-name">Siemens</span> <span class="token constant">ET200S</span> island <span class="token number">1</span>  <span class="token punctuation">(</span>pumps<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">3</span>x <span class="token function">motorstarter</span> <span class="token punctuation">(</span>supply<span class="token operator">-</span> <span class="token operator">&amp;</span> drainpump <span class="token operator">&amp;</span> heating<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">2</span>x analog <span class="token function">measurement</span> <span class="token punctuation">(</span>level and temperature<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">1</span>x digital <span class="token function">levelmeasurement</span> <span class="token punctuation">(</span>overflow<span class="token punctuation">)</span>
+</pre><p><em>If there is no internet available the required GSD files are included in the Documents.</em><br>
+<strong>Overview of IP adresses and devices</strong><br>
+<img src="../PDB/Images/Networkview.jpg" alt="Networkview"></p>
+<p><strong>Step 4:</strong> Importing these GSD files:</p>
+<p><img src="../PDB/Images/Tia-Options.jpg" alt="Importing GSD files"></p>
+<p><strong>Step 5:</strong> Select the right GSD files wherever you stored them:</p>
+<p><img src="../PDB/Images/TIA-GSDselection.jpg" alt="Importing GSD files"></p>
+<p><strong>Step 6:</strong> Install the selected GSD files:</p>
+<p><img src="../PDB/Images/Tia-GSDinstall.jpg" alt="Installing GSD files"></p>
+<p><strong>Step 7:</strong> Import the correct devices from the "Hardware catalog" into "Network view"</p>
+<p><strong>Step 8:</strong> Connect the devices and give them the right IP adress</p>
+<p><strong>Step 9:</strong> Configure them for the right configuration given in <strong>Step 3</strong></p>
+<h1 class="mume-header" id="the-crane-project-1">The Crane Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-add-profinet-based-device">first goal</a> is to add ProfiNET based devices</li>
+<li>The <a href="#goal-2-to-add-profibus-based-devices">second goal</a> is to add Profibus based devices</li>
+<li>The <a href="#goal-3-to-add-drives">third goal</a> is to add Drives</li>
+</ul>
+<p>Back to the <a href="#scope1">project scope</a></p>
+<h2 class="mume-header" id="goal-2-to-add-profibus-based-devices">Goal 2 to add Profibus based devices</h2>
+
+<hr>
+<h1 class="mume-header" id="profibus">Profibus</h1>
+
+<p><strong>Step 1:</strong> Search for the correct GSD files for the following devices:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token operator">-</span> <span class="token maybe-class-name">Sick</span> <span class="token maybe-class-name">Long</span><span class="token operator">-</span>range<span class="token operator">-</span>sensor <span class="token constant">DX100</span>
+<span class="token operator">-</span> <span class="token maybe-class-name">Sick</span> wire<span class="token operator">-</span>encoder <span class="token constant">ATM60</span>
+</pre><p><strong>Step 2:</strong> Link them to the PLC</p>
+<p><strong>Overview of the network</strong> </p><p></p>
+<p><img src="../PDB/Images/Networkprofibus.jpg" alt="Networkview"></p>
+<p><strong>Step 3:</strong> Configure the imported devices to the right measurement type</p>
+<h1 class="mume-header" id="the-crane-project-2">The Crane Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-add-profinet-based-device">first goal</a> is to add ProfiNET based devices</li>
+<li>The <a href="#goal-2-to-add-profibus-based-devices">second goal</a> is to add Profibus based devices</li>
+<li>The <a href="#goal-3-to-add-drives">third goal</a> is to add Drives</li>
+</ul>
+<p>Back to the <a href="#scope1">project scope</a></p>
+<h2 class="mume-header" id="goal-3-to-add-drives">Goal 3 to add Drives</h2>
+
+<hr>
+<h1 class="mume-header" id="drives">Drives</h1>
+
+<p><strong>Step 1:</strong> Search for the correct GSD file for the following device:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Control</span> <span class="token maybe-class-name">Techniques</span> <span class="token maybe-class-name">Commander</span> <span class="token constant">C300</span>
+</pre><p><strong>Step 2:</strong> Link the drive to the PLC</p>
+<p><img src="../PDB/Images/Networkdrive.jpg" alt="Networkview"></p>
+<p><strong>Step 3:</strong> Compile the entire project and check for errors</p>
+<p><strong>Normal functionallity</strong></p>
+<ul>
+<li>TIA compiles the project without issues</li>
+</ul>
 <h1 class="mume-header" id="exercise-2">Exercise 2</h1>
 
 <p><a href="#8-6-exercise-2">Back</a></p>
@@ -1842,12 +2487,12 @@ mSysIlnit	<span class="token operator">-</span> <span class="token constant">BOO
 <p><a href="#8-7-exercise-3">Back</a></p>
 <h1 class="mume-header" id="study-materials">Study materials</h1>
 
-<h2 class="mume-header" id="literature">Literature</h2>
+<h2 class="mume-header" id="literature-1">Literature</h2>
 
 <ul>
 <li>Addendum 04 : Grafcet</li>
 </ul>
-<h2 class="mume-header" id="equipment">Equipment</h2>
+<h2 class="mume-header" id="equipment-1">Equipment</h2>
 
 <p>1 Engineering station 2 SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher 3 SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher 4 Ethernet connection between engineering station and controller 5 Factory IO scene Pick &amp; Place.factoryio</p>
 <h1 class="mume-header" id="the-pick-and-place-project">The Pick and Place Project</h1>
@@ -1943,14 +2588,14 @@ mSen <span class="token operator">-</span> <span class="token constant">BOOL</sp
 <h1 class="mume-header" id="exercise-4">Exercise 4</h1>
 
 <p><a href="#8-7-exercise-4">Back</a></p>
-<h1 class="mume-header" id="study-material">Study material</h1>
+<h1 class="mume-header" id="study-material-1">Study material</h1>
 
-<h2 class="mume-header" id="literature-1">Literature</h2>
+<h2 class="mume-header" id="literature-2">Literature</h2>
 
 <ul>
 <li>Addendum 05 Controllers</li>
 </ul>
-<h2 class="mume-header" id="equipment-1">Equipment</h2>
+<h2 class="mume-header" id="equipment-2">Equipment</h2>
 
 <p>1 Engineering station 2 SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher 3 SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher 4 Ethernet connection between engineering station and controller 5 Factory IO scene Level Control.factoryio</p>
 <h1 class="mume-header" id="the-watertank-project">The Watertank Project</h1>
@@ -2059,7 +2704,69 @@ mSen <span class="token operator">-</span> <span class="token constant">BOOL</sp
 <p><strong>Step 1:</strong> Compile the hardware with a rebuild all command</p>
 <p><strong>Step 2:</strong> Compile the software with a rebuild all command</p>
 <p><strong>Step 3:</strong> Download hardware and software to the PLC_1</p>
-<p><strong>Step 4:</strong> Go to <a href="../Ex05/Subchapter03.md">Exercise 5</a> to test the program on a HMI screen</p>
+<p><strong>Step 4:</strong> Go to <a href="#exercise-5">Exercise 5</a> to test the program on a HMI screen</p>
+<h1 class="mume-header" id="exercise-5">Exercise 5</h1>
+
+<p><a href="#8-8-exercise-5">Back</a></p>
+<h1 class="mume-header" id="study-material-2">Study material</h1>
+
+<hr>
+<h2 class="mume-header" id="literature-3">Literature</h2>
+
+<ul>
+<li>Addendum 03 HMI</li>
+<li>Addendum 05 Controllers</li>
+</ul>
+<h2 class="mume-header" id="equipment-3">Equipment</h2>
+
+<blockquote>
+<p><strong>1</strong> Engineering station<br>
+<strong>2</strong> SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher<br>
+<strong>3</strong> SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher<br>
+<strong>4</strong> Ethernet connection between engineering station and controller<br>
+<strong>5</strong> Factory IO scene Pick &amp; Place.factoryio</p>
+</blockquote>
+<h2 class="mume-header" id="additional-literature-1">Additional literature</h2>
+
+<ul>
+<li>Real Games Factory IO manual - <a href="https://docs.factoryio.com/">https://docs.factoryio.com/</a></li>
+</ul>
+<h1 class="mume-header" id="the-watertank-project-4">The Watertank Project</h1>
+
+<hr>
+<h2 class="mume-header" id="scope">Scope</h2>
+
+<p>Automate controlling the level in <strong>watertank T1</strong>. that is equipped with</p>
+<ul>
+<li>An analog level sensor</li>
+<li>An analog flow sensor on the outlet</li>
+<li>An analog inlet valve</li>
+<li>An analog outlet valve</li>
+</ul>
+<p><img src="../PDB/Images/scope.jpg" alt="Scope"></p>
+<p>Use the HMI simulation to control the tank leven and control the PID parameters</p>
+<p><strong>Step 1:</strong> Open project Ex4-Watertank</p>
+<p><strong>Step 2 :</strong> Open the FactoryIO scene called:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Filename</span> <span class="token operator">:</span> <span class="token maybe-class-name">Level_Control</span><span class="token punctuation">.</span><span class="token property-access">factoryio</span>
+<span class="token maybe-class-name">Filelocation</span> <span class="token operator">:</span> \<span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Factory</span> <span class="token constant">IO</span>\<span class="token maybe-class-name">My</span> <span class="token maybe-class-name">Scenes</span>
+</pre><p><strong>Step 3:</strong> Add a TP1500 Basic color PN HMI panel to the project<br>
+<strong>Step 4:</strong> Link the HMI to the PLC configured in the project.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token constant">IP</span><span class="token operator">-</span>address                    <span class="token operator">:</span> <span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.31</span>
+<span class="token constant">IP</span><span class="token operator">-</span>address subnet mask        <span class="token operator">:</span> <span class="token number">255.255</span><span class="token number">.255</span><span class="token number">.0</span>
+</pre><p><strong>Step 5:</strong> Create the following HMI screen, (adjust the PID parameters through HMI)</p>
+<p><img src="../PDB/Images/hmiscreen.jpg" alt="Hmi screen"><br>
+<em>Remark: to show and use the parameters in 00.00 values in a IO field;</em><br>
+<img src="../PDB/Images/format.jpg" alt="Hmi screen"></p>
+<p><strong>Step 6:</strong> Start the HMI simulation</p>
+<p><img src="../PDB/Images/simulation.jpg" alt="Hmi screen"></p>
+<p><em>Remark: if the HMI simulation can't find your PLC connection go to the following</em></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token string">"C:\Program Files\Common Files\Siemens\CommunicationSettings"</span>
+</pre><p>Acces point &gt; S7ONLINE &gt; "Your networkcard"</p>
+<p><strong>Normal functionallity</strong></p>
+<ul>
+<li>The PID will slowly increase(or decrease) when setpoint changes and ultimately stop at the setpoint</li>
+<li>Play with the PID parameters until it works</li>
+</ul>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -2067,7 +2774,7 @@ mSen <span class="token operator">-</span> <span class="token constant">BOOL</sp
 </li>
 <li id="fn2" class="footnote-item"><p>ADD = Addendum, een onderwerp wordt hierin volledig uitgelegd. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>EX = Exercise, een oefening die de student zal kunnen maken. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>LHL = Low / High / Low <a href="#fnref3" class="footnote-backref">↩︎</a> <a href="#fnref3:1" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn4" class="footnote-item"><p>SFC = Sequential Function Chart, Siemens uses the name GRAPH <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
@@ -2075,6 +2782,10 @@ mSen <span class="token operator">-</span> <span class="token constant">BOOL</sp
 </li>
 <li id="fn6" class="footnote-item"><p>Within (process)automation this is commonly the automation of an entire machine/installation.<br>
 The S88 software model divides a machine/installation proces in 3 big parts: <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>NO = Normal open <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>NC = Normal closed <a href="#fnref8" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
