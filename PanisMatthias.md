@@ -602,5 +602,3 @@ Familie die mij elke dag steunt.
 [TIA Portal minimum requirements](https://support.industry.siemens.com/cs/document/109771628/delivery-release-simatic-step-7-professional-basic-v16-?lc=en-af)
 
 # 12 Bijlagen
-
-[Cursus](../PDB/cursus.md)
