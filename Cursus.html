@@ -1,0 +1,2297 @@
+<!DOCTYPE html><html><head>
+      <title>Cursus</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\Matti\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="10-1-cursus">10-1 Cursus</h2>
+
+<h1 class="mume-header" id="hmi-programming-in-siemens-tia-portal-v16">HMI programming in Siemens TIA Portal V16</h1>
+
+<h2 class="mume-header" id="introduction">Introduction</h2>
+
+<p>Due to production processes are becoming more and more complex and requirements for machine and plant functionality are increasing, operators need a powerful tool for controlling and monitoring production plants. An HMI system (human-machine interface) represents the interface between man (operator) and process (machine/plant). It is the controller that actually controls the process. Hence, there is an interface between the operator and WinCC (at the HMI device) and an interface between WinCC and the controller.</p>
+<h2 class="mume-header" id="device-description">Device description</h2>
+
+<p>The SIMATIC HMI Basic Panels product line features key and touch panels (operator input via keyboard and touch screen)<br>
+SIMATIC HMI Basic Panels cover all requirements described in the previous section.</p>
+<h2 class="mume-header" id="hardware-configuration">Hardware configuration</h2>
+
+<p>For a HMI to be correctly used in TIA Portal V16, one will need to make the right hardware configuration. For this to be correct you will need a correct CPU configuration mentioned in M2C3-ADD03.</p>
+<p>To add a HMI to a current project you will have to add a new device. This can be done through the 2 views within TIA portal.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Project View</th>
+<th style="text-align:center">Portal View</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">"New Device"</td>
+<td style="text-align:center">"Devices &amp; network &gt; Add new device"</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Step1.jpg" alt="TIA Portal Adding HMI"></td>
+<td style="text-align:center"><img src="../PDB/Images/Step1-1.jpg" alt="TIA Portal Adding HMI"></td>
+</tr>
+</tbody>
+</table>
+<p>The menu that pops up has 3 main options to select between Controllers / HMI / PC systems. For our example we'll be needing the HMI tab:</p>
+<p><img src="../PDB/Images/Step2.jpg" alt="TIA Portal Adding HMI"></p>
+<p>After which you select the desired HMI. HMI &gt; SIMATIC Basic Panel (we'll be using the simulator of TIA Portal, for this example i took the KTP1500 Basic):</p>
+<p><img src="../PDB/Images/Step3.jpg" alt="TIA Portal Adding HMI"></p>
+<h1 class="mume-header" id="hmi-wizard">HMI wizard</h1>
+
+<p>When you selected the correct/desired HMI you get the following screen presented:</p>
+<p>Here you need to link the HMI to the correct PLC, this is done by selecting the right PLC under Select PLC -&gt; PLC_1</p>
+<p><img src="../PDB/Images/Step4.jpg" alt="TIA Portal Adding HMI"></p>
+<p>If the correct PLC is selected it should automatically link the HMI to the PLC through ProfiNET.<br>
+Now proceed to the next screen by pressing "Next".</p>
+<p><img src="../PDB/Images/Step5.jpg" alt="TIA Portal Adding HMI"></p>
+<p>You can change the default background color of your panel under "Screen layout".<br>
+Select the "Header", "Date/time" and "Logo" check boxes. Confirm your selection by clicking on "Next ".</p>
+<p><img src="../PDB/Images/Step6.jpg" alt="TIA Portal Adding HMI"></p>
+<p>In the "Alarms" section, you can specify which of the alarms are to be displayed in a window. Select all three alarm types. Confirm your selection by clicking on<br>
+"Next".</p>
+<p><img src="../PDB/Images/Step7.jpg" alt="TIA Portal Adding HMI"></p>
+<p>In the "Screen navigation" section, the screen structure is displayed with the screen name of the last created project, starting with the root screen on the far left. A new name can be assigned simply by clicking on a screen name.<br>
+If you click on + you can insert new screens in the hierarchy ® and delete selected screens by clicking on "Delete screen".<br>
+Confirm your selection by clicking on "Next".</p>
+<p><img src="../PDB/Images/Step8.jpg" alt="TIA Portal Adding HMI"></p>
+<p>In the System screens section, you can select previously preset views for system functions and have them automatically added. Select all system screens by clicking "Select all". Confirm your selection by clicking on "Next".</p>
+<p><img src="../PDB/Images/Step9.jpg" alt="TIA Portal Adding HMI"></p>
+<p>In the System buttons section, you will find four user-selectable buttons for Exit(Runtime), Log on, Language and Root screen. You can place these buttons on the provided button areas "Left", "Bottom" or "Right" as desired. An "Open alarm window" button is already created.</p>
+<p>Select only the "Button area", "Bottom".Insert the button for the "Root screen" on the left and the button for "Exit" Runtime on the right. Confirm your selection by clicking on "Finish".</p>
+<p><img src="../PDB/Images/Step10.jpg" alt="TIA Portal Adding HMI"></p>
+<h1 class="mume-header" id="device-configuration-of-hmi-panel">Device configuration of HMI Panel</h1>
+
+<p>The TIA Portal now automatically changes to the Project view and displays the root screen of the visualization.</p>
+<p><img src="../PDB/Images/Step11.jpg" alt="TIA Portal Adding HMI"></p>
+<p>To configure the panel, select "Panel KTP700 Basic" in the project tree and open its "Device configuration" with a double-click.</p>
+<p><img src="../PDB/Images/Step12.jpg" alt="TIA Portal Adding HMI"></p>
+<h2 class="mume-header" id="setting-the-ip-adress">Setting the IP adress</h2>
+
+<p>Select the Ethernet interface of the panel in the Device view with a double-click.<br>
+Under "General" in "Properties", open menu item "PROFINET interface [X1]" and select in the "Ethernet addresses" entry.<br>
+Set the IP address "192.168.0.10" under IP protocol.</p>
+<p><img src="../PDB/Images/Step13.jpg" alt="TIA Portal Adding HMI"></p>
+<p><strong>Remarks</strong><br>
+–	The subnet mask was already set in the settings of the CPU 1215C and is automatically applied by the panel.</p>
+<h2 class="mume-header" id="compiling-the-cpu-and-panel-and-saving-the-project">Compiling the CPU and panel and saving the project</h2>
+
+<p>To compile the CPU, click on the "CPU_1215C" folder, and select the "Compile" button for compiling in the menu. To compile the panel, click on the "Panel KTP1500 Basic" folder, and select the "Compile" button for compiling in the menu. You can save your project by clicking on the "Save Project"  button in the menu.<br>
+( CPU_1215C &gt; "Compile" &gt; Panel KTP700 Basic &gt; "Compile" &gt; Save project  ).</p>
+<p><img src="../PDB/Images/Step14.jpg" alt="TIA Portal Adding HMI"></p>
+<p>In the "Info" area under "Compile", it is then shown whether the compilation was successful or whether warnings or errors have occurred.</p>
+<p><img src="../PDB/Images/Step15.jpg" alt="TIA Portal Adding HMI"></p>
+<h1 class="mume-header" id="changin-screens-and-objects">Changin screens and objects</h1>
+
+<h2 class="mume-header" id="screens">Screens</h2>
+
+<p>After successful compilation, you want to design the first screen for the visualization. To do this, open the &gt; "Root" screen with a double-click:</p>
+<p><img src="../PDB/Images/Step16.jpg" alt="TIA Portal Adding HMI"></p>
+<p>You will see a text box in the center of the screen, we will remove this by right clicking the text box and selecting "Delete". This also can be done by pressing you keyboard button "Delete".</p>
+<p><img src="../PDB/Images/Step17.jpg" alt="TIA Portal Adding HMI"></p>
+<h2 class="mume-header" id="toolbox">Toolbox</h2>
+
+<p>These contain the most commonly used objects, elements and controls used in a HMI display.</p><p></p><p><br>
+<img src="../PDB/Images/Step18.jpg" alt="TIA Portal Adding HMI"></p>
+<h3 class="mume-header" id="basic-objects">Basic objects</h3>
+
+<p>The basic objects contain a text box, rectangle, circle, line, ellipse and a graphic view.<br>
+These are added by simply dragging them onto on the screen or selecting one in the toolbox section and clicking on the desired screen. To customise them further you'll have to click on the properties of the object. For example a rectangle, in the properties you can change the appearance, layout and miscelaneous.</p>
+<p><img src="../PDB/Images/Step19.jpg" alt="TIA Portal Adding HMI"></p>
+<p>These properties are the same for all basic objects except for the text box and graphic view.<br>
+Graphic view has the ability to show custom images. This is done by selecting the grpahic view and placing it on a screen. Then in options you'll have to go to General &gt; bottom button to add custom files. There is already a pre existing list of images you can choose from. But to add a custom image:<br>
+<img src="../PDB/Images/Step20.jpg" alt="TIA Portal Adding HMI"></p>
+<h3 class="mume-header" id="elements">Elements</h3>
+
+<p>The elements are objects that can be linked to actual PLC data / are ment to be used as a way of interacting with PLC data. These stock ones contain an I/O-Field, button, symbolic I/O-Field, graphical I/O Field, date/time field, bar and a switch. Once dragged into the screen you can change the appearance however you want and link them with the correct PLC data type. For example an I/O-Field.</p>
+<p><img src="../PDB/Images/Step21.jpg" alt="TIA Portal Adding HMI"></p>
+<p>In the properties of this I/O field you can assign a Tag from the HMI or PLC to it. This will read out the value that tag has. An I/O field is mostly used for reading or giving in a desired value. In "format" you can customise how the value gets displayed. For example:</p>
+<p><img src="../PDB/Images/Step22.jpg" alt="TIA Portal Adding HMI"></p>
+<p>You can also change the type of I/O field by changing it to input or output only. Input only will only show input values. Output only will only allow a measured value to be displayed and NOT changed.</p>
+<h2 class="mume-header" id="events">Events</h2>
+
+<p>Each object or element can have events. These can change values, screens on the HMI, calculations scripts etc.. For an example we'll use a button to make it behave like a Start button.</p>
+<p><img src="../PDB/Images/Step23.jpg" alt="TIA Portal Adding HMI"></p>
+<p>To assign a function to the button you click on "Properties" &gt; "Events" &gt; "Click" &gt; "&lt; Add function &gt;" you will get the following selection.</p>
+<p><img src="../PDB/Images/Step24.jpg" alt="TIA Portal Adding HMI"></p>
+<p>Select "Edit bits", in here there are several options of changing a bit. For a start button the most common function is "SetBitWhileKeyPressed", this will set the asigned bit to 1 while you press the button. If you release the button the bit value will be set to 0 again.</p>
+<h2 class="mume-header" id="animations">Animations</h2>
+
+<h3 class="mume-header" id="display">Display</h3>
+
+<p>Within the properties screen you can find the tab "Animations". After which you get the option to add either a <strong>Display</strong> or <strong>Movements</strong>. In this chapter i'll explain the <strong>Display</strong>.</p>
+<p><img src="../PDB/Images/Step25.jpg" alt="TIA Portal Adding HMI"></p>
+<p>Within a display you can have a "Appearance" or "Visibility" animation. The appearance will give you the ability to change the colours of a object depending on a tag value. Visibility will give you the option to hide the object depending on a tag value.</p>
+<h3 class="mume-header" id="movements">Movements</h3>
+
+<p>Within <strong>movements</strong> there are 4 different movements, direct movement, diagonal movement, horizontal movement and vertical movement. Direct movement will allow you to move a object from point A to B in a direct way. Diagonal movement will move from point A to B diagonally. Horizontal movement will move from point A to B horizontaly. Vertical movement will move from point A to B vertically.</p>
+<p>Horizontal and vertical movement can be assigned to a tag value so that depending on that value the object will move towards one point. For example:</p>
+<p><img src="../PDB/Images/Step26.jpg" alt="TIA Portal Adding HMI"></p>
+<p>The range will determine how much of your tag value will be used (0-50 of the tag value will move your object between the two points in that range 0 being point A and 50 being point B).</p>
+<h1 class="mume-header" id="grafcet">GRAFCET</h1>
+
+<h2 class="mume-header" id="general">General</h2>
+
+<p>The implementation of an automated system requires, in particular, a description relating cause and effect. To do this, the logical aspect of the desired behaviour of the system will be described.</p>
+<p>The <strong>sequential part</strong> of the system is the logical aspect of this physical system. The behavior indicates the way which the output variables depend on the input variables. The object of the GRAFCET chart is to specify the behavior of the sequential part of the system.</p>
+<p>The <strong>GRAFCET design language</strong> is characterized by different graphical elements and by text that gives information about the variables. By connecting these various elements and text, the behavior of the automatic machine/installation is described.</p>
+<p>This behavior is known as steps and a GRAFCET contains multiple steps. The evolution of one step to another is translated by one or several transitions.</p>
+<p><img src="../PDB/Images/Sequential_process.jpg" alt="Sequential process"></p>
+<p>A GRAFCET will be executed as follows:</p>
+<ul>
+<li>A GRAFCET will run from top to bottom</li>
+<li>A GRAFCET starts with an initial step</li>
+<li>A transition is displayed as a mathematic boolean expression</li>
+<li>The result of a transition is TRUE or FALSE</li>
+<li>While the GRAFCET is executed there is at least one active step</li>
+<li>Only steps connected to the active step can be executed</li>
+<li>Other steps can be activated on the condition that they are connected with the active step if the result of the connected transition is TRUE</li>
+</ul>
+<p>There are 5 programming languages included in the standard IEC 61131 including SFC<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> which is inspired on the GRAFCET design language. However, there are some differences:</p>
+<ul>
+<li>SFC is a programming language</li>
+<li>GRAFCET is a design language</li>
+<li>The SFC program language uses other program languages, such as FBD and LAD, and different abbreviations to program transitions and actions</li>
+<li>The execution of an OR-convergence, if all conditions are TRUE, is  different</li>
+</ul>
+<p><sub>        Conclusions</sub></p>
+<ul>
+<li>It is possible to program a GRAFCET in each programming language described in the standard IEC 61131</li>
+<li>The SFC program language looks like GRAFCET design language but is not 100% the same </li>
+</ul>
+<h1 class="mume-header" id="designing-of-a-grafcet-in-iec-60848">Designing of a GRAFCET in IEC 60848</h1>
+
+<p><a href="#8-2-addendum-4-grafcet">8.2 Addendum 4 GRAFCET</a></p>
+<h2 class="mume-header" id="grafcet-diagram">GRAFCET diagram</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Symbol</strong></th>
+<th style="text-align:left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/GRAFCET_Diagram.jpg" alt="Grafcet Diagram"></td>
+<td style="text-align:left">A GRAFCET diagram is a collection of steps, actions, transitions, connections, etc. which form a complete diagram. The collection of all elements is surrounded by a rectangle.</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Input_Variables.jpg" alt="Input Variables"></td>
+<td style="text-align:left"><strong>Input variables</strong> are on the left with an incoming arrow <p></p><p><strong>Example</strong>: "Initial step activation" and "installation started" inputs </p><p> <img src="../PDB/Images/Input_VariablesEx.jpg" alt="Input Variables Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Output_Variables.jpg" alt="Output Variables"></td>
+<td style="text-align:left"><strong>Output variables</strong> are located on the right with an outgoing arrow. <p></p><p><strong>Example</strong>: "Forward" and "Backward" output signals.</p><p> <img src="../PDB/Images/Output_VariablesEx.jpg" alt="Output Variables Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center">"*"</td>
+<td style="text-align:left">A <strong>comment</strong> clarifies the working of certain parts and is written between double quotation marks, whereby the asterisk symbol gets replaced by the description.<p></p><p>  <strong>Example</strong>: Stop a drain  pump if the level is too low. </p><p> <img src="../PDB/Images/Comments.jpg" alt="Comments"></p></td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="step">Step</h2>
+
+<p>A <strong>step</strong> displays a defined condition of the sequential process. A step is either <strong>Active</strong> or <strong>Not Active</strong>.</p>
+<p>On a certain moment during the sequential proces:</p>
+<ul>
+<li>Is a step active or not active</li>
+<li>The set of active steps determines the state of the process</li>
+<li>The GRAFCET determines which step or steps can become active</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Symbol</strong></th>
+<th style="text-align:left"><strong>Descpription</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Step.jpg" alt="Step"></td>
+<td style="text-align:left">A <strong>step</strong> is shown as a square with an unique label. For practical reasons the most commonly used label are numbers which replaces the asterisk symbol.<p></p><p> <strong>Example</strong>: Step 2 </p><p>       <img src="../PDB/Images/Step_2.jpg" alt="Step Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Initial_Step.jpg" alt="Initial Step"></td>
+<td style="text-align:left">The <strong>initial step</strong> characterizes the initial situation and is displayed as a double square. In case of the initial step being active, all other steps in the GRAFCET won’t be active.<p></p><p> <strong>Example</strong>: Step 0 </p><p></p><p> <img src="../PDB/Images/Initial_StepEx.jpg" alt="Initial Step Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Enclosed_Step.jpg" alt="Enclosed Step"></td>
+<td style="text-align:left">An <strong>enclosed step</strong> means that this step contains other steps. If the conditions after the enclosed step are TRUE, we will proceed to the next step and all internal steps will be inactive.<p></p><p> It is allowed that an enclosed step contains multiple GRAFCET diagrams, but the enclosed internal steps can only be assigned to one enclosed step.</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Enclosed_Initial_Step.jpg" alt="Enclosed Initial Step"></td>
+<td style="text-align:left">An <strong>enclosed initial step</strong> means that this step has multiple internal steps that participate in the initial condition.<p></p><p> The enclosed initial step contains minimum one internal initial step and can contain multiple GRAFCET diagrams.</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Macro_Step.jpg" alt="Macro Step"></td>
+<td style="text-align:left">A <strong>macro step</strong> means that this step has multiple internal steps. We can describe it as an independent piece of software. A macro is not designed as standalone software, it’s meant to support a different piece of software. <p></p><p> The internal steps always start with a source step and always end with an end step. Only in the case of the end step being active can the macro exit. Unlike an enclosed step, a macro contains a maximum of one GRAFCET diagram and the asterisk symbol gets replaced by one unique label that can deviate from step labels, in numbered order.</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Active_Step.jpg" alt="Active Step"></td>
+<td style="text-align:left">In case that an <strong>active step</strong> needs to be displayed, this will be done by placing a point under the label.</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="connections">Connections</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Symbol</strong></th>
+<th style="text-align:left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Connectionelements.jpg" alt="Connectionelements"></td>
+<td style="text-align:left">Connections are lines in the network that connect steps.</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/ConnectionelementsHorizontal.jpg" alt="Horizontal Connectionelements"></td>
+<td style="text-align:left">Both horizontal and vertical lines are allowed. <p></p><p>Diagonal lines are to be avoided. They are allowed, but only to clarify.</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/FlowConnection.jpg" alt="Flow Connection"></td>
+<td style="text-align:left">The flow of a connection is always from top to bottom.<p></p><p> The use of arrows is allowed in case of clarification.</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Disconnect.jpg" alt="Disconnected"></td>
+<td style="text-align:left">If a directed link has to be broken (for example for complex charts or when a chart covers several pages) the number of the destination steps and the number of the page on which it appears, shall be indicated. <p></p><p><strong>Example</strong>: Reference to step 12 on page 2</p><p></p><p> <img src="../PDB/Images/DisconnectEx.jpg" alt="Disconnected Example"></p></td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="transition">Transition</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Symbol</strong></th>
+<th style="text-align:left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Condition.jpg" alt="Condition"></td>
+<td style="text-align:left">A transition between two steps is indicated by a horizontal line right through the connection line. <p></p><p> The transition-condition is active if the previous step is active. </p><p></p><p> Between 2 steps one condition is allowed.</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Condition_Horizontal.jpg" alt="Condition Horizontal"></td>
+<td style="text-align:left">It’s allowed to use vertical transitions for graphical reasons.</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Transition_Condition.jpg" alt="Transition Condition"></td>
+<td style="text-align:left">Each transition contains a condition. This is a mathematical boolean expression composed by variables, they replace the asterisk symbol. The result of a transition-condition is TRUE or FALSE. <p></p><p>The transition-condition is always at the right of the transition. </p><p></p><p> <strong>Example</strong>: Start button AND stop button </p><p></p><p><img src="../PDB/Images/Transition_ConditionEx.jpg" alt="Transition Condition Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Transition_Number.jpg" alt="Transition Number"></td>
+<td style="text-align:left">The transition may have an unique designation ( ) at the left of the transition.<p></p><p> <strong>Example</strong>: Label 6 </p><p></p><p><img src="../PDB/Images/NumberingEx.jpg" alt="Transtion Number Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Always_TRUE.jpg" alt="Always TRUE"></td>
+<td style="text-align:left">A transition condition that is always TRUE is displayed with the underscored expression 1.</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Step_Status.jpg" alt="Step Status"></td>
+<td style="text-align:left">The status of a step (active or not active) can be added in a transition-condition with the capital letter "X".<p></p><p> The asterisk symbol will be replaced by a label of the step.</p><p></p><p> <strong>Example</strong>: Step variable of step 7</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Increased_Flank.jpg" alt="Increasing Flank"></td>
+<td style="text-align:left">An upward arrow in the transition-condition means that it is only TRUE the moment the variable changes from FALSE to TRUE. <p></p><p><strong>Example</strong>: The transition-condition is TRUE on a rising edge of the "Door is Open" sensor OR if the "Door Limit switch" is activated. <img src="../PDB/Images/Increased_FlankEx.jpg" alt="Increasing Flank Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Decreasing_Flank.jpg" alt="Decreasing Flank"></td>
+<td style="text-align:left">A downward arrow in the transition-condition means that it is only TRUE the moment the variable changes from TRUE to FALSE.<p></p><p> <strong>Example</strong>: The transition condition is TRUE on a decreasing flank of the pallet fotocel.</p><p></p><p><img src="../PDB/Images/Decreasing_FlankEx.jpg" alt="Decreasing Flank Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Comparison_Instructionjpg.jpg" alt="Comparison Instruction"></td>
+<td style="text-align:left">A <strong>comparison</strong> is noted between [ ].<p></p><p> The asterisk symbol gets replaced with a comparison.</p><p></p><p>  The result of a comparison instruction is TRUE or FALSE. </p><p></p><p><strong>Example</strong>: The transition-condition is TRUE in case the actual pressure is higher than 5,0 bar. </p><p></p><p> <img src="../PDB/Images/Comparison_InstructionEx.jpg" alt="Comparison Instruction Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Time_Condition.jpg" alt="Time Condition"></td>
+<td style="text-align:left">A variable that is time dependent is displayed with the <strong>/</strong> symbols (TON / variable / TOF). <p></p><p> Hereby, the transition-condition is TRUE after an on-delay and stays TRUE with an off-delay. It is allowed to simplify the notation by removing the off-delay in case this isn’t used. </p><p></p><p><strong>Example</strong>: The transition condition is TRUE 2 s after the iSen is TRUE  and stays 5s TRUE after iSen becomes FALSE.</p><p> <img src="../PDB/Images/Time_VariableEx.jpg" alt="Time Condition Example 1"> </p><p></p><p><strong>Example</strong>: 3 s after step 4 is activated the transition-condition becomes TRUE and step 5 will be activated.</p><p></p><p><img src="../PDB/Images/Time_ConditionEx.jpg" alt="Comparison Instruction"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Source_Transition_Condition.jpg" alt="Source Transition Condition"></td>
+<td style="text-align:left">A <strong>source transition-condition</strong> is a transition-condition without previous steps. Each time the transition condition is TRUE, the next step will be activated. It is recommended to provide a transition condition with a rising or dropping flank to avoid the activation of the next step. <p></p><p><strong>Example</strong>:The initialization step 0 will be activated on a rising flank from the initialization input signal.</p><p></p><p>     <img src="../PDB/Images/Source_Transition_ConditionEx.jpg" alt="Source Transition Condition Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/End_Transition_Condition.jpg" alt="End Transition Condition"></td>
+<td style="text-align:left">An <strong>end transition-condition</strong> is a transition-condition where no steps follows. Each time the transition condition is TRUE, the upwards steps will be disabled.  <p></p><p><strong>Example</strong>:  Sequence with initialization of a sourcestep where all steps get activated <img src="../PDB/Images/End_Transition_ConditionEx.jpg" alt="End Transition Condition Example"></p></td>
+</tr>
+</tbody>
+</table>
+<p>Explanation symbolic image</p>
+<ul>
+<li>iInit = digital input – GRAFCET initialise</li>
+<li>iStarted = digital input – Result of a start-stop circuit</li>
+<li>iSen1 = digital input – Sensor 1</li>
+<li>iSen2 = digital input – Sensor 2</li>
+</ul>
+<h2 class="mume-header" id="action">Action</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Symbol</strong></th>
+<th style="text-align:left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Action.jpg" alt="Action"></td>
+<td style="text-align:left">An <strong>action</strong> is assigned to a step and gets illustrated by a rectangle which is connected to that step with a horizontal line.<p></p><p> It is allowed to use multiple actions in the same step, if each of them have their own rectangle.</p><p></p><p> <strong>Allowed multiple actions:</strong> <img src="../PDB/Images/ActionEx.jpg" alt="Action Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Action_Label.jpg" alt="Action Label"></td>
+<td style="text-align:left">Each action has an action label which clarifies the executed task.<p></p><p> The label is written in the rectangle where the asterisk symbol is replaced by a variable.</p><p></p><p> A <strong>continue action</strong> will have the status of the variable TRUE the moment the corresponding step is active. All other moments the action is FALSE.</p><p></p><p><strong>Example</strong>: The pump action is TRUE on step 4 and FALSE on step 5</p><p></p><p> <img src="../PDB/Images/Action_LabelEx.jpg" alt="Action Label Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Memory_Action.jpg" alt="Memory Action"></td>
+<td style="text-align:left">A <strong>memory action</strong> has a specific value assigned to a variable which gets stored. The asterisk symbol gets replaced by a variable and the # symbol gets replaced by a (mathematical) value, formula, .... . <p></p><p><strong>Example</strong>: The lamp gets activated in step 7, is still activated in step 8 and turns off in step 9. The internal variable "sX" is increased by 1 in step 8.</p><p></p><p> <img src="../PDB/Images/Memory_ActionEx.jpg" alt="Memory Action"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Conditional_Action_Timedependant.jpg" alt="Conditional Action Example Time Dependent"></td>
+<td style="text-align:left">A time dependent <strong>conditional action</strong> is displayed with the / symbols. The action is TRUE after an on-delay and stays TRUE with an off-delay. It is allowed to simplify the condition by removing the off-delay in case this isn't used. <p></p><p><strong>Example</strong>: 2s after "iSen" becomes TRUE valve A+ will be activated. 5s after "iSen" become FALSE valve A+ will be deactivated if step 9 is activated.</p><p></p><p><img src="../PDB/Images/Conditional_Action_TimedependantEx1.jpg" alt="Conditional Action Example Time Dependent Example"> </p><p></p><p><strong>Example</strong>: 3s after step 4 is activated the OK lamp lights up.</p><p></p><p><img src="../PDB/Images/Conditional_Action_TimedependantEx2.jpg" alt="Conditional Action Example Time Dependent Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Memory_ActionActivation.jpg" alt="Memory Action Activation"></td>
+<td style="text-align:left">It is possible to run a memory action with the activation of a step. This is indicated with an upwards arrow. <p></p><p><strong>Example</strong>: With the activation of step 8 the formula will be ran. </p><p></p><p><img src="../PDB/Images/Memory_ActionActivationEx.jpg" alt="Memory Action Activation"></p></td>
+</tr>
+</tbody>
+</table>
+<p>Explanation of the used symbols:</p>
+<ul>
+<li>oPump = digital output – Activation of a pump</li>
+<li>oLmp = digital output – Activation of a lamp</li>
+<li>oLmpOK = digital output – Activation of an OK lamp</li>
+<li>oVlvA_1 = digital output – Activation of Valve A+</li>
+<li>sX = static variable X</li>
+<li>sNumNOK = static variable – Amount of NOK parts</li>
+</ul>
+<h2 class="mume-header" id="structures">Structures</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Symbol</strong></th>
+<th style="text-align:left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Sequence.jpg" alt="Sequence"></td>
+<td style="text-align:left">A <strong>sequence</strong> is a series of steps where each step contains max. one transition-condition.<p></p><p> The sequence is active if at least one step of the sequence is active. The sequence is inactive when all steps are inactive.</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/Loopsequence.jpg" alt=" Loop Sequence"></td>
+<td style="text-align:left">A simple <strong>loop sequence</strong> is a sequence of steps whereby each step contains max. one transition-condition and where the last step is connected to the first step.</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/SequenceWithSourceStep.jpg" alt=" Sequence With Source Step"></td>
+<td style="text-align:left">A <strong>sequence with source step</strong> has a step without previous transition- condition. <p></p><p><strong>Example</strong>: Sequence with a initializing sourcestep.</p><p></p><p> <img src="../PDB/Images/SequenceWithSourceStepEx.jpg" alt=" Sequence With Source Step Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/SequenceWithEndStep.jpg" alt=" Sequence With End Step"></td>
+<td style="text-align:left">A <strong>sequence with end step</strong> has a step where there are no transition- conditions after it. An end step (and a source step) are necessary with macros.</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/ForwardSequenceJump.jpg" alt=" Forward Sequence Jump"></td>
+<td style="text-align:left">It is possible to jump to a step with a <strong>forward sequence skip</strong>.<p></p><p> Notice that between 2 steps only one transition is allowed.</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/BackwardsSequenceJump.jpg" alt=" Backwards Sequence jump"></td>
+<td style="text-align:left">It is possible to loop back with a <strong>backwards sequence skip</strong>. This makes it possible to repeat a sequence.<p></p><p> Notice that between 2 steps only one transition is possible.</p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/OR-Convergence.jpg" alt=" OR-Convergence"></td>
+<td style="text-align:left">Using a <strong>OR-convergence</strong> makes it possible to choose between different sequences where between 2 steps only one transition is allowed. The designer needs to make sure that both sequences can't be activated at the same time. <p></p><p><strong>Example</strong>: In the GRAFCET version A it is possible to activate both step 4 and 5. This can happen when "iSen1" and "iSen2" have the status TRUE and in the moment step 3 is active. In the GRAFCET version B it isn't possible due to the extended transition-condition.</p><p></p><p><img src="../PDB/Images/OR-ConvergenceEx.jpg" alt=" OR-Convergence Example"></p></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../PDB/Images/AND-Convergence.jpg" alt=" AND-Convergence "></td>
+<td style="text-align:left">A <strong>AND-convergence</strong> allows to activate parallel sequences at the same time. They will be started after a starting transition.<p></p><p> An startind AND-convergence is showed by means of a double line after the starting transition.</p><p></p><p> Once the parallel sequence is activated both sequences will run seperatly from each other.</p><p></p><p> An AND-convergence gets back ends if all the parallel end steps are active and the ending transition-condition is TRUE. An ending AND-convergence is showed by a double line before the ending transition.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="function-rules">Function rules</h2>
+
+<p>The <strong>function of a GRAFCET</strong> is in general step by step.<br>
+If a step is active and the transition condition(s) are met than the next step will be activated. If the next step gets activated the previous step will be deactivated immediately.</p>
+<p>It is possible that the status of the different transtion-conditions the fucntion of a GRAFCET seems not to run step by step. It is the task of the designer to avoid that functions which can cause an unstable function of actions.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Function</strong></th>
+<th style="text-align:left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><img src="../PDB/Images/TransitionFunction.jpg" alt=" Non transient action "></td>
+<td style="text-align:left">A <strong>non transient action</strong>  will run step by step.<p></p><p> Situation: Step 4 active, iSen1 = iSen2 = Isen3 = FALSE </p><p></p><p> Function: iSen1 (1) is TRUE which activates step 5 and deactivates step 4.</p></td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="../PDB/Images/TransientFunction.jpg" alt=" Transient Function "></td>
+<td style="text-align:left">With a <strong>transient action</strong> the steps won't run step by step.<p></p><p> Situation Step 4 active, iSen1 = iSen3 = FALSE iSen2 = TRUE </p><p></p><p>Function: iSen (1) is TRUE which causes step 5 to be activated and step 4 gets deactivated. Because iSen3 (2) is true, step 6 will inmediatly be activated and step 5 will be deactivated.</p><p></p><p> Disadvantage: In case we use an action instead of a memory action, it is possible that the assigned actions of a transient step are not or transient executed (= unstable function).</p></td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="../PDB/Images/ANDFunction.jpg" alt=" And Convergence "></td>
+<td style="text-align:left">An <strong>AND-convergence</strong> parallel sequences will be started in case the previous transition condition is TRUE.<p></p><p> Situation 1: If step 1 is active and transition conditoin iGestart is TRUE then step 2 and 4 will be activated.   </p><p></p><p> Situation 2: Once the parallel sequences are activated they will run separatly.</p><p></p><p> Situation 3: Step 9 gets activated in case step 3 and step 6 are active and in case the transition-condition "iSen1.iSen2" is TRUE.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="example">Example</h2>
+
+<p>The next example shows a GRAFCET for the functionality of a conveyor belt. A box is displaced 5x times from start to end before it stops. After this operation it is necessary to restart the installation.</p>
+<p></p><p>
+</p><p><img src="../PDB/Images/ConveyorBeltEx.jpg" alt=" Conveyor belt "></p>
+<p>The GRAFCET has the name FB_PE_BeltFwBw:</p>
+<ul>
+<li>FB = GRAFCET will be programmed in a function block (FB)</li>
+<li>PE = This part is a procedure element according ANSI/ISA S88 standard</li>
+<li>BeltFwBw = Conveyor belt forwards &amp; backwards</li>
+</ul>
+<p>The conveyor belt is <strong>started and stopped</strong> by means of a start button and a stop button. The functionality of these buttons is not included in the GRAFCET but gets executed by an external start-stop basic circuit. The result of this start-stop basic circuit will be linked with the GRAFCET input variable "iStarted".</p>
+<p></p><p>
+</p><p><img src="../PDB/Images/StartStopEx.jpg" alt=" Start Stop exaple "></p>
+<p></p><p>
+Each time the stop button is pressed the conveyor belt will immediatly stop. When the start button is pressed again, the conveyor and GRAFCET continues where they ended.
+</p><p></p><p>
+</p><p><img src="../PDB/ConveyorbeltGRAFCET.jpg" alt=" Conveyorbelt GRAFCET "></p>
+<p></p><p>
+The **photocell** sensors on the conveyor belt detects the presence of the box when the infrared beam between photocell and reflector is interrupted. The status of the photocells (%I) is linked with the GRAFCET input variables "iSenFw" and "iSenBw".
+</p><p></p><p>
+</p><p><img src="../PDB/Images/ProcessingSensors.jpg" alt=" Processing Sensors "></p>
+<p></p><p>
+Controlling the conveyor belt forwards and backwards will be determined by step 1 and step 2 on condition that the installation is started.
+</p><p></p><p>
+</p><p><img src="../PDB/Images/UpwardsEx.jpg" alt=" Controlling the conveyorbelt "></p>
+<p></p><p>
+The effective **control of the conveyor belt** happens by the GRAFCET output variables "oBeltFw" and "oBeltBw" which are linked to the contactors (%Q) and the conveyor belt motor (asynchronous motor).</p><p></p><p>
+</p><p><img src="../PDB/Images/ProcessingContactors.jpg" alt=" Processing of contactors "></p>
+<p>Counting of the <strong>number of backward and forward movements</strong> is controlled by the internal INT variable "i". This variable is an internal function block parameter of the type STATIC. This makes it possible to remember the condition of variable "i" also without voltage (=retentive). </p><p></p><p></p>
+<p><img src="../PDB/Images/IncreasingVariableEx.jpg" alt=" Variable example "></p>
+<p></p><p>
+Increasing the variable "i" is executed in step 3, after which step 1 gets activated because there is a loop sequence between step 3 and step 1 but only if the value of the variable "i" is less than the decimal value 5. Noticed that the increasing of the variable "i" is only executed on the moment that step 3 is activated (rising edge). This is to prevent wrongly increasing the value of the variable in case step 3 is active longer the one PLC cycle.
+</p><p>In case the box went 5x backwards and forward this will be displayed with a green OK lamp. This lamp (%Q) is connected with the GRAFCET output variable "oOk". Now the installation needs to be stopped with the stop button before the installation can restart.</p>
+<p></p><p>
+</p><p><img src="../PDB/Images/ProcessingLamp.jpg" alt=" Lamp Processing "> <img src="../PDB/Images/ProcessingLamp2.jpg" alt=" Lamp Processing "></p>
+<p></p><p>
+It is possible to **initialize** the GRAFCET. This is the activation of the initial step (step 0) by using GRAFCET input variable "iInit". All the other active steps get deactivated. The initialising is only activated on the rising edge of "iInit".
+</p><p></p><p>
+</p><p><img src="../PDB/Images/iInitGRAFCET.jpg" alt="iInit Grafcet Example "></p>
+<p>You could choose to initialize the installation in case you press the start and stop button simultaneously for 5 seconds or more.</p>
+<p><img src="../PDB/Images/ActivatingiInitGRAFCET.jpg" alt="Activating iInit Grafcet Example "></p>
+<h1 class="mume-header" id="grafcet-programming-in-lad-fbd-using-bool">GRAFCET programming in LAD-FBD using BOOL</h1>
+
+<p>Converting a <strong>GRAFCET design to software code</strong> is demonstrated with the GRAFCET described in subchapter 2.</p>
+<p>The GRAFCET is programmed in the LAD or FBD programming language in the function block (%FB) with the use of STATIC parameters. STATIC parameters can remember their status without the PLC being powered on if they are configured to retain.</p>
+<p><img src="../PDB/Images/SiemensVarLAD.jpg" alt="Interface variables "></p>
+<p>The programming is split into <strong>3 parts</strong> which are chronologically programmed in different networks:</p>
+<ul>
+<li>Initialization (network 1)</li>
+<li>Transition-conditions (network 3 ... x)</li>
+<li>Actions (network x+1 ... last network)</li>
+</ul>
+<p>The <strong>GRAFCET programming in LAD/FBD with BOOL</strong> follows the next rules</p>
+<ul>
+<li>Each step is repesented by an unique BOOL variable</li>
+<li>This variable is an ARRAY of BOOL starting with 0 and ending with max. step number</li>
+<li>In case the corresponding variable is TRUE, the step will be active</li>
+<li>Input "iInit" is always present which causes the activation of the initial step on a rising edge of this input</li>
+<li>Input "iStarted" is always present which processes the result of an external start-stop basic circuit</li>
+</ul>
+<p><img src="../PDB/Images/SiemensiInitLAD.jpg" alt="FBD  "><br>
+<img src="../PDB/Images/SiemensFBD.jpg" alt="FBD  "><br>
+<img src="../PDB/Images/SiemensFBD2.jpg" alt="FBD  "><br>
+<img src="../PDB/Images/SiemensFBD3.jpg" alt="FBD  "><br>
+<img src="../PDB/Images/SiemensFBD4.jpg" alt="FBD  "><br>
+<img src="../PDB/Images/SiemensFBD5.jpg" alt="FBD  "><br>
+<img src="../PDB/Images/SiemensFBD6.jpg" alt="FBD  "></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Advantages</strong></th>
+<th style="text-align:center"><strong>Disadvantages</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Simplicity (1 step = 1 variable)</td>
+<td style="text-align:center">Initial step is not activated during the first download of the program</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">Monitoring of active steps is complicated</td>
+</tr>
+</tbody>
+</table>
+<h1 class="mume-header" id="grafcet-programming-in-lad-fbd-using-int">GRAFCET programming in LAD-FBD using INT</h1>
+
+<p>Converting a <strong>GRAFCET design to software code</strong> is demonstrated with the GRAFCET described in subchapter 2.</p>
+<p>The GRAFCET is programmed in the LAD or FBD programming language in the function block (%FB) with the use of STATIC parameters. STATIC parameters can remember their status without the PLC being powered on if they are configured to retain.</p>
+<p><img src="../PDB/Images/SiemensVarINT.jpg" alt="Siemens VAR "></p>
+<p>The programming is split into <strong>3 parts</strong> which are chronologically programmed in different networks:</p>
+<ul>
+<li>Initialization (network 1)</li>
+<li>Transition-conditions (network 3 ... x)</li>
+<li>Actions (network x+1 ... last network)</li>
+</ul>
+<p>The <strong>GRAFCET programming in LAD/FBD with INT</strong> follows the next rules</p>
+<ul>
+<li>Only the actual step needs to be known</li>
+<li>The actual step is represented by an STATIC INT variable (step)</li>
+<li>The initial value of this variable is the decimal value 0</li>
+<li>The actual value of this variable corresponds to the active GRAFCET step</li>
+<li>The initial step is automatically activated the first time the software is downloaded to the PLC; this is because the INT number initial value is equal to the decimal value 0</li>
+<li>Input "iInit" is always present which causes the activation of the initial step on a rising edge of this input</li>
+<li>Input "iStarted" is always present which processes the result of an external start-stop basic circuit</li>
+</ul>
+<p><img src="../PDB/Images/SiemensINT1.jpg" alt="INT "><br>
+<img src="../PDB/Images/SiemensINT2.jpg" alt="INT "><br>
+<img src="../PDB/Images/SiemensINT3.jpg" alt="INT "><br>
+<img src="../PDB/Images/SiemensINT4.jpg" alt="INT "><br>
+<img src="../PDB/Images/SiemensINT5.jpg" alt="INT "><br>
+<img src="../PDB/Images/SiemensINT6.jpg" alt="INT "></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Advantages</strong></th>
+<th style="text-align:center"><strong>Disadvantages</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Initial step is activated during the first download of the program</td>
+<td style="text-align:center">More complex, advanced programming then with LAD/FBD BOOL method</td>
+</tr>
+<tr>
+<td style="text-align:center">Monitoring of active steps is easier</td>
+<td style="text-align:center">Programming of AND-convergence is more complex then with LAD/FBD BOOL variant</td>
+</tr>
+</tbody>
+</table>
+<h1 class="mume-header" id="grafcet-programming-in-st">GRAFCET programming in ST</h1>
+
+<p>Converting a <strong>GRAFCET design to softwarecode</strong> is demonstrated with the GRAFCET described in subchapter 2.</p>
+<p>The GRAFCET is programmed in the LAD or FBD programming language in the function block (%FB) with the use of STATIC parameters. STATIC parameters can remeber their status also without voltage if they are configured as retain.</p><p></p>
+<p><img src="../PDB/Images/SiemensVARST.jpg" alt="Siemens ST "></p>
+<p>The programming is split into <strong>3 parts</strong> which are chronologically programmed in different networks:</p>
+<ul>
+<li>Initialisation (network 1)</li>
+<li>Transition-conditions (network 3 ... x)</li>
+<li>Actions (network x+1 ... last network)</li>
+</ul>
+<p>The <strong>GRAFCET prgramming in ST</strong> is submitted to the next rules</p>
+<ul>
+<li>The use of CASE .. OF .. ELSE control structure which handles the processing of transition-conditions</li>
+<li>Only the actual step needs to be known</li>
+<li>The actual step is represented by a STATIC ANY_INT variable (step)</li>
+<li>The initial value of this variable is the decimal value 0</li>
+<li>The actual value of this variable corresponds to the active GRAFCET step</li>
+<li>The initial step is automatically activated the first time the software is downloaded to the PLC; this because the INT number initial value is equal to the decimal value 0</li>
+<li>Input "iInit" is always present which causes the activation of the initial step on a rising edge of this input</li>
+<li>Input "iStarted" is always present which processes the result of an external start-stop basic circuit</li>
+</ul>
+<p><img src="../PDB/Images/SiemensST.jpg" alt="STL "><br>
+<img src="../PDB/Images/SiemensST2.jpg" alt="STL "><br>
+<img src="../PDB/Images/SiemensST3.jpg" alt="STL "><br>
+<img src="../PDB/Images/SiemensST4.jpg" alt="STL "></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Advantages</strong></th>
+<th style="text-align:center"><strong>Disadvantages</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Initial step is not activated while the the first download of the program</td>
+<td style="text-align:center">More complex programming than LAD/FBD variant</td>
+</tr>
+<tr>
+<td style="text-align:center">Smaller programming then LAD/FBD variant</td>
+<td style="text-align:center">Programming of AND-convergence is more complex than the LAD/FBD BOOL method</td>
+</tr>
+<tr>
+<td style="text-align:center">Monitoring of active steps are easier</td>
+<td style="text-align:center">Debugging <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> in ST is harder than in FBD/LAD</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="characteristics-and-defenitions">Characteristics and defenitions</h2>
+
+<p>Controllers are used mainly to control continuing processes. Also non continuing can be controlled. This way a GRAFCET can run t he controller as action in a determined step. We use analog sensors to control analog or digital actuators.</p>
+<p>Controllers are defined by several characteristics which are explained in the table below.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Definition</strong></th>
+<th><strong>Abbreviation</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Process value</td>
+<td>X <em>PV</em></td>
+<td>The value measured by the analog sensor <em>German name = Istwert</em></td>
+</tr>
+<tr>
+<td>Setpoint</td>
+<td>W <em>SP</em></td>
+<td>The value that we want to achieve. <em>German name = Sollwert</em></td>
+</tr>
+<tr>
+<td>Loop manipulated value</td>
+<td>Y <em>LMN</em></td>
+<td>The result that the actuator that affects the process adjusts <em>German name = Regelabweichung</em></td>
+</tr>
+<tr>
+<td>Error</td>
+<td>E <em>ER</em></td>
+<td>Difference between measured values and the setpoint <em>German naming = Stellgrösse</em></td>
+</tr>
+<tr>
+<td>Hysteresis</td>
+<td>H</td>
+<td>The area wherein an actuator gets turned on and off.</td>
+</tr>
+<tr>
+<td>Dead band</td>
+<td>XDo <em>Db</em></td>
+<td>The area in which multiple digital acutators get turned off. With analog actuators the status of the output that isn't in the dead band changes.H <em>German name = Bandbreite</em></td>
+</tr>
+<tr>
+<td>Dead time</td>
+<td>T0/Tt Td</td>
+<td>The time delay between the change of the loop manipulated value and the change of the measured value. <em>German name = Totzeit</em></td>
+</tr>
+<tr>
+<td>Gain</td>
+<td>Kr <em>GAIN</em></td>
+<td>The proportional action or P-action amplifies the output in proportion to input. The magnitude is determined by the gain factor, which can be positive or negative.</td>
+</tr>
+<tr>
+<td>Reset time</td>
+<td>TI</td>
+<td>The integrating action ensures a constant sum of the error and keeps outputting more signals depending on how long an error exists between the measured and desired value. The integrator or I action is characterized by the time response of the integrator</td>
+</tr>
+<tr>
+<td>Derivative time</td>
+<td>TD</td>
+<td>The D action responds to the rate of change of the error. So only when creating a step will the D action give its contribution to the controller. The differentiating action or D action is characterized by the time response of the differentiator</td>
+</tr>
+</tbody>
+</table>
+<p>The measure difference is the difference between the loop manipulated value and the measured value.</p>
+<p>E=W-X</p>
+<p>Notice that the control difference can have a positive or a negative value.</p>
+<h2 class="mume-header" id="on-off-circuit">On-off circuit</h2>
+
+<p>The <strong>on-off circuit</strong> gets used to switch a control output Y [BOOL] on or off in function of a measured value X [REAL] and a set value W [REAL]. The on-off switch ensures that the actuator does not switch on and off too often by using 2 threshold values, namely:</p>
+<ul>
+<li>The switch-on threshold value (lower limit)</li>
+<li>The switch-off threshold value (upper limit)</li>
+</ul>
+<p><img src="../PDB/Images/ON-OFFeX.jpg" alt="ON_OFF"></p>
+<p>The difference between the switch-on and switch-off threshold values becomes the so<br>
+called hysteresis. The following mathematical formulas apply:</p>
+<p>Switch-on threshold or lower limit = X -  Hysteresis/2.0<br>
+Switch-off threshold or upper limit = X +  Hysteresis/2.0</p>
+<p><strong>FBD</strong><br>
+<img src="../PDB/Images/SiemensEx1.jpg" alt="Siemens Example"></p>
+<p><strong>LD</strong><br>
+<img src="../PDB/Images/SiemensEx2.jpg" alt="Siemends Example"></p>
+<p>In case the process value is lower then the switch-on threshold, the loop manipulated value will be turn off.<br>
+As soon as the process value reaches the switch-off threshold, the loop manipulated value will be turn off.</p>
+<p><strong>FBD</strong><br>
+<img src="../PDB/Images/SiemensEx3.jpg" alt="Siemends Example"></p>
+<p><strong>LD</strong><br>
+<img src="../PDB/Images/SiemensEx4.jpg" alt="Siemends Example"></p>
+<p><strong>Example on-off switch - Heating in a home</strong><br>
+Homes are often equipped with a thermostat to measure and control the temperature in a room.</p>
+<ul>
+<li>The thermostat measures the room temperature = measured value X</li>
+<li>The ideal temperature is entered on the thermostat = desired value W</li>
+<li>If it is too cold, the thermostat ensures that the boiler is switched on = closed contact = control output Y on</li>
+<li>If it is too hot, the thermostat ensures that the boiler is switched off = open contact = control output Y off</li>
+<li>Depending on the type of thermostat, the hysteresis is a fixed value or adjustable (order of magnitude 0.5 to 1.0 ° C)</li>
+</ul>
+<h2 class="mume-header" id="pid-controller">PID controller</h2>
+
+<p><a href="#8-3-addendum-5-controllers">8.2 Addendum 5 Controllers</a></p>
+<h3 class="mume-header" id="functioning">Functioning</h3>
+
+<p>A PID controller is used to control processes via an analog actuator<br>
+[Y = INT or WORD]. A PID controller consists of several sub-functions. So, one distinguishes:</p>
+<ul>
+<li>
+<p>P or Proportional action</p>
+</li>
+<li>
+<p>I or Integrative action</p>
+</li>
+<li>
+<p>D or Differentiating action</p>
+</li>
+</ul>
+<h3 class="mume-header" id="compact-pid-controller">Compact PID controller</h3>
+
+<p>The compact Siemens PID controller is limited compared to the continuous PID controller in its possibilities. Most of the parameters can be set via associated pop-up menus and can therefore only be set using a programming device (PC with TIA Portal).</p>
+<p>As an advantage it can be quoted that configuring this controller is done by using these pop-up screens which is much easier. This way one can make a choice between the different quantities and different SI units and one can opt to operate via a normalized input (output) or a periphery (entrance exit).</p>
+<p><img src="../PDB/Images/SiemensEx5.jpg" alt="Siemens Example"></p>
+<p>If you opt for a peripheral input, you can convert it to the correct measuring range using the screen <em>“Process value settings”</em>.</p>
+<p><img src="../PDB/Images/SiemensEx6.jpg" alt="Siemens Example"></p>
+<p>The P, I and D action can be set via the screen <em>“PID Parameters”</em>. Notice that the different actions cannot be selected individually. One can only make a choice between a PID and a PI controller. Note that every action is separately correctable. For example, one can calculate the weight of the P action and the D-action can be individually adjusted to even turn off and one can assign a wait coefficient for the D action.</p>
+<p><img src="../PDB/Images/SiemensEx7.jpg" alt="Siemens Example"></p>
+<p>The output can be limited just like a continue controller. This can be done in the <em>"Output value limits"</em> screen.</p>
+<p><img src="../PDB/Images/SiemensEx8.jpg" alt="Siemens Example"></p>
+<p>Because of the different parameters being adjustable by using pop-up screens, the PID building block will be compacter than the continuing Siemens PID controller.</p>
+<p><img src="../PDB/Images/SiemensEx9.jpg" alt="Siemens Example"></p>
+<h3 class="mume-header" id="programming-example-continue-pid-controller">Programming example – Continue PID controller</h3>
+
+<p>In the programming example below will you find the programming of a continue PID controller.</p>
+<p>The analog pressure sensor %IW256 gets formed internally so that the following results are obtained:</p>
+<ul>
+<li>
+<p>PV_NORM = (output CRP_IN) . PV_FAC + PV_OFF</p>
+</li>
+<li>
+<p>PV_NORM = (output CRP_IN) . 0,11 + 1.0</p>
+</li>
+<li>
+<p>1.0 bar = ( 0%) . 0,11 + 1.0</p>
+</li>
+<li>
+<p>12.0 bar = (100%) . 0,11 + 1.0</p>
+</li>
+</ul>
+<p>The loop manipulated value is variable adjustable suing %MD20. This way we can adjust the loop manipulated value with changing the user program.</p>
+<p>The dead band is adjustable at 1.2 bar. In case (W - XDo/2) &lt; X &lt; (W + XDo /2)<br>
+The output of the controller doesn't change.</p>
+<p>The controller is adjustable so that:</p>
+<ul>
+<li>
+<p>The P-action is activated and the gain is set to 5.2</p>
+</li>
+<li>
+<p>The I-action is activated and the reset time is set to 2 min.</p>
+</li>
+<li>
+<p>The D-action is deactivated</p>
+</li>
+</ul>
+<p>The output is limited between 0 and 100+ (standard settings) and transformed to the peripheral output %PQW320.</p>
+<p>Notice that the values are shown in light grey colour which are the standard values.</p>
+<table>
+<thead>
+<tr>
+<th><strong>The PID buildblock gets saved by TIA PORTAL in the folder“Program Blocks\System Blocks\Program Resources”</strong></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p><img src="../PDB/Images/SiemensEx10.jpg" alt="Siemens Example"></p>
+<h2 class="mume-header" id="controller-cicruit-structuring">Controller cicruit structuring</h2>
+
+<h3 class="mume-header" id="singular-control-circuit">Singular control circuit</h3>
+
+<p>This is the simplest control circuit. The controller keeps the controlled unit [X] stable on the set value [W]</p>
+<p><img src="../PDB/Images/SingleCircuitjpg.jpg" alt="Single Circuit Example"></p>
+<p>Singular feedback control circuits are commonly used where the influence of the controldynamic and the control result are minor.</p>
+<h3>Cascade controller or master/slave controller</h3>
+<p>The imperfections of a single control loop are mainly improved by a cascade control. In cascade control, the control loop becomes divided into a main control loop and an auxiliary control loop.<br>
+For this there is at least one main control controller (master) and one auxiliary or follower control (slave) required.</p>
+<ul>
+<li>The main or control controller regulates the main control variable to the desired one  value [W]</li>
+<li>The main or control controller returns an analog SI unit [Yf]  which is processed by the auxiliary or follow-up controller as the desired value  [Yf = Wh]</li>
+<li>The result of the auxiliary or tracking controller [Yh] influences the process of the  analog measurement of the main or control controller</li>
+</ul>
+<p><img src="../PDB/Images/Cascade.jpg" alt="Cascade Example"></p>
+<p>Depending on the needs a cascade controller can be equipped with multiple help controllers. Consequently you could place multiple help/follow controllers behind a head controller.</p>
+<h3>Ratio controller</h3>
+<p>The ratio controller has just like a cascade controller a head controller and a help- or follow controller. The intention is to have multiple processunits in a constant ratio. The ratio controller gets used mostly for controlling 2 flow streams, between these 2 flow streams a determined ratio needs to be present.</p>
+<p>The simplest example of a ratio controller is for example the gas and air supply in a gas incinerator. The head controller controls the amount of gas, depending on the desired oven temperature. The help or follow controller gets controlled by the actual value of the head controller which then controls the amount of air.</p>
+<p><img src="../PDB/Images/Ratio.jpg" alt="Ratio Example"></p>
+<p>The ratio between both SI units, gas and air gets used with a ratio factor on the setpoint for the control or follow controller.</p>
+<h3>Mix Ratio Controller</h3>
+<p>A mix ratio controller is a ratio controller with a main controller and several subordinate auxiliary or follow-up controllers.</p>
+<p>With the mixing ratio control it is possible to make a product from several basic components consists of mixing [X1, X2,… .Xn] into a final product with a constant mixing ratio.</p>
+<p>The main- or control-controller controls the joint composition [Xg] it controls all subordinate component controllers with its control output [Yf].The percentage share of each component [X1, X2 ..Xn] with respect to the joint mixing ratio [Xg] is entered with the ratio factor "for".</p>
+<p><img src="../PDB/Images/MixRatio.jpg" alt="MixRatio Example"></p>
+<h3>Split range controller</h3>
+<p>Some applications need multiple ajustment ratios, that can be achieved with only one adjusting device, for example a controlvalve.</p>
+<p>A split range controller is a controller with one controlling SI unit and multiple controlled SI units.</p>
+<p>The controlling unit divides its actions over for example two adjustment devices.</p>
+<p>Split range controllers get used a lot in systems for heating and cooling.</p>
+<p>In case the controlled variable varies over a big range, will it be useful for applications.</p>
+<p><img src="../PDB/Images/SplitRange.jpg" alt="Split Range Example"></p>
+<p>The controller output gets split in parallel paths, each with an adjusting device.</p>
+<h2 class="mume-header" id="software-model-following-ansi-isa-88">Software model following ANSI-ISA-88</h2>
+
+<h3 class="mume-header" id="the-different-parts">The different parts</h3>
+
+<p>The ANSI/ISA-88 norm or the <strong>S88 software model</strong> is a norm that describes how a machine/installation (batch)process can be subdivided in different parts.</p>
+<p>The advantage of this is that one big problem<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> will be divided in different smaller partial problems; smaller problems are often easier to solve than bigger problems. A strategy will be developed for each small partial problem that will cause the bigger problems to be solved one by one.</p>
+<ul>
+<li>
+<p>The physical part</p>
+</li>
+<li>
+<p>The procedure part</p>
+</li>
+<li>
+<p>The recipe part</p>
+</li>
+</ul>
+<p><img src="../PDB/Images/S88_Softwaredesign.jpg" alt="S88 Software Design "></p>
+<p>Because the S88 software model is very abstract and expanded we will be using a very simple form in this course:</p>
+<ul>
+<li>
+<p>The back spine is the physical part</p>
+</li>
+<li>
+<p>The procedure part gets integrated in the physical part.</p>
+</li>
+<li>
+<p>The recipe part won't be applied</p>
+</li>
+</ul>
+<p>This means that the software building blocks only get designed for the processing of the physic part or only the procedure part.<br>
+The building blocks will exhange information between each other.</p>
+<p>The following chapters describe different building blocks that are included in the software library. The operation of each individual building block is explained with the use of a operation scheme with the following symbols:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Symbol</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../PDB/Images/AND.jpg" alt="AND port "></td>
+<td>AND port</td>
+</tr>
+<tr>
+<td><img src="../PDB/Images/OR.jpg" alt="OR port "></td>
+<td>OR Port</td>
+</tr>
+<tr>
+<td><img src="../PDB/Images/NOT-connection.jpg" alt="Not connection "></td>
+<td>NOT connection</td>
+</tr>
+<tr>
+<td><img src="../PDB/Images/OR.jpg" alt="OR port "></td>
+<td>Connection</td>
+</tr>
+<tr>
+<td><img src="../PDB/Images/TON.jpg" alt="TON "></td>
+<td>Risedelay</td>
+</tr>
+<tr>
+<td><img src="../PDB/Images/TOF.jpg" alt="TOF "></td>
+<td>Drop-off delay</td>
+</tr>
+<tr>
+<td><img src="../PDB/Images/TP.jpg" alt="Time pulse "></td>
+<td>Time Puls</td>
+</tr>
+<tr>
+<td></td>
+<td>A collection of instructions that together a combination basiccircuit form (in this case the start-stop circuit)</td>
+</tr>
+<tr>
+<td><img src="../PDB/Images/Pflank.jpg" alt="Positive flank "></td>
+<td>Positive flank signal</td>
+</tr>
+<tr>
+<td><img src="../PDB/Images/Nflank.jpg" alt="Negative flank "></td>
+<td>Negative flank signal</td>
+</tr>
+</tbody>
+</table>
+<p>The operation scheme gets drawn up so that every incoming signal is as far to the left as possible and all output signals are to the right. Connections are when needed drawn with dotted lines (with crossing lines) to avoid confusion.</p>
+<h1>Physical part - Control modules</h1>
+<p><strong>Control modules</strong> are software blocks that<br>
+- Process sensor input singals (%I)<br>
+- Activate / control output signals (%Q)</p>
+<p>This way a control module gets represented by a certain type of actuator or sensor and by preference gets included in the software library.<br>
+Control modules are preferably progammed in "Function buildblocks" whereby, the TAG-naming gets expanded with the letters CM.</p>
+<h1 class="mume-header" id="sensors">Sensors</h1>
+
+<h2>Digital sensor</h2>
+<p>A <strong>digital sensor</strong> (Ex.:limit switch, inductive sensor, capacitive sensor, tuning fork,...) processes mainly the presence of a product, object, person, etc. It has 2 conditions which indicate whether these products, objects or persons are preset or not.</p>
+<p>Functionally seen these sensors monitor:</p>
+<ul>
+<li>The correct automatic process whether or not with the needed delay (example, opening of a door with the help of a photocell after which the door stays open for a bit)</li>
+<li>The protection against defects (example, overflow protection )</li>
+</ul>
+<p>One can design a building block wherein all the above functionalities are processed. As a Consequently, this building block is the software representative of a digital sensor.</p>
+<p><img src="../PDB/Images/ObjectDigitalSensor.jpg" alt="S88 Example Digital Sensor "></p>
+<p>This building block belongs to the group of <strong>control modules</strong> are provided with following functionalities:</p>
+<ul>
+<li>The module will ensure that the sensor signal (iSen) which optionally can be delayed with a on-delay(iTON_Time) and/or a off-delay (iTOF_Time) for a correct operation, which then provides the output signal (oSen_TO)</li>
+<li>In case the option alarm (iAL_Option) is enabled, the module will activate an alarm(ioAL_Sen) as soon as the sensor (iSen) is disabled, taking into account the off-delay(iAL_Time).</li>
+<li>If the sensor(iSen) isn't switched on anymore, the module will turn off the alarm(ioAL_Sen) as soon as it gets reset(iReset)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_DI_Sensor.</p>
+<p><img src="../PDB/Images/OperationschemeCMFB_CM_DI_Sensor.jpg" alt="operation scheme control module FB_CM_DI_Sensor "></p>
+<p>This results into a <strong>"Function buildblock"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th>Text</th>
+<th>Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FDB example</td>
+<td><img src="../PDB/Images/TIA-FB_CM_DI_Sensor.jpg" alt="TIA image of control module FB_CM_DI_Sensor "></td>
+</tr>
+<tr>
+<td>More simple example</td>
+<td><img src="../PDB/Images/SimpleFB_CM_DI_Sensor.jpg" alt="Simple image of control module FB_CM_DI_Sensor "></td>
+</tr>
+</tbody>
+</table>
+<h2>Analog sensors</h2>
+<p>It is possible to process for example: the current level of a liquid with an <strong>analog sensor</strong> in a programmable manager circuit ("sturing"). It's needed to convert the number given to the correct SI-unit, this is because the current value isn't given in the correct SI-unit (ex. : mm). A unipolar sensor is only capable of converting a positive signal (ex. 0 .. 20mA, 4 .. 20mA, 0 .. 10 V, ...). A bipolar sensor processes both positive and negative signals (ex. -10V .. + 10 V).</p>
+<p>A <strong>control module</strong> for this type of sensors has the following tasks:</p>
+<ul>
+<li>Converting the provided number (iSen) which is a mirror of the measured value, to a SI-unit (oX) whereby taking into account the unipolar and bipolar signals (iUniOption) and the max. (iHiLim) and min. (iLoLim) measure range of the analog sensor.</li>
+<li>Making an alarm (ioAL_Sen) in case of an abnormal situation (ex. Cable break or overcurrent)</li>
+<li>If the abnormal situation is fixed will the module will turn off the alarm as soon as it gets resetted (iReset)</li>
+</ul>
+<p><img src="../PDB/Images/ObjectAnalogSensor.jpg" alt="Object of a analog sensor "></p>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_AI_Sensor.</p>
+<p><img src="../PDB/Images/OperationschemeCMFB_CM_AI_Sensor.jpg" alt="Operation scheme control module FB_CM_AI_Sensor "></p>
+<p>Notice that the operation scheme is drafted for analog sensors that work following the Siemens principle, they have a normal range of 0 .. 27.648 / -27648 .. + 27648.</p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_AI_Sensor.jpg" alt="TIA image of control module FB_CM_AI_Sensor "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_AI_Sensor.jpg" alt="Simple image of control module FB_CM_AI_Sensor "></td>
+</tr>
+</tbody>
+</table>
+<p><em>Examples</em></p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Processing of a digital sensor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FB_CM_DI_Sensor</td>
+<td>Processing of a digital sensor</td>
+</tr>
+<tr>
+<td>FB_CM_AI_Sensor</td>
+<td>Processing of an analog sensor</td>
+</tr>
+<tr>
+<td>FB_CM_DOL</td>
+<td>Controlling an asynchronous motor with 1 speed and 1 rotating direction</td>
+</tr>
+<tr>
+<td>FB_CM_DOLRev</td>
+<td>Controlling an asynchronous motor with 1 speed and 2 rotating directions</td>
+</tr>
+<tr>
+<td>FB_CM_Valve</td>
+<td>Controlling of a (pressurised air) valve</td>
+</tr>
+<tr>
+<td>FB_CM_Relay</td>
+<td>Controlling of a relay</td>
+</tr>
+<tr>
+<td>FB_CM_Lamp</td>
+<td>Controlling of a (LED) lamp</td>
+</tr>
+</tbody>
+</table>
+<h1 class="mume-header" id="asynchronous-motors">Asynchronous motors</h1>
+
+<h2>Asynchronous motor with set speed and one turn direction</h2>
+<p>With the current technology an asynchronous motor that only runs forward with a set speed can't operate without:</p>
+<ul>
+<li>1x motor circuit breaker</li>
+<li>1x relay</li>
+</ul>
+<p><img src="../PDB/Images/ObjectAsynchronousMotor.jpg" alt="Object of a direct online motor "></p>
+<p>A <strong>control module</strong> for this type actuator is inseperable connected with a motor circuit breaker and a relay. The control module shortly does the following:</p>
+<ul>
+<li>If the think process(iAut) asks that if the motor needs to run, the control module will let the motor run (oCon)</li>
+<li>But if the motor circuit breaker (iMcb) is turned off the module won't let the motor run en it'll activate the alarm (ioAL_Mcb)</li>
+<li>The motor will only start running again if the motor circuit breaker has been activated and the alarm reset has been reset(iReset)</li>
+</ul>
+<p>One can expand the functionalities of the control module:</p>
+<ul>
+<li>The motor will only run (oCon) if the module is enable (iEnable)</li>
+<li>If manual mode is activated (iModeHand), the module will ignore the request from the think process (iAut) and runs the motor whenever the manual signals are given (iHandOn &amp; iHandOut)</li>
+<li>If the motor needs to run (oCon) the module can start the motor with an on delay (iTON_Time) and/or an off delay(iTOF_Time)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_DOL.</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_DOL.jpg" alt="Operationscheme for a direct online control module "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_DOL.jpg" alt="TIA image of control module FB_CM_DOL"></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_DOL.jpg" alt="Simple image of control module FB_CM_DOL "></td>
+</tr>
+</tbody>
+</table>
+<h2>Asynchronous motor with set speed and two turn directions</h2>
+<p>With the current technology an asynchronous motor that runs forward and backwards with a set speed can't operate without:</p>
+<ul>
+<li>1x motor circuit breaker</li>
+<li>2x relays</li>
+</ul>
+<p><img src="../PDB/Images/ObjectAsynchronousMotor2.jpg" alt="Object of a direct online reverse motor "></p>
+<p>A <strong>control module</strong> for this type of actuator is inseperably connected with a motor circuit breaker and a relay. The control module, in short does the following:</p>
+<ul>
+<li>If the think process(iAutL) asks if the motor needs to run left, the control module will let the motor run left (oConL)</li>
+<li>If the think process(iAutR) asks if the motor needs to run right, the control module will let the motor run right (oConR)</li>
+<li>It is possible to run through a waiting time(iTOF_Time) if it is requested to change direction</li>
+<li>But if both directions are requested (left and right) the direction doesn't change and the motor will keep spinning the way it was before the request.</li>
+<li>But if the motor circuit breaker (iMcb) is turned off the module won't let the motor run en it'll activate the alarm (ioAL_Mcb)</li>
+<li>The motor will only start running again if the motor circuit breaker has been activated and the alarm reset has been reset(iReset)</li>
+</ul>
+<p>One can expand the functionalities of the control module:</p>
+<ul>
+<li>The motor will only run (oConR &amp; oConL) if the module is enable (iEnable)</li>
+<li>If manual mode is activated (iModeHand), the module will ignore the request from the think process (iAutR &amp; iAutL) and runs the motor to the right(oConR) whenever the manual signal is given (iHandR)</li>
+<li>If manual mode is activated (iModeHand), the module will ignore the request from the think process (iAutR &amp; iAutL) and runs the motor to the left(oConL) whenever the manual signal is given (iHandL)</li>
+<li>The control module won't change running condition if the mode changes from automatic mode (NOT iModeHand) to hand mode (iModeHand)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_DOLRev</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_DOLRev.jpg" alt="Operationscheme for a direct online reverse control module "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_DOLRev.jpg" alt="TIA image of control module FB_CM_DOLRev"></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_DOLRev.jpg" alt="Simple image of control module FB_CM_DOLRev "></td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="valve">Valve</h2>
+
+<p>A valve is used to power compressed air or hydraulic actuators (ex. compressed air cylinder). The combination of a valve and actuator has a specific functionality:</p>
+<ul>
+<li>Monostable power circuit: In case there is a loss of power the actuator will automatically take its residual state (ex. single-acting compressed air cylinder)</li>
+<li>Bistable power circuit: In case there is a loss of power the actuator will keep the last position (ex. double-acting compressed air cylinder)</li>
+<li>Monostable control circuit:  In case there is a loss of power in the control circuit the valve will automatically take its residual state (ex. 3/2 valve with spring return)</li>
+<li>Bistable control circuit: In case there is a loss of power in the control circuit the valve will automatically keep its last state (ex. 5/2 valve with electromagnetic control on both sides)</li>
+</ul>
+<p>A <strong>control module</strong> for a valve will be built without taking into account the already existing functions of the combination valve - actuator. The control module will work following the bistable process.</p>
+<p><strong>Why would you use a monostable valve and cylinder?</strong></p>
+<p>During the design of a machine/installation one needs to ask themselves: What can go wrong during an unexpected event? How do i take care of potential risk to a human? Following the machine guidelines, no moving part of the machine or no single object that is held by the machine can be dropped or ejected. (2006/42/EG,2006)</p>
+<p>Unexpected events like for example a fire, an accident, an earthquake, a flood, etc. can cause interruptions in the control- and/or power circuits. The interruption of these circuits can cause dangerous situations.</p>
+<p><em>Example</em></p>
+<p>Because of a fire in a technical room, the air compressor stopped working which has the side effect that there is no more compressed air. A robot that moves part of +/- 2 kg on highspeed is equipped with a pneumatic grabber. There is the danger that in case the compressed air falls away on the moment the robot moves at high speed, that the robot lets go of the object and basically throws away the object. This has the potential to hurt humans that work near the robot.</p>
+<p>In this situation one chooses a monostable compressed air cylinder with a spring return, this will keep the grabber "grijper" to remain closed in case the compressed air falls away.</p>
+<p>The functionality of this type control module:</p>
+<ul>
+<li>The control module will work on the following a bistable principle;</li>
+<li>
+<ul>
+<li>In case the think process asks to activate the "+" side of the valve (iAut_1) the control module will do this (oVlv_1) and it will keep the condition in case the think process doesn't ask for it anymore, until the "-" side gets activated</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>In case the thinkprocess asks to activate the "-" side of the valve (iAut_0) the control module will do this (oVlv_0) and it will keep the condition in case the think process doesn't ask for it anymore, until the "+" side gets activated</li>
+</ul>
+</li>
+<li>The control module will only change the condition of the electromagnetic control in case this is allowed (iEnable)</li>
+<li>If the hand mode is active (iModeHand) the control module ignores the think process signals (iAut_1 &amp; iAut_0) and sends the valve (oVlv_1 &amp; oVlv_0) commands based off the hand signals (iHand_1 &amp; iHand_0)</li>
+</ul>
+<p>It is possible with the description to draft a operation scheme for the control module with the name FB_CM_Valve</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_Vlv.jpg" alt="Operationscheme for a valve "></p>
+<p>The endresult is a <strong>"Function buildblock"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_Valve.jpg" alt="TIA image of control module FB_CM_Valve"></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_Valve.jpg" alt="Simple image of control module FB_CM_Vavle "></td>
+</tr>
+</tbody>
+</table>
+<h2>Relay</h2>
+<p>A <strong>relay</strong> is often used to build up communication with:</p>
+<ul>
+<li>Other PLC's via a potential-free contacts</li>
+<li>Other devices like frequency controllers</li>
+</ul>
+<p><img src="../PDB/Images/ObjectRelay.jpg" alt="Object of a relay "></p>
+<p>Just like an asynchronous motor one can assign multiple functionalities to the corresponding control module such as:</p>
+<ul>
+<li>If the think process asks to activate the relay (iAut), the relay will be activated (oRel)</li>
+<li>The relay will only be activated if this is enabled (iEnable)</li>
+<li>If hand mode (iModeHand) is activated then the module will ignore the think process's signal (iAut) and activates the relay based on the hand signals</li>
+<li>If it's asked to activate the relay, the module has the possibility to activate a rise delay (iTON_Time) and/or drop-out delay (iTOF_Time)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_Relay</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_Relay.jpg" alt="Operationscheme FB_CM_Relay "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_Relay.jpg" alt="TIA image of control module FB_CM_Relay"></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_Relay.jpg" alt="Simple image of control module FB_CM_Relay "></td>
+</tr>
+</tbody>
+</table>
+<h2>Lamp</h2>
+<p>A <strong>lamp</strong> is used to inform an operator about the status of a machine/installation or part of it.</p>
+<p>A lamp control module handles following functionalities:</p>
+<ul>
+<li>Continued lighting of the lamp (iAut)</li>
+<li>Blinking of the lamp (iAaut_1Hz)</li>
+<li>Fast blinking of the lamp (iAut_2Hz)</li>
+<li>Activating the lamp if a lamp test(= controlling the lamps on defective lamps by maintenance technicians) is being executed (iHandTest)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_CM_Lamp</p>
+<p><img src="../PDB/Images/OperationschemeFB_CM_Lamp.jpg" alt="Operationscheme FB_CM_Lamp "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_CM_Lamp.jpg" alt="TIA image of control module FB_CM_Lamp "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_CM_Lamp.jpg" alt="Simple image of control module FB_CM_Lamp "></td>
+</tr>
+</tbody>
+</table>
+<h1 class="mume-header" id="physical-part">Physical part</h1>
+
+<h2>Equipment modules</h2>
+<p>An <strong>equipment module</strong> is a collection of multiple control modules and/or other equipment modules. The collection is built upon the physical relationship they have with each other.<br>
+In other words, an equipment module is a software building block that has a minimum of 2 building blocks of the type control modules and/or equipment modules/.<br>
+Equipment modules are preferably programmed in "Functions", the TAG-naming gets expanded with the letters EM.</p>
+<table>
+<thead>
+<tr>
+<th>Examples</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FC_EM_CC</td>
+<td>Includes programming of the control cabinet</td>
+</tr>
+<tr>
+<td>FC_EM_Airco</td>
+<td>Includes programming of the airco installation</td>
+</tr>
+<tr>
+<td>FC_T10_EM_Level</td>
+<td>Includes programming of the level controlling of tank T10</td>
+</tr>
+<tr>
+<td>FC_EM_X_Axis</td>
+<td>Includes programming of the X axis</td>
+</tr>
+</tbody>
+</table>
+<h1>Procedure part</h1>
+<h2>Procedure</h2>
+<p>A <strong>procedure</strong> is a strategy, think process to solve a problem. First, a strategy gets designed on paper using a certain method. Next the strategy will be translated to a software building block which we call the procedure element.</p>
+<p>The designing of a strategy can be done with the following methods:<br>
+- By designing a GRAFCET drawing<br>
+- By designing a flowchart drawing<br>
+- By determining the needed mathematical formulas<br>
+- By drawing of an operation scheme<br>
+- By selecting a controller and determining the corresponding parameters in the shape of a table</p>
+<h2>Procedure element</h2>
+<p>A <strong>procedure element</strong> is the software translation(programming) of a procedure. A procedure drawing, scheme or table needs to be present for each procedure element. Some of these procedure elements are commonly used in machines/installations. This causes them to preferably be included into a software library. Other procedure elements get delivered by the producer of the processing unit:</p>
+<ul>
+<li>Start-stop procedure (software library) = To start and stop actuators, machines/installations in the correct way</li>
+<li>Reset procedure (software library) = To create a reset signal in the correct way</li>
+<li>Two-point controller (software library) = Controlling a digital sensor using an on-off controller with the help of an analog sensor</li>
+<li>PID-controller (software catalog Siemens) = To control an analog output</li>
+</ul>
+<p>Procedure elements get preferably programmed in "Function building blocks", the TAG-naming gets expanded with the letters PE.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Examples</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FB_PE_StarStop</td>
+<td style="text-align:center">Start-stop procedure</td>
+</tr>
+<tr>
+<td style="text-align:center">FB_PE_Reset</td>
+<td style="text-align:center">Reset procedure</td>
+</tr>
+</tbody>
+</table>
+<h2>Start-stop procedure elements</h2>
+<p>A <strong>start-stop procedure</strong> is used to start or stop an actuator and/or the automatic process of a machine/installation (or parts of it). We use a classic start-stop circuit that is expanded with extra functionality.</p>
+<p>Characteristics of the start-stop procedure:</p>
+<ul>
+<li>The stop action (iBtnStop) has priority on the start action (iBtnStart) which is mandatory following the machine guidelines</li>
+<li>The start signal is of the type NO-contact<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>, the stop signal is of the type NC-contact<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></li>
+<li>The operator is obligated to press the start button (iBtnStart) (Electrically bridging the start button isn't allowed)</li>
+<li>There is the possibility to start slower (iTON_Time) and/or stopping slower (iTOF_Time)</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_PE_StartStop</p>
+<p><img src="../PDB/Images/OperationschemeFB_PE_StartStop.jpg" alt="Operationscheme FB_PE_StarStop "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_PE_StartStop.jpg" alt="TIA image of control module FB_PE_StartStop "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_PE_StartStop.jpg" alt="Simple image of control module FB_PE_StarStop "></td>
+</tr>
+</tbody>
+</table>
+<h2>Reset procedure elements</h2>
+<p>The <strong>reset procedure</strong> gets used to create a checked reset signal. Checked because the signal coming from ex. an electrical reset button(NO-contact) can include issues like:</p>
+<ul>
+<li>An electrical circuit of the reset button can have a short circuit (it is like the button is being pressed the entire time)</li>
+<li>The reset button is electrically bridged (it is like the button is being pressed the entire time)</li>
+<li>Bad/fake contact in the electrical circuit of the reset button (it is possible by vibrations in the installation the contact on/off/on/off/on/off/.. switches)</li>
+</ul>
+<p>Because these situations can lead to uncontrolled situations, the reset procedure gets designed with the following functionalities:</p>
+<ul>
+<li>LHL<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> functionality after pressing the reset button (iBtnReset) this between a set time (the high range) has to be let go to produce an outputsignal</li>
+<li>A checked output signal that is max. 1s is TRUE (oReset_1s)</li>
+<li>A checked output signal that is max. 1 PLC-cycle TRUE is (=edge signal)(oReset)</li>
+</ul>
+<p><img src="../PDB/Images/Operationdiagram_LHLreset.jpg" alt="Simple image of control module LHL reset procedure "></p>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_PE_Reset</p>
+<p><img src="../PDB/Images/OperationschemeFB_PE_Reset.jpg" alt="Operationscheme FB_PE_Reset "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_PE_Reset.jpg" alt="TIA image of control module FB_PE_Reset "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_PE_Reset.jpg" alt="Simple image of control module FB_PE_Reset "></td>
+</tr>
+</tbody>
+</table>
+<h2>Two-point controller with hysteresis</h2>
+<p>A <strong>two-point controller with hysteresis</strong> uses an on-off switch to switch an actuator either on or off in function of a measure physical unit (= measured value x) and the desired physical unit (= setpoint W).</p>
+<p>A <strong>two-point controller with hysteresis</strong> is consequently an on-off circuit with extra functionality like:</p>
+<ul>
+<li>The result of the controller (oY) is also offered inverted (oY_NOT)</li>
+<li>The possibility to switch the controller on and off. With turned-off controllers all the control outputs have the status FALSE(oY &amp; oY_NOT)</li>
+<li>Setpoint (iW), the measured value (iX) and the hysteresis (iH) are adjustable</li>
+</ul>
+<p>It is possible with the description to draft an operation scheme for the control module with the name FB_PE_TWPH</p>
+<p><img src="../PDB/Images/OperationschemeFB_PE_TWPH.jpg" alt="Operationscheme FB_PE_ON-OFF "></p>
+<p>The end result is a <strong>"Function building block"</strong> which looks like the following images.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Text</th>
+<th style="text-align:center">Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FDB example</td>
+<td style="text-align:center"><img src="../PDB/Images/TIA-FB_PE_On-Off.jpg" alt="TIA image of control module FB_PE_ON-OFF "></td>
+</tr>
+<tr>
+<td style="text-align:center">More simple example</td>
+<td style="text-align:center"><img src="../PDB/Images/SimpleFB_PE_On-Off.jpg" alt="Simple image of control module FB_PE_ON-OFF "></td>
+</tr>
+</tbody>
+</table>
+<h2>Specific designed procedure elements</h2>
+<p>Not all the think process can be collected with standard procedures. It's often necessary to design specific procedures and procedure elements. One of these following analysis methods gets applied to determine the strategy:</p>
+<ul>
+<li>GRAFCET</li>
+<li>Flowchart</li>
+<li>Mathematical formulas</li>
+<li>Operation schemes</li>
+<li>Selection controllers and explanation of control parameters</li>
+</ul>
+<h1 class="mume-header" id="exercise-1">Exercise 1</h1>
+
+<h1 class="mume-header" id="study-material">Study material</h1>
+
+<hr>
+<h2 class="mume-header" id="literature">Literature</h2>
+
+<h2 class="mume-header" id="equipment">Equipment</h2>
+
+<blockquote>
+<p><strong>1</strong> Engineering station<br>
+<strong>2</strong> SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher<br>
+<strong>3</strong> SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher<br>
+<strong>4</strong> Ethernet connection between engineering station and controller</p>
+</blockquote>
+<h2 class="mume-header" id="additional-literature">Additional literature</h2>
+
+<h1 class="mume-header" id="the-crane-project">The Crane Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-add-profinet-based-device">first goal</a> is to add ProfiNET based devices</li>
+<li>The <a href="#goal-2-to-add-profibus-based-devices">second goal</a> is to add Profibus based devices</li>
+<li>The <a href="#goal-3-to-add-drives">third goal</a> is to add Drives</li>
+</ul>
+<p>Back to the <a href="#scope1">project scope</a></p>
+<h2 class="mume-header" id="scope1">Scope1</h2>
+
+<p>Make a networkconfiguration of a crane that has the follwing:</p>
+<ul>
+<li>5 Digital sensors</li>
+<li>3 Motorstarters</li>
+<li>2 Analog sensors</li>
+<li>A digital levelsensor</li>
+<li>2 Profibus Devices</li>
+<li>1 Drive</li>
+</ul>
+<p><img src="../PDB/Images/Crane.jpg" alt="Crane"></p>
+<h2 class="mume-header" id="goal-1-to-add-profinet-based-devices">Goal 1 To add ProfiNET based devices</h2>
+
+<hr>
+<h1 class="mume-header" id="profinet">ProfiNET</h1>
+
+<p><strong>Step 1 :</strong> Create a new TIA Portal project</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Project</span> name  <span class="token operator">:</span> <span class="token maybe-class-name">Ex1</span><span class="token operator">-</span><span class="token maybe-class-name">TheCraneProject</span>
+<span class="token maybe-class-name">Author</span>        <span class="token operator">:</span> <span class="token maybe-class-name">Your</span> name
+<span class="token maybe-class-name">Comment</span>       <span class="token operator">:</span> <span class="token maybe-class-name">The</span> <span class="token maybe-class-name">Crane</span> <span class="token maybe-class-name">Project</span>
+</pre><p><strong>Step 2 :</strong> Add a PLC-device with next CPU settings</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Type</span>                          <span class="token operator">:</span> <span class="token maybe-class-name">See</span> available <span class="token constant">CPU</span>
+<span class="token maybe-class-name">System</span> byte                   <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">MB254</span>
+<span class="token maybe-class-name">Clock</span> memory byte             <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">MB255</span>
+<span class="token maybe-class-name">Digital</span> input start address   <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">IB0</span>
+<span class="token maybe-class-name">Output</span> start address          <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">QB0</span>
+<span class="token maybe-class-name">Analog</span> input start address    <span class="token operator">:</span> <span class="token operator">%</span><span class="token constant">IB64</span>
+<span class="token constant">IP</span><span class="token operator">-</span>address                    <span class="token operator">:</span> <span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.30</span>
+<span class="token constant">IP</span><span class="token operator">-</span>address subnet mask        <span class="token operator">:</span> <span class="token number">255.255</span><span class="token number">.255</span><span class="token number">.0</span>
+</pre><p><strong>Step 3:</strong> Search for the correct GSD files for the following devices:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Beckhoff</span> <span class="token constant">CX8093</span> <span class="token function">island</span> <span class="token punctuation">(</span><span class="token constant">IO</span> on bridge<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">3</span>x digital <span class="token function">sensor</span> <span class="token punctuation">(</span>grabber open<span class="token punctuation">,</span> rabber closed<span class="token punctuation">,</span> grabber on top<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">2</span>x digital <span class="token function">sensor</span> <span class="token punctuation">(</span>eindeloop left<span class="token punctuation">,</span> eindeloop right<span class="token punctuation">)</span>
+
+<span class="token maybe-class-name">Siemens</span> <span class="token constant">ET200S</span> island <span class="token number">1</span>  <span class="token punctuation">(</span>pumps<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">3</span>x <span class="token function">motorstarter</span> <span class="token punctuation">(</span>supply<span class="token operator">-</span> <span class="token operator">&amp;</span> drainpump <span class="token operator">&amp;</span> heating<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">2</span>x analog <span class="token function">measurement</span> <span class="token punctuation">(</span>level and temperature<span class="token punctuation">)</span>
+<span class="token operator">-</span>	<span class="token number">1</span>x digital <span class="token function">levelmeasurement</span> <span class="token punctuation">(</span>overflow<span class="token punctuation">)</span>
+</pre><p><em>If there is no internet available the required GSD files are included in the Documents.</em><br>
+<strong>Overview of IP adresses and devices</strong><br>
+<img src="../PDB/Images/Networkview.jpg" alt="Networkview"></p>
+<p><strong>Step 4:</strong> Importing these GSD files:</p>
+<p><img src="../PDB/Images/Tia-Options.jpg" alt="Importing GSD files"></p>
+<p><strong>Step 5:</strong> Select the right GSD files wherever you stored them:</p>
+<p><img src="../PDB/Images/TIA-GSDselection.jpg" alt="Importing GSD files"></p>
+<p><strong>Step 6:</strong> Install the selected GSD files:</p>
+<p><img src="../PDB/Images/Tia-GSDinstall.jpg" alt="Installing GSD files"></p>
+<p><strong>Step 7:</strong> Import the correct devices from the "Hardware catalog" into "Network view"</p>
+<p><strong>Step 8:</strong> Connect the devices and give them the right IP adress</p>
+<p><strong>Step 9:</strong> Configure them for the right configuration given in <strong>Step 3</strong></p>
+<h1 class="mume-header" id="the-crane-project-1">The Crane Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-add-profinet-based-device">first goal</a> is to add ProfiNET based devices</li>
+<li>The <a href="#goal-2-to-add-profibus-based-devices">second goal</a> is to add Profibus based devices</li>
+<li>The <a href="#goal-3-to-add-drives">third goal</a> is to add Drives</li>
+</ul>
+<p>Back to the <a href="#scope1">project scope</a></p>
+<h2 class="mume-header" id="goal-2-to-add-profibus-based-devices">Goal 2 to add Profibus based devices</h2>
+
+<hr>
+<h1 class="mume-header" id="profibus">Profibus</h1>
+
+<p><strong>Step 1:</strong> Search for the correct GSD files for the following devices:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token operator">-</span> <span class="token maybe-class-name">Sick</span> <span class="token maybe-class-name">Long</span><span class="token operator">-</span>range<span class="token operator">-</span>sensor <span class="token constant">DX100</span>
+<span class="token operator">-</span> <span class="token maybe-class-name">Sick</span> wire<span class="token operator">-</span>encoder <span class="token constant">ATM60</span>
+</pre><p><strong>Step 2:</strong> Link them to the PLC</p>
+<p><strong>Overview of the network</strong> </p><p></p>
+<p><img src="../PDB/Images/Networkprofibus.jpg" alt="Networkview"></p>
+<p><strong>Step 3:</strong> Configure the imported devices to the right measurement type</p>
+<h1 class="mume-header" id="the-crane-project-2">The Crane Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-add-profinet-based-device">first goal</a> is to add ProfiNET based devices</li>
+<li>The <a href="#goal-2-to-add-profibus-based-devices">second goal</a> is to add Profibus based devices</li>
+<li>The <a href="#goal-3-to-add-drives">third goal</a> is to add Drives</li>
+</ul>
+<p>Back to the <a href="#scope1">project scope</a></p>
+<h2 class="mume-header" id="goal-3-to-add-drives">Goal 3 to add Drives</h2>
+
+<hr>
+<h1 class="mume-header" id="drives">Drives</h1>
+
+<p><strong>Step 1:</strong> Search for the correct GSD file for the following device:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Control</span> <span class="token maybe-class-name">Techniques</span> <span class="token maybe-class-name">Commander</span> <span class="token constant">C300</span>
+</pre><p><strong>Step 2:</strong> Link the drive to the PLC</p>
+<p><img src="../PDB/Images/Networkdrive.jpg" alt="Networkview"></p>
+<p><strong>Step 3:</strong> Compile the entire project and check for errors</p>
+<p><strong>Normal functionallity</strong></p>
+<ul>
+<li>TIA compiles the project without issues</li>
+</ul>
+<h1 class="mume-header" id="exercise-2">Exercise 2</h1>
+
+<h1>Study material</h1>
+<h2>Literature</h2>
+<ul>
+<li>Addendum 06 : Software model following ANSI/ISA-88</li>
+</ul>
+<h2>Equipment</h2>
+<p>1 Engineering station 2 SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher 3 SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher 4 Ethernet connection between engineering station and controller 5 Factory IO scene Pick &amp; Place.factoryio</p>
+<h1>The Pick and Place Project</h1>
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-retrieve-an-archived-program">first goal</a> is to retrieve an archived program.</li>
+<li>The <a href="#goal-2-to-retrieve-an-archived-library">second goal</a> is to retrieve an archived library</li>
+<li>The <a href="#goal-3-to-program-the-s88">third goal</a> is to program the S88 following the S88 design</li>
+<li>The <a href="#goal-4-to-import-an-external-source-file">fourth goal</a> is to import a exernal source file</li>
+<li>The <a href="../Ex02/Subchapter04_04.md">last goal</a> is to deliver a working project</li>
+</ul>
+<p>Back to the <a href="#scope2">project scope</a></p>
+<h2 class="mume-header" id="scope2">Scope2</h2>
+
+<p>Automate the process of picking up packages and placing them on a different conveyor. This will be equipped with the following:</p>
+<ul>
+<li>2 Digital photocells</li>
+<li>2 Digital motor circuit breakers</li>
+<li>2 Digital preasurised air valves</li>
+<li>2 Digital contactors to control the conveyorbelt motors</li>
+<li>A digital vacuum grabber</li>
+</ul>
+<p><img src="../PDB/Images/FactoryIOScene.jpg" alt="FactoryIO scene"></p>
+<p>Use the buttons on the PLC to control the motor circuit breakers.<br>
+Use the control board in FactoryIO to start and stop the machine.</p>
+<h1>The Pick and Place Project</h1>
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-retrieve-an-archived-program">first goal</a> is to retrieve an archived program</li>
+<li>The <a href="#goal-2-to-retrieve-an-archived-library">second goal</a> is to retrieve an archived library</li>
+<li>The <a href="#goal-3-to-program-the-s88">third goal</a> is to program the S88 following the S88 design</li>
+<li>The <a href="#goal-4-to-import-an-external-source-file">fourth goal</a> is to import a exernal source file</li>
+<li>The <a href="../Ex02/Subchapter04_5.md">last goal</a> is to deliver a working project</li>
+</ul>
+<p>Back to the <a href="#scope2">project scope</a></p>
+<h2 class="mume-header" id="goal-1-to-retrieve-an-archived-program">Goal 1 To retrieve an archived program</h2>
+
+<hr>
+<p><strong>Step 1:</strong></p>
+<p>Copy/download the included Ex2-PickAndPlace.zap16 file. Copy the file into:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Filename</span> <span class="token operator">:</span> <span class="token maybe-class-name">Ex2</span><span class="token operator">-</span><span class="token maybe-class-name">PickAndPlace</span><span class="token punctuation">.</span><span class="token property-access">zap16</span>
+<span class="token maybe-class-name">Destination</span> <span class="token operator">:</span> \<span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Automation</span>
+</pre><p><strong>Step 2:</strong> Start TIA Portal and click on "Open existing project" </p><p><br>
+<img src="../PDB/Images/TiaPortalProjectOpen.jpg" alt="FactoryIO scene"></p>
+<p><strong>Step 3:</strong> Click on browse and search for the right archived file</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Automation</span>\<span class="token maybe-class-name">Ex2</span><span class="token operator">-</span><span class="token maybe-class-name">PickAndPlace</span><span class="token punctuation">.</span><span class="token property-access">zap16</span>
+</pre><p><strong>Step 4:</strong> Once selected you'll have to select the target destination. Select Documents\Automation in our case. </p><p><br>
+<img src="../PDB/Images/FileBrowser.jpg" alt="Project succesfully opened"></p>
+<p><strong>Step 5:</strong> Once this screen pops up you have succesfully opened the archive. Click on "Project view" to continue the exercise </p><p><br>
+<img src="../PDB/Images/TiaPortalProjectView.jpg" alt="Project succesfully opened"></p>
+<h1>The Pick and Place Project</h1>
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-retrieve-an-archived-program">first goal</a> is to retrieve an archived program</li>
+<li>The <a href="#goal-2-to-retrieve-an-archived-library">second goal</a> is to retrieve an archived library</li>
+<li>The <a href="#goal-3-to-program-the-s88">third goal</a> is to program the S88 following the S88 design</li>
+<li>The <a href="#goal-4-to-import-an-external-source-file">fourth goal</a> is to import a exernal source file</li>
+<li>The <a href="../Ex02/Subchapter04_5.md">last goal</a> is to deliver a working project</li>
+</ul>
+<p>Back to the <a href="#scope2">project scope</a></p>
+<h2 class="mume-header" id="goal-2-to-retrieve-an-archived-library">Goal 2 To retrieve an archived library</h2>
+
+<hr>
+<p>The point of retrieving this archived library is that this has all the control modules and procedure elemts programmed for you. So that later when you build your S88 in TIA you can drag them from the library into your project.</p>
+<p><strong>Step 1:</strong></p>
+<p>Copy/download the included .zal file named. Make a new subfolder into automation called "Library"(If it doesn't exist already). Copy the file into:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Filename</span> <span class="token operator">:</span> <span class="token constant">S88</span> <span class="token constant">TIA</span> <span class="token maybe-class-name">Portal</span> <span class="token constant">V16</span><span class="token punctuation">.</span><span class="token property-access">zap16</span>
+<span class="token maybe-class-name">Destination</span> <span class="token operator">:</span> \<span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Automation</span>\<span class="token maybe-class-name">Library</span>
+</pre><p><strong>Step 2:</strong> To select the library go to "Options &gt; Global libraries &gt; Open library..." </p><p><br>
+<img src="../PDB/Images/ImportLibrary.jpg" alt="FactoryIO scene"></p>
+<p><strong>Step 3:</strong> Open in the follwing screen the saved library</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Files</span> <span class="token keyword">of</span> type <span class="token operator">:</span> <span class="token maybe-class-name">Compressed</span> <span class="token maybe-class-name">Libraries</span>
+<span class="token maybe-class-name">Destination</span> <span class="token operator">:</span> \<span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Automation</span>\<span class="token maybe-class-name">Library</span>
+</pre><p><img src="../PDB/Images/LibraryBrowser.jpg" alt="FactoryIO scene"></p>
+<p><strong>Step 4:</strong>  Once selected you'll have to select the target destination. Select "Documents\Automation\Library" in our case. </p><p></p>
+<p><img src="../PDB/Images/LibraryDestination.jpg" alt="FactoryIO scene"></p>
+<p><strong>Step 5:</strong> To make sure you have got the library opened check the right bottom of TIA Portal in "Global Libraries". This is done by clicking on libraries on the right side of tia portal. </p><p></p>
+<p><img src="../PDB/Images/TiaLibrary.jpg" alt="FactoryIO scene"></p>
+<h1>The Pick and Place Project</h1>
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-retrieve-an-archived-program">first goal</a> is to retrieve an archived program.</li>
+<li>The <a href="#goal-2-to-retrieve-an-archived-library">second goal</a> is to retrieve an archived library</li>
+<li>The <a href="#goal-3-to-program-the-s88">third goal</a> is to program the S88 following the S88 design</li>
+<li>The <a href="#goal-4-to-import-an-external-source-file">fourth goal</a> is to import a exernal source file</li>
+<li>The <a href="../Ex02/Subchapter04_5.md">last goal</a> is to deliver a working project</li>
+</ul>
+<p>Back to the <a href="#scope2">project scope</a></p>
+<h2 class="mume-header" id="goal-3-to-program-the-s88">Goal 3 To program the S88</h2>
+
+<hr>
+<p><strong>Step 1:</strong> Create the necessary PLC Tags:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">//Inputs</span>
+iCC1_McbConveyorIn_Q1 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">I</span> <span class="token number">0.0</span> <span class="token operator">-</span> <span class="token maybe-class-name">Motor</span> circuit breaker <span class="token keyword control-flow">for</span> conveyor belt entry
+iCC1_McbConveyorOut_Q2 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span>	<span class="token operator">%</span><span class="token constant">I0</span><span class="token number">.1</span>	<span class="token operator">-</span> <span class="token maybe-class-name">Motor</span> circuit breaker <span class="token keyword control-flow">for</span> conveyor belt exit
+iPnP_Sen_B1 <span class="token operator">-</span>	<span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">I10</span><span class="token number">.0</span> <span class="token operator">-</span> <span class="token maybe-class-name">Sensor</span> item at entry
+iPnP_Sen_B2 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">I10</span><span class="token number">.1</span> <span class="token operator">-</span> <span class="token maybe-class-name">Sensor</span> item at exit
+<span class="token maybe-class-name">Moving</span> <span class="token constant">X</span> <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">I10</span><span class="token number">.2</span> <span class="token operator">-</span> <span class="token maybe-class-name">Robot</span> is moving <span class="token keyword">in</span> the <span class="token constant">X</span> axis
+<span class="token maybe-class-name">Moving</span> <span class="token constant">Z</span> <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">I10</span><span class="token number">.3</span> <span class="token operator">-</span> is moving <span class="token keyword">in</span> the <span class="token constant">Z</span> axis
+<span class="token maybe-class-name">Vacuum</span> <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span>	<span class="token operator">%</span><span class="token constant">I10</span><span class="token number">.4</span> <span class="token operator">-</span> <span class="token maybe-class-name">The</span> vacuum <span class="token keyword">of</span> the robot is active
+iCC1_BtnStart_S1 <span class="token operator">-</span> <span class="token constant">BOOL</span>	<span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">I10</span><span class="token number">.5</span> <span class="token operator">-</span> <span class="token maybe-class-name">Start</span> button
+iCC1_BtnReset_S3 <span class="token operator">-</span> <span class="token constant">BOOL</span>	<span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">I10</span><span class="token number">.6</span> <span class="token operator">-</span> <span class="token maybe-class-name">Reset</span> button
+iCC1_BtnStop_S2	<span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">I10</span><span class="token number">.7</span>	<span class="token operator">-</span> <span class="token maybe-class-name">Stop</span> button
+iCC1_BtnEms_S4	<span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">I11</span><span class="token number">.0</span>	<span class="token operator">-</span> <span class="token maybe-class-name">Emergency</span> stop button
+
+
+<span class="token comment">//Outputs</span>
+iCC1_McbConveryorIn_K1 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">Q10</span><span class="token number">.0</span> <span class="token operator">-</span> <span class="token maybe-class-name">Contactor</span> conveyor belt entry
+iCC1_McbConveyorOut_K2 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">Q10</span><span class="token number">.1</span> <span class="token operator">-</span> <span class="token maybe-class-name">Contactor</span> conveyor belt exit
+<span class="token maybe-class-name">Move</span> <span class="token constant">X</span> <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">Q10</span><span class="token number">.2</span> <span class="token operator">-</span> <span class="token maybe-class-name">Moves</span> the robot <span class="token keyword">in</span> the <span class="token constant">X</span> axis
+<span class="token maybe-class-name">Move</span> <span class="token constant">Z</span> <span class="token operator">-</span>  <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">Q10</span><span class="token number">.3</span> <span class="token operator">-</span> <span class="token maybe-class-name">Moves</span> the robot <span class="token keyword">in</span> the <span class="token constant">Z</span> axis
+<span class="token maybe-class-name">Grab</span> <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">Q10</span><span class="token number">.4</span> <span class="token operator">-</span> <span class="token maybe-class-name">Grabs</span> an item
+oCB1_LmpError_H1 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">Q10</span><span class="token number">.7</span> <span class="token operator">-</span> <span class="token known-class-name class-name">Error</span> lamp
+
+
+<span class="token comment">//Flags</span>
+mM001 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M50</span><span class="token number">.0</span> <span class="token operator">-</span> <span class="token maybe-class-name">System</span> started
+mA001 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M50</span><span class="token number">.1</span> <span class="token operator">-</span> <span class="token maybe-class-name">Motor</span> circuit breaker conveyot belt entry alarm
+mA002 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M50</span><span class="token number">.2</span> <span class="token operator">-</span> <span class="token maybe-class-name">Motor</span> circuit breaker coneyor belt exit alarm
+
+mZ <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M60</span><span class="token number">.1</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> move <span class="token constant">Z</span><span class="token operator">-</span>axis <span class="token keyword">of</span> the robot
+mGrab <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M60</span><span class="token number">.2</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> grab item
+mReset <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M60</span><span class="token number">.3</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> reset
+mSysFALSE <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M60</span><span class="token number">.4</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> <span class="token constant">FALSE</span>
+mStopIn	<span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M60</span><span class="token number">.6</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> stop conveyor belt entry
+mStopOut <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M60</span><span class="token number">.7</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> stop conveyor belt exit
+mSen_TO_B1 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M61</span><span class="token number">.0</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> sensor <span class="token constant">B1</span>
+mSen_TO_B2 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M61</span><span class="token number">.1</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> sensor <span class="token constant">B2</span>
+mSysIlnit	<span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M60</span><span class="token number">.5</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> initilization
+
+</pre><p><strong>Step 2 :</strong> Open the Function FC_EM_PnP[FC1]</p>
+<p><strong>Step 3 :</strong> There is one control module already present and linked to the right tags. </p><p></p>
+<p><img src="../PDB/Images/DI_Sensor.jpg" alt="Control module DI Sensor"></p>
+<p><strong>Step 4:</strong> Program the remaining control modules like the following S88 design. <em>For each control module or procedure element you need to have a seperate network</em> </p><p></p>
+<p><img src="../PDB/Images/S88PnP.jpg" alt="S88 Pick and Place" title="S88 Pick and Place"></p>
+<h1>The Pick and Place Project</h1>
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-retrieve-an-archived-program">first goal</a> is to retrieve an archived program.</li>
+<li>The <a href="#goal-2-to-retrieve-an-archived-library">second goal</a> is to retrieve an archived library</li>
+<li>The <a href="#goal-3-to-program-the-s88">third goal</a> is to program the S88 following the S88 design</li>
+<li>The <a href="#goal-4-to-import-an-external-source-file">fourth goal</a> is to import a exernal source file</li>
+<li>The <a href="#goal-5-to-deliver-a-working-project2">last goal</a> is to deliver a working project</li>
+</ul>
+<p>Back to the <a href="#scope2">project scope</a></p>
+<h2 class="mume-header" id="goal-4-to-import-an-external-source-file">Goal 4 To import an external source file</h2>
+
+<hr>
+<p><strong>Step 1:</strong> Download/copy FB-P_PickAndPlace.scl and place it under</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Filename</span> <span class="token operator">:</span> <span class="token constant">FB</span><span class="token operator">-</span><span class="token maybe-class-name">P_PickAndPlace</span><span class="token punctuation">.</span><span class="token property-access">scl</span>
+<span class="token maybe-class-name">Destination</span> <span class="token operator">:</span> \<span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Automation</span>
+</pre><p><strong>Step 2:</strong> Search for "External source files" in the project tree and click on "Add new external file" </p><p><br>
+<img src="../PDB/Images/ExternalSource.jpg" alt="External Source File in TIA"></p>
+<p><strong>Step 3:</strong> In the file browser select FB-P_PickAndPlace.scl and open it </p><p></p>
+<p><img src="../PDB/Images/SourceBrowser.jpg" alt="External Source File in windows explorer"></p>
+<p><strong>Step 4:</strong> Under the "External source files" the selected file will pop up. Right click on it and run "Generate source blocks from source" </p><p></p>
+<p><img src="../PDB/Images/GenerateBlocks.jpg" alt="Generate blocks from source"></p>
+<p><strong>Step 5:</strong>  Add both the Functions into <em>Function block</em> FC_EM_PnP [FC1]:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token constant">FB</span><span class="token operator">-</span><span class="token maybe-class-name">P_PickAndPlace</span> into a <span class="token keyword">new</span> <span class="token class-name">network</span>
+</pre><p><strong>Step 5:</strong> Link the right tags with the block that has been generated</p>
+<h1>The Pick and Place Project</h1>
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-retrieve-an-archived-program">first goal</a> is to retrieve an archived program.</li>
+<li>The <a href="#goal-2-to-retrieve-an-archived-library">second goal</a> is to retrieve an archived library</li>
+<li>The <a href="#goal-3-to-program-the-s88">third goal</a> is to program the S88 following the S88 design</li>
+<li>The <a href="#goal-4-to-import-an-external-source-file">fourth goal</a> is to import a exernal source file</li>
+<li>The <a href="#goal-5-to-deliver-a-working-project2">last goal</a> is to deliver a working project</li>
+</ul>
+<p>Back to the <a href="#scope2">project scope</a></p>
+<h2 class="mume-header" id="goal-5-to-deliver-a-working-project2">Goal 5 To deliver a working project2</h2>
+
+<hr>
+<p><strong>Step 1:</strong> Open the FactoryIO scene called "Pick and Place" (it's one of the default scene's)</p>
+<p><strong>Step 2:</strong> Configure the driver to the right PLC</p>
+<p><strong>Step 3:</strong> Open up the configuration</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token constant">IP</span> adress<span class="token operator">:</span> <span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.10</span>
+<span class="token maybe-class-name">Bool</span> inputs<span class="token operator">:</span> <span class="token number">10</span>
+<span class="token maybe-class-name">Bool</span> outputs<span class="token operator">:</span> <span class="token number">10</span>
+</pre><p><img src="../PDB/Images/DriveConfiguration.jpg" alt="FactoryIO Drive configuration "></p>
+<p><strong>Step 4:</strong> Compile the hardware with a rebuild all command</p>
+<p><strong>Step 5:</strong> Compile the software with a rebuild all command</p>
+<p><strong>Step 6:</strong> Download hardware and software to the PLC_1</p>
+<p><strong>Step 7:</strong> Test the Project</p>
+<p><strong>Normal functionallity</strong></p>
+<ul>
+<li>Start the conveyorbelt by pressing the start button in FactoryIO</li>
+<li>The sensor will detect an item on the entry conveyor belt</li>
+<li>Entry conveyor belt will stop and the robot will pick up the item</li>
+<li>Exit conveyor belt will stop and the robot will put down the item</li>
+</ul>
+<h1 class="mume-header" id="exercise-3">Exercise 3</h1>
+
+<h1 class="mume-header" id="study-materials">Study materials</h1>
+
+<h2 class="mume-header" id="literature-1">Literature</h2>
+
+<ul>
+<li>Addendum 04 : Grafcet</li>
+</ul>
+<h2 class="mume-header" id="equipment-1">Equipment</h2>
+
+<p>1 Engineering station 2 SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher 3 SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher 4 Ethernet connection between engineering station and controller 5 Factory IO scene Pick &amp; Place.factoryio</p>
+<h1 class="mume-header" id="the-pick-and-place-project">The Pick and Place Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-program-a-grafcet">first goal</a> is to program a GRAFCET</li>
+<li>The <a href="#goal-2-to-program-a-flowchart">second goal</a> is to program a Flowchart</li>
+<li>The <a href="#goal-3-to-deliver-a-working-project3">third goal</a> is to deliver a working</li>
+</ul>
+<p>Back to the <a href="#scope3">project scope</a></p>
+<h2 class="mume-header" id="scope3">Scope3</h2>
+
+<p>Automate the process of picking up packages and placing them on a different conveyor. This will be equipped with the following:</p>
+<ul>
+<li>2 Digital photocells</li>
+<li>2 Digital motor circuit breakers</li>
+<li>2 Digital preasurised air valves</li>
+<li>2 Digital contactors to control the conveyorbelt motors</li>
+<li>A digital vacuum grabber</li>
+</ul>
+<p><img src="../PDB/Images/FactoryIOScene.jpg" alt="FactoryIO scene"></p>
+<p>Use the buttons on the PLC to control the motor circuit breakers.<br>
+Use the control board in FactoryIO to start and stop the machine.</p>
+<h2 class="mume-header" id="goal-1-to-program-a-grafcet">Goal 1 To program a GRAFCET</h2>
+
+<hr>
+<p><strong>Step 1:</strong> Open the previous exercise Ex2-PickAndPlace.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Filename</span> <span class="token operator">:</span> <span class="token maybe-class-name">Ex2</span><span class="token operator">-</span><span class="token maybe-class-name">PickAndPlace</span><span class="token punctuation">.</span><span class="token property-access">ap16</span>
+</pre><p><strong>Step 2:</strong> Remove the function block that we previously ported into TIA.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Functionblock</span> <span class="token operator">:</span> <span class="token constant">FB</span><span class="token operator">-</span><span class="token maybe-class-name">P_PickAndPlace</span>
+</pre><p><strong>Step 3:</strong> Copy/download the included .zal file named. Make a new subfolder into automation called "Library"(If it doesn't exist already). Copy the file into:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Filename</span> <span class="token operator">:</span> <span class="token constant">S88</span> <span class="token constant">GRAFCET</span><span class="token punctuation">.</span><span class="token property-access">zap16</span>
+<span class="token maybe-class-name">Destination</span> <span class="token operator">:</span> \<span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Automation</span>\<span class="token maybe-class-name">Library</span>
+</pre><p><strong>Step 4:</strong> Open the archive as we did in Ex02. Here you'll find a template of a GRAFCET under "Master Copies" called "FB-P_GRAFCET". Drag this into your TIA portal project.</p>
+<p><strong>Step 5:</strong> Rename the block to FB-P_PickAndPlace.</p>
+<p><em>Remark: The previous block "FB-P_PickAndPlace" in "FC_EM_PnP" will be red, to fix this right click on the block and press "Update block call".</em></p>
+<p><strong>Step 6:</strong> Program the following GRAFCET into FB-P_PickAndPlace.<br>
+<img src="../PDB/Images/GRAFCET.jpg" alt="GRAFCET"></p>
+<h1 class="mume-header" id="the-pick-and-place-project-1">The Pick and Place Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-program-a-grafcet">first goal</a> is to program a GRAFCET</li>
+<li>The <a href="#goal-2-to-program-a-flowchart">second goal</a> is to program a Flowchart</li>
+<li>The <a href="#goal-3-to-deliver-a-working-project3">third goal</a> is to deliver a working</li>
+</ul>
+<p>Back to the <a href="#scope3">project scope</a></p>
+<h2 class="mume-header" id="goal-2-to-program-a-flowchart">Goal 2 To program a Flowchart</h2>
+
+<hr>
+<p><strong>Step 1:</strong> Create the necessary PLC Tags:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">//Outputs</span>
+<span class="token maybe-class-name">Counter</span> <span class="token operator">-</span> <span class="token constant">DWORD</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">QD100</span> <span class="token operator">-</span> <span class="token maybe-class-name">Amount</span> <span class="token keyword">of</span> processed packages
+
+<span class="token comment">//Flags</span>
+mA003 <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">M50</span><span class="token number">.3</span> <span class="token operator">-</span> <span class="token maybe-class-name">Motor</span> circuit breaker coneyor belt exit alarm
+mCounter <span class="token operator">-</span> <span class="token constant">DWORD</span> <span class="token operator">-</span> <span class="token operator">%</span><span class="token constant">QD100</span> <span class="token operator">-</span> <span class="token maybe-class-name">Flag</span> amount <span class="token keyword">of</span> processed packages
+</pre><p><strong>Step 2:</strong> Create the Function Block FB_Counter[FB1] in the language SCL</p>
+<p><strong>Step 3:</strong> Create the necessary block tags:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">//Static</span>
+mSen <span class="token operator">-</span> <span class="token constant">BOOL</span> <span class="token operator">-</span> <span class="token maybe-class-name">Rising</span> edge detection <span class="token keyword control-flow">for</span> sensor on the output conveyor
+</pre><p><strong>Step 4:</strong> Add a rise edge direction for "mSen_TO_B2"<br>
+<em>Remark "mSen_TO_B2" will be the input and "mSen" will be the output</em></p>
+<p><strong>Step 5:</strong> Create the following Flowcharts<br>
+<img src="../PDB/Images/FlowchartCounter.jpg" alt="Flowchart Counter"><br>
+<img src="../PDB/Images/FlowchartAlarm.jpg" alt="Flowchart Alarm"></p>
+<h1 class="mume-header" id="the-pick-and-place-project-2">The Pick and Place Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-program-a-grafcet">first goal</a> is to program a GRAFCET</li>
+<li>The <a href="#goal-2-to-program-a-flowchart">second goal</a> is to program a Flowchart</li>
+<li>The <a href="#goal-3-to-deliver-a-working-project3">third goal</a> is to deliver a working project</li>
+</ul>
+<p>Back to the <a href="#scope3">project scope</a></p>
+<h2 class="mume-header" id="goal-3-to-deliver-a-working-project3">Goal 3 To deliver a working project3</h2>
+
+<hr>
+<p><strong>Step 1:</strong> Compile the hardware with a rebuild all command</p>
+<p><strong>Step 2:</strong> Compile the software with a rebuild all command</p>
+<p><strong>Step 3:</strong> Download hardware and software to the PLC_1</p>
+<p><strong>Step 4:</strong> Test the Project</p>
+<p><strong>Normal functionallity</strong></p>
+<ul>
+<li>Start the conveyorbelt by pressing the start button in FactoryIO</li>
+<li>The sensor will detect an item on the entry conveyor belt</li>
+<li>Entry conveyor belt will stop and the robot will pick up the item</li>
+<li>Exit conveyor belt will stop and the robot will put down the item</li>
+<li>The counter counts up each time a object gets detected by the fotocell on the outputconveyor</li>
+<li>Stop light lights up when you reach 50 moved packages</li>
+</ul>
+<h1 class="mume-header" id="exercise-4">Exercise 4</h1>
+
+<h1 class="mume-header" id="study-material-1">Study material</h1>
+
+<h2 class="mume-header" id="literature-2">Literature</h2>
+
+<ul>
+<li>Addendum 05 Controllers</li>
+</ul>
+<h2 class="mume-header" id="equipment-2">Equipment</h2>
+
+<p>1 Engineering station 2 SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher 3 SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher 4 Ethernet connection between engineering station and controller 5 Factory IO scene Level Control.factoryio</p>
+<h1 class="mume-header" id="the-watertank-project">The Watertank Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-program-an-on-off-controller">first goal</a> is to program an ON/OFF controller</li>
+<li>The <a href="#goal-2-to-program-a-pid-controller">second goal</a> is to program a PID controller</li>
+<li>The <a href="#goal-3-to-deliver-a-working-program4">third goal</a> is to deliver a working program</li>
+</ul>
+<p>Back to the <a href="#scope4">project scope</a></p>
+<h2 class="mume-header" id="scope4">Scope4</h2>
+
+<p>Automate controlling the level in <strong>watertank T1</strong>. that is equipped with</p>
+<ul>
+<li>An analog level sensor</li>
+<li>An analog flow sensor on the outlet</li>
+<li>An analog inlet valve</li>
+<li>An analog outlet valve</li>
+</ul>
+<p><img src="../PDB/Images/scope.jpg" alt="Procedure element ON OFF"></p>
+<p>Use the buttons, lamps, potentiometer and analog indicator on the ASTI PLC board to control the watertank.</p>
+<h2 class="mume-header" id="characteristics">Characteristics</h2>
+
+<ul>
+<li>Height: 3 m</li>
+<li>Diameter: 2 m</li>
+<li>Discharge pipe radius: 0.125 m</li>
+<li>Input flow: 0.25 m³/s</li>
+<li>Output flow: 0.3543 m³/s</li>
+</ul>
+<h1 class="mume-header" id="the-watertank-project-1">The Watertank Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-program-an-on-off-controller">first goal</a> is to program an ON/OFF controller</li>
+<li>The <a href="#goal-2-to-program-a-pid-controller">second goal</a> is to program a PID controller</li>
+<li>The <a href="#goal-3-to-deliver-a-working-program4">third goal</a> is to deliver a working program</li>
+</ul>
+<p>Back to the <a href="#scope4">project scope</a></p>
+<h2 class="mume-header" id="goal-1-to-program-an-on-off-controller">Goal 1 To program an ON OFF controller</h2>
+
+<hr>
+<p><strong>Step 1:</strong> Open project Ex7-Watertank</p>
+<p><strong>Step 2:</strong> Open the <em>Function</em> FC_T1[FC2]</p>
+<p><strong>Step 3:</strong> Delete the content within network 4 : Level control</p>
+<p><strong>Step 4:</strong> Open the library "S88 TIA Portal V16"</p>
+<p><strong>Step 5:</strong> Copy "FB_PE_ON-OFF" into the <em>Function</em> FC_T1[FC2] network 4 :<br>
+<img src="../PDB/Images/ON-OFF.jpg" alt="Global library"></p>
+<p><strong>Step 6:</strong> Link the right in- &amp; outputs of the ON-OFF controller.</p>
+<p><img src="../PDB/Images/changes.jpg" alt="Procedure element ON OFF"><br>
+<strong>Step 8 :</strong> Open the FactoryIO scene called:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Filename</span> <span class="token operator">:</span> <span class="token maybe-class-name">Level_Control</span><span class="token punctuation">.</span><span class="token property-access">factoryio</span>
+<span class="token maybe-class-name">Filelocation</span> <span class="token operator">:</span> \<span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Factory</span> <span class="token constant">IO</span>\<span class="token maybe-class-name">My</span> <span class="token maybe-class-name">Scenes</span>
+</pre><p><strong>Step 9:</strong> Compile the hardware with a rebuild all command</p>
+<p><strong>Step 10:</strong> Compile the software with a rebuild all command</p>
+<p><strong>Step 11:</strong> Download hardware and software to the PLC_1</p>
+<p><strong>Step 12:</strong> Test the Project</p>
+<p><strong>Normal functionallity</strong></p>
+<ul>
+<li>If you change the iH value the hysteresis of the controller will change</li>
+<li>If you change the iW value the setpoint will change</li>
+<li>The on/off controller will control the level set by you in iW</li>
+<li>Play around with these values and see what they do</li>
+</ul>
+<h1 class="mume-header" id="the-watertank-project-2">The Watertank Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-program-an-on-off-controller">first goal</a> is to program an ON/OFF controller</li>
+<li>The <a href="#goal-2-to-program-a-pid-controller">second goal</a> is to program a PID controller</li>
+<li>The <a href="#goal-3-to-deliver-a-working-program4">third goal</a> is to deliver a working program</li>
+</ul>
+<p>Back to the <a href="#scope4">project scope</a></p>
+<h2 class="mume-header" id="goal-2-to-program-a-pid-controller">Goal 2 To program a PID controller</h2>
+
+<hr>
+<p><strong>Step 1:</strong> Open project Ex7-Watertank</p>
+<p><strong>Step 2:</strong> Delete network 4 : Level control</p>
+<p><strong>Step 3:</strong> Create a cyclic interrupt</p>
+<p><strong>Step 4:</strong> Add PID_Compact into <em>cyclic interrupt</em></p>
+<p><img src="../PDB/Images/pidcompact.jpg" alt="PID Compact"></p>
+<p><strong>Step 5:</strong> Connect the right in- &amp; outputs</p>
+<p><img src="../PDB/Images/cyclicinterrupt.jpg" alt="PID Compact"></p>
+<p><strong>Step 6:</strong>  Delete network 5 : Control the inlet valve</p>
+<p><img src="../PDB/Images/deleted.jpg" alt="Deleting"></p>
+<p><strong>Step 7:</strong> Configure the PID_Compact</p>
+<p><img src="../PDB/Images/configuration.jpg" alt="PID Compact configuration"></p>
+<p><strong>Step 8:</strong> Play with the following paramaters</p>
+<p><img src="../PDB/Images/end.jpg" alt="PID paramaters"></p>
+<p><strong>Step 9 :</strong> Open the FactoryIO scene called:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Filename</span> <span class="token operator">:</span> <span class="token maybe-class-name">Level_Control</span><span class="token punctuation">.</span><span class="token property-access">factoryio</span>
+<span class="token maybe-class-name">Filelocation</span> <span class="token operator">:</span> \<span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Factory</span> <span class="token constant">IO</span>\<span class="token maybe-class-name">My</span> <span class="token maybe-class-name">Scenes</span>
+</pre><h1 class="mume-header" id="the-watertank-project-3">The Watertank Project</h1>
+
+<hr>
+<ul>
+<li>The <a href="#goal-1-to-program-an-on-off-controller">first goal</a> is to program an ON/OFF controller</li>
+<li>The <a href="#goal-2-to-program-a-pid-controller">second goal</a> is to program a PID controller</li>
+<li>The <a href="#goal-3-to-deliver-a-working-program4">third goal</a> is to deliver a working program</li>
+</ul>
+<p>Back to the <a href="#scope4">project scope</a></p>
+<h2 class="mume-header" id="goal-3-to-deliver-a-working-program4">Goal 3 To deliver a working program4</h2>
+
+<hr>
+<p><strong>Step 1:</strong> Compile the hardware with a rebuild all command</p>
+<p><strong>Step 2:</strong> Compile the software with a rebuild all command</p>
+<p><strong>Step 3:</strong> Download hardware and software to the PLC_1</p>
+<p><strong>Step 4:</strong> Go to <a href="#exercise-5">Exercise 5</a> to test the program on a HMI screen</p>
+<h1 class="mume-header" id="exercise-5">Exercise 5</h1>
+
+<h1 class="mume-header" id="study-material-2">Study material</h1>
+
+<hr>
+<h2 class="mume-header" id="literature-3">Literature</h2>
+
+<ul>
+<li>Addendum 03 HMI</li>
+<li>Addendum 05 Controllers</li>
+</ul>
+<h2 class="mume-header" id="equipment-3">Equipment</h2>
+
+<blockquote>
+<p><strong>1</strong> Engineering station<br>
+<strong>2</strong> SIMATIC S7-1200 controller, e.g. CPU 1215C DC/DC/DC – firmware V4.2 or higher<br>
+<strong>3</strong> SIMATIC STEP 7 software in TIA Portal – V15 SP1 or higher<br>
+<strong>4</strong> Ethernet connection between engineering station and controller<br>
+<strong>5</strong> Factory IO scene Pick &amp; Place.factoryio</p>
+</blockquote>
+<h2 class="mume-header" id="additional-literature-1">Additional literature</h2>
+
+<ul>
+<li>Real Games Factory IO manual - <a href="https://docs.factoryio.com/">https://docs.factoryio.com/</a></li>
+</ul>
+<h1 class="mume-header" id="the-watertank-project-4">The Watertank Project</h1>
+
+<hr>
+<h2 class="mume-header" id="scope">Scope</h2>
+
+<p>Automate controlling the level in <strong>watertank T1</strong>. that is equipped with</p>
+<ul>
+<li>An analog level sensor</li>
+<li>An analog flow sensor on the outlet</li>
+<li>An analog inlet valve</li>
+<li>An analog outlet valve</li>
+</ul>
+<p><img src="../PDB/Images/scope.jpg" alt="Scope"></p>
+<p>Use the HMI simulation to control the tank leven and control the PID parameters</p>
+<p><strong>Step 1:</strong> Open project Ex4-Watertank</p>
+<p><strong>Step 2 :</strong> Open the FactoryIO scene called:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token maybe-class-name">Filename</span> <span class="token operator">:</span> <span class="token maybe-class-name">Level_Control</span><span class="token punctuation">.</span><span class="token property-access">factoryio</span>
+<span class="token maybe-class-name">Filelocation</span> <span class="token operator">:</span> \<span class="token maybe-class-name">Documents</span>\<span class="token maybe-class-name">Factory</span> <span class="token constant">IO</span>\<span class="token maybe-class-name">My</span> <span class="token maybe-class-name">Scenes</span>
+</pre><p><strong>Step 3:</strong> Add a TP1500 Basic color PN HMI panel to the project<br>
+<strong>Step 4:</strong> Link the HMI to the PLC configured in the project.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token constant">IP</span><span class="token operator">-</span>address                    <span class="token operator">:</span> <span class="token number">192.168</span><span class="token number">.0</span><span class="token number">.31</span>
+<span class="token constant">IP</span><span class="token operator">-</span>address subnet mask        <span class="token operator">:</span> <span class="token number">255.255</span><span class="token number">.255</span><span class="token number">.0</span>
+</pre><p><strong>Step 5:</strong> Create the following HMI screen, (adjust the PID parameters through HMI)</p>
+<p><img src="../PDB/Images/hmiscreen.jpg" alt="Hmi screen"><br>
+<em>Remark: to show and use the parameters in 00.00 values in a IO field;</em><br>
+<img src="../PDB/Images/format.jpg" alt="Hmi screen"></p>
+<p><strong>Step 6:</strong> Start the HMI simulation</p>
+<p><img src="../PDB/Images/simulation.jpg" alt="Hmi screen"></p>
+<p><em>Remark: if the HMI simulation can't find your PLC connection go to the following</em></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token string">"C:\Program Files\Common Files\Siemens\CommunicationSettings"</span>
+</pre><p>Acces point &gt; S7ONLINE &gt; "Your networkcard"</p>
+<p><strong>Normal functionallity</strong></p>
+<ul>
+<li>The PID will slowly increase(or decrease) when setpoint changes and ultimately stop at the setpoint</li>
+<li>Play with the PID parameters until it works</li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>SFC = Sequential Function Chart, Siemens uses the name GRAPH <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Debugging = Searching for (programming) faults <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Within (process)automation this is commonly the automation of an entire machine/installation.<br>
+The S88 software model divides a machine/installation proces in 3 big parts: <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>NO = Normal open <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>NC = Normal closed <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>LHL = Low / High / Low <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
